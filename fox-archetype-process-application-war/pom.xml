@@ -49,8 +49,8 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git://bitbucket.org/camunda/fox-archetypes.git</connection>
-    <developerConnection>scm:git:git://bitbucket.org/camunda/fox-archetypes.git</developerConnection>
+    <connection>scm:git:ssh://git@bitbucket.org/camunda/fox-archetypes.git</connection>
+    <developerConnection>scm:git:ssh://git@bitbucket.org/camunda/fox-archetypes.git</developerConnection>
   </scm>
 
   <distributionManagement>
