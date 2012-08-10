@@ -21,7 +21,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
-public class ArquillianProcessExecutionTest {
+public class ArquillianTest {
   
   private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
 
@@ -54,11 +54,10 @@ public class ArquillianProcessExecutionTest {
   private ProcessEngine processEngine;
 
   /**
-   * Tests that a user cannot claim or complete a task if he completed the first
-   * task
+   * Tests that the process is executable and reaches its end.
    */
   @Test
-  public void testInvalidClaim() throws Exception {
+  public void testProcessExecution() throws Exception {
     cleanUpRunningProcessInstances();
     
     ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
@@ -67,7 +66,7 @@ public class ArquillianProcessExecutionTest {
   }
 
   /**
-   * Helper to delete all running process instances which might disturb our Arquillian Test case
+   * Helper to delete all running process instances, which might disturb our Arquillian Test case
    * Better run test cases in a clean environment, but this is pretty handy for demo purposes
    */
   private void cleanUpRunningProcessInstances() {
