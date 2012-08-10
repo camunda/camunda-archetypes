@@ -7,7 +7,8 @@
   <version>6.0.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
-  <name>Maven archetype for process applications that use the camunda fox BPM Platform</name>
+  <name>camunda fox Archetype: Process Application (WAR)</name>
+  <description>Maven archetype for process applications that use the camunda fox BPM Platform</description>
 
   <build>
     <extensions>
@@ -27,4 +28,28 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <url>http://www.camunda.com/fox/</url>
+  <licenses>
+    <license>
+      <name>AGPL v3</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0.html</url>
+    </license>
+  </licenses>
+  <organization>
+    <name>camunda</name>
+    <url>http://www.camunda.com</url>
+  </organization>
+  <developers>
+    <developer>
+      <name>Falko Menge</name>
+      <organization>camunda</organization>
+      <url>http://www.camunda.com</url>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@bitbucket.org:camunda/fox-archetypes.git</connection>
+    <developerConnection>scm:git:git@bitbucket.org:camunda/fox-archetypes.git</developerConnection>
+  </scm>
 </project>
