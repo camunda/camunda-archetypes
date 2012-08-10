@@ -3,31 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.camunda.fox.archetype</groupId>
-  <artifactId>fox-archetype-process-application-war</artifactId>
+  <artifactId>fox-archetype-parent</artifactId>
   <version>6.0.0-SNAPSHOT</version>
-  <packaging>maven-archetype</packaging>
+  <packaging>pom</packaging>
 
-  <name>camunda fox Archetype: Process Application (WAR)</name>
-  <description>Maven archetype for process applications that use the camunda fox BPM Platform</description>
+  <name>camunda fox Archetypes Parent POM</name>
 
-  <build>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.archetype</groupId>
-        <artifactId>archetype-packaging</artifactId>
-        <version>2.2</version>
-      </extension>
-    </extensions>
-
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-archetype-plugin</artifactId>
-          <version>2.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
+  <modules>
+    <module>fox-archetype-process-application-war</module>
+  </modules>
 
   <url>http://www.camunda.com/fox/</url>
   <organization>
