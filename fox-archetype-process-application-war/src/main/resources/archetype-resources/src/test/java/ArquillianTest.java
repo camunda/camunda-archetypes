@@ -43,7 +43,7 @@ public class ArquillianTest {
             .addAsWebResource("META-INF/processes.xml", "WEB-INF/classes/META-INF/processes.xml")
             .addAsWebResource("META-INF/beans.xml", "WEB-INF/classes/META-INF/beans.xml")
             // add your own classes (could be done one by one as well)
-            .addPackages(false, "${package}")
+            .addPackages(false, "${package}") // not recursive to skip package 'nonarquillian'
             // add process definition
             .addAsResource("process.bpmn")
     // now you can add additional stuff required for your test case
