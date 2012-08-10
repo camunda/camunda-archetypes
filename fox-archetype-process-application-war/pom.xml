@@ -52,4 +52,11 @@
     <connection>scm:git:git@bitbucket.org:camunda/fox-archetypes.git</connection>
     <developerConnection>scm:git:git@bitbucket.org:camunda/fox-archetypes.git</developerConnection>
   </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>camunda-nexus</id>
+      <url>https://app.camunda.com/nexus/content/repositories/fox-ce/</url>
+    </repository>
+  </distributionManagement>
 </project>
