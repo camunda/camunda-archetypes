@@ -2,8 +2,10 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8"?>
-<processArchive>
-	<configuration>
-		<undeployment delete="false" />
-	</configuration>
-</processArchive>
+<process-archives>
+  <process-archive>
+    <configuration>
+      <undeployment delete="false" />
+    </configuration>
+  </process-archive>
+</process-archives>

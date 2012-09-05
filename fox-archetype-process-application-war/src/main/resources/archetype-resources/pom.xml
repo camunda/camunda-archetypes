@@ -10,7 +10,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <fox.version>6.0.3</fox.version>
+    <fox.version>6.1.0</fox.version>
   </properties>
 
   <dependencies>
