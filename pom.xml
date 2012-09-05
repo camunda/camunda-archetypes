@@ -4,7 +4,7 @@
 
   <groupId>com.camunda.fox.archetype</groupId>
   <artifactId>fox-archetype-parent</artifactId>
-  <version>6.0.1-SNAPSHOT</version>
+  <version>6.1.0</version>
   <packaging>pom</packaging>
 
   <name>camunda fox Archetypes Parent POM</name>
