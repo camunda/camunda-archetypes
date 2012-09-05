@@ -1,7 +1,7 @@
 Releasing the archetypes turned out to be cumbersome. Thus I'm documenting how I managed to do it.
 
-Checkout the master branch of the fox-archetypes repository and run the following commands with Maven 2.2.1 (tag name should be just the version number):
-mvn release:prepare
+Checkout the master branch of the fox-archetypes repository and run the following commands with Maven 2.2.1:
+mvn release:prepare  # tag name should be just the version number
 mvn release:perform
 
 The release did neither work with Jenkins due to http://issues.hudson-ci.org/browse/HUDSON-5856 nor with Maven 3.
