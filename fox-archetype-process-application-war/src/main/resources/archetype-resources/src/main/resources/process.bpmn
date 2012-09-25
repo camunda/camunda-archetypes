@@ -3,7 +3,7 @@
   <bpmn2:collaboration id="Collaboration_1" name="Default Collaboration">
     <bpmn2:participant id="Process_Engine" name="Process Engine" processRef="${artifactId}"/>
   </bpmn2:collaboration>
-  <bpmn2:process id="${artifactId}" name="" isExecutable="true">
+  <bpmn2:process id="${artifactId}" name="${artifactId}" isExecutable="true">
     <bpmn2:startEvent id="StartEvent_1">
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
     </bpmn2:startEvent>
