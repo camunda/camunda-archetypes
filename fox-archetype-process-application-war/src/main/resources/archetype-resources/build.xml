@@ -24,4 +24,8 @@
 		<copy file="${symbol_dollar}{target.dir}/${symbol_dollar}{ant.project.name}.war" todir="${symbol_dollar}{deploy.dir}" />
 	</target>
 
+	<target name="undeploy">
+		<delete file="${symbol_dollar}{deploy.dir}/${symbol_dollar}{ant.project.name}.war" />
+	</target>
+
 </project>
