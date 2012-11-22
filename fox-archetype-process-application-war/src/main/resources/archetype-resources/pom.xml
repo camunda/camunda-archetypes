@@ -10,7 +10,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <fox.version>6.1.0</fox.version>
+    <fox.version>6.1.8</fox.version>
   </properties>
 
   <dependencies>
@@ -51,7 +51,7 @@
     </dependency>
 
     <dependency>
-      <!-- Needed for ArquillianProcessExecutionTest -->
+      <!-- Needed for ArquillianTest -->
       <groupId>org.jboss.arquillian.junit</groupId>
       <artifactId>arquillian-junit-container</artifactId>
       <version>1.0.0.CR7</version>
@@ -119,7 +119,7 @@
       </activation>
       <dependencies>
         <dependency>
-          <!-- Needed for ArquillianProcessExecutionTest -->
+          <!-- Needed for ArquillianTest -->
           <!-- Requires a running JBoss 7 with fox platform
                change to other artifact for embedded start or different server -->
           <!-- Included here for convenience when running the test in Eclipse -->
@@ -151,7 +151,7 @@
       <id>arq-jbossas-remote</id>
       <dependencies>
         <dependency>
-          <!-- Needed for ArquillianProcessExecutionTest -->
+          <!-- Needed for ArquillianTest -->
           <!-- Requires a running JBoss 7 with fox platform
                change to other artifact for embedded start or different server -->
           <groupId>org.jboss.as</groupId>
