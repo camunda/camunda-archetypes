@@ -1,2 +1,6 @@
+# Copy this file to 'build.properties' and modify it to match your system
+# Alternatively, you can also copy it to '${user.home}/.fox/build.properties'
+# to have a central configuration that works with all camunda fox projects
+
 # Defines the deployment folder in the fox installation.
 deploy.dir=C:/fox/demopoint/fox-platform-jboss7/standalone/deployments
