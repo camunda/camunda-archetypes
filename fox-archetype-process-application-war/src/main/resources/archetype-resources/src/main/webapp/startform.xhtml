@@ -8,21 +8,21 @@
 
   <h:head>
     <f:metadata>
-      <f:viewParam id="taskId" name="taskId" />
+      <f:viewParam id="processDefinitionKey" name="processDefinitionKey" />
       <f:viewParam id="callbackUrl" name="callbackUrl" />
       <f:event type="preRenderView"
-        listener="${symbol_pound}{fox.taskForm.startTask(taskId, callbackUrl)}" />
+        listener="${symbol_pound}{fox.taskForm.startProcessInstanceByKeyForm(processDefinitionKey, callbackUrl)}" />
     </f:metadata>
-    <title>Task Form: ${symbol_pound}{task.name}</title>
+    <title>Start Process: ${symbol_pound}{processDefinitionKey}</title>
   </h:head>
   <h:body>
-    <h1>${symbol_pound}{task.name}</h1>
+    <h1>Start Process: ${symbol_pound}{processDefinitionKey}</h1>
     <h:form id="someForm">
-      <p>Here you would put the actual form to work on the task in some
+      <p>Here you would put the actual form to start the process in some
         design normally either matching you task list or your business
         application (or both in the best case).</p>
-      <h:commandButton id="submit_button" value="Task completed"
-        action="${symbol_pound}{fox.taskForm.completeTask()}" />
+      <h:commandButton id="submit_button" value="Start Process"
+        action="${symbol_pound}{fox.taskForm.completeProcessInstanceForm()}" />
     </h:form>
   </h:body>
 </ui:composition>
