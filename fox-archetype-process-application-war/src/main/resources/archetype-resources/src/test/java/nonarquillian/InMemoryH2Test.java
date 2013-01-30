@@ -3,6 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.nonarquillian;
 
+import org.activiti.engine.impl.util.LogUtil;
 import org.activiti.engine.test.ActivitiTestCase;
 import org.activiti.engine.test.Deployment;
 
@@ -10,6 +11,11 @@ import org.activiti.engine.test.Deployment;
  * Test case starting an in-memory database-backed Process Engine.
  */
 public class InMemoryH2Test extends ActivitiTestCase {
+
+  // enable more detailed logging
+  static {
+    LogUtil.readJavaUtilLoggingConfigFromClasspath();
+  }
 
   /**
    * Just tests if the process definition is deployable.
