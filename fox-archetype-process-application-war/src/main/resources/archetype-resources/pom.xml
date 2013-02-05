@@ -78,7 +78,7 @@
     <!-- you will need credentials to access this repository!
          For details see: https://app.camunda.com/confluence/display/foxUserGuide/Setting+up+a+maven+project 
     <repository>
-      <id>camunda-fox-enterprise</id>
+      <id>camunda-fox-ee</id>
       <url>https://app.camunda.com/nexus/content/repositories/fox-ee/</url>
     </repository>
     -->
