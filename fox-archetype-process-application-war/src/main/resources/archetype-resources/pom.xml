@@ -71,10 +71,12 @@
   </dependencies>
 
   <repositories>
+    <!--
     <repository>
       <id>camunda-fox-ce</id>
       <url>https://app.camunda.com/nexus/content/repositories/fox-ce/</url>
     </repository>
+    -->
     <repository>
       <!-- you will need credentials to access this repository!
            For details see: https://app.camunda.com/confluence/display/foxUserGuide/Setting+up+a+maven+project 
