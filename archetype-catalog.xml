@@ -5,28 +5,28 @@
       <groupId>com.camunda.fox.archetype</groupId>
       <artifactId>fox-archetype-process-application-war</artifactId>
       <version>6.2.0</version>
-      <description>Maven archetype for process applications that use the camunda fox BPM Platform</description>
+      <description>Maven archetype for process applications that use the camunda fox BPM Platform 6.2.x</description>
       <repository>https://app.camunda.com/nexus/content/repositories/fox-ee</repository>
     </archetype>
     <archetype>
       <groupId>com.camunda.fox.archetype</groupId>
       <artifactId>fox-archetype-process-application-war</artifactId>
       <version>6.1.1</version>
-      <description>Maven archetype for process applications that use the camunda fox BPM Platform</description>
+      <description>Maven archetype for process applications that use the camunda fox BPM Platform 6.1.x</description>
       <repository>https://app.camunda.com/nexus/content/repositories/fox-ee</repository>
     </archetype>
     <archetype>
       <groupId>com.camunda.fox.archetype</groupId>
       <artifactId>fox-archetype-process-application-war</artifactId>
       <version>6.1.0</version>
-      <description>Maven archetype for process applications that use the camunda fox BPM Platform</description>
+      <description>Maven archetype for process applications that use the camunda fox BPM Platform 6.1.x</description>
       <repository>https://app.camunda.com/nexus/content/repositories/fox-ee</repository>
     </archetype>
     <archetype>
       <groupId>com.camunda.fox.archetype</groupId>
       <artifactId>fox-archetype-process-application-war</artifactId>
       <version>6.0.0</version>
-      <description>Maven archetype for process applications that use the camunda fox BPM Platform</description>
+      <description>Maven archetype for process applications that use the camunda fox BPM Platform 6.0.x</description>
       <repository>https://app.camunda.com/nexus/content/repositories/fox-ee</repository>
     </archetype>
   </archetypes>
