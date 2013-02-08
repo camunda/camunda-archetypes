@@ -5,3 +5,6 @@ mvn release:prepare  # tag name should be just the version number
 mvn release:perform
 
 The release did neither work with Jenkins due to http://issues.hudson-ci.org/browse/HUDSON-5856 nor with Maven 3.
+
+In addition to that add the new archetype version to the file 'archetype-catalog.xml' and
+upload it to: https://app.camunda.com/confluence/pages/viewpageattachments.action?pageId=7668278
