@@ -42,6 +42,8 @@ public class ArquillianTest {
             .addAsLibraries(resolver.artifact("com.camunda.fox.platform:fox-platform-client").resolveAsFiles())
             .addAsWebResource("META-INF/processes.xml", "WEB-INF/classes/META-INF/processes.xml")
             .addAsWebResource("META-INF/beans.xml", "WEB-INF/beans.xml")
+            // boot persistence unit
+            .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
             // add your own classes (could be done one by one as well)
             .addPackages(false, "${package}") // not recursive to skip package 'nonarquillian'
             // add process definition
