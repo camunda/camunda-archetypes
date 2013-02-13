@@ -4,7 +4,7 @@
 
   <groupId>com.camunda.fox.archetype</groupId>
   <artifactId>fox-archetype-process-application-war</artifactId>
-  <version>6.2.1</version>
+  <version>6.2.2-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>camunda fox Archetype: Process Application (WAR)</name>
