@@ -12,6 +12,8 @@ import org.activiti.engine.test.Deployment;
  */
 public class InMemoryH2Test extends ActivitiTestCase {
 
+  private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
+
   // enable more detailed logging
   static {
     LogUtil.readJavaUtilLoggingConfigFromClasspath();
