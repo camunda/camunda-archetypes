@@ -14,6 +14,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <fox.version>${fox-version}</fox.version>
+    <jboss.version>${jboss-version}</jboss.version>
   </properties>
 
   <dependencies>
@@ -130,7 +131,7 @@
           <!-- Included here for convenience when running the test in Eclipse -->
           <groupId>org.jboss.as</groupId>
           <artifactId>jboss-as-arquillian-container-remote</artifactId>
-          <version>7.1.0.Final</version>
+          <version>${jboss.version}</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -161,7 +162,7 @@
                change to other artifact for embedded start or different server -->
           <groupId>org.jboss.as</groupId>
           <artifactId>jboss-as-arquillian-container-remote</artifactId>
-          <version>7.1.3.Final</version>
+          <version>${jboss.version}</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
