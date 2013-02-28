@@ -3,7 +3,7 @@
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <requiredProperties>
-    <requiredProperty key="fox-version"><defaultValue>6.2.1</defaultValue></requiredProperty>
+    <requiredProperty key="fox-version"><defaultValue>6.2.2</defaultValue></requiredProperty>
     <requiredProperty key="jboss-version"><defaultValue>7.1.3.Final</defaultValue></requiredProperty>
   </requiredProperties>
   <fileSets>
