@@ -8,3 +8,6 @@ The release did neither work with Jenkins due to http://issues.hudson-ci.org/bro
 
 In addition to that add the new archetype version to the file 'archetype-catalog.xml' and
 upload it to: https://app.camunda.com/confluence/pages/viewpageattachments.action?pageId=7668278
+
+Update latest version referenced on wiki page:
+https://app.camunda.com/confluence/display/foxUserGuide/Maven+Archetypes+for+Process+Applications
