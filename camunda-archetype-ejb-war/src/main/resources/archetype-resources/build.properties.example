@@ -1,0 +1,9 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+# Copy this file to 'build.properties' and modify it to match your system
+# Alternatively, you can also copy it to '${symbol_dollar}{user.home}/.camunda/build.properties'
+# to have a central configuration that works with all camunda BPM projects
+
+# Defines the deployment folder in a camunda BPM installation.
+deploy.dir=C:/camunda/camunda-bpm-jboss-${camunda-version}/server/jboss-as-${jboss-version}/standalone/deployments

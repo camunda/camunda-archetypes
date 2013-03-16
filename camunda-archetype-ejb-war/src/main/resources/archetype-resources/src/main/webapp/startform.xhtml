@@ -1,0 +1,28 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+  <h:head>
+    <f:metadata>
+      <f:viewParam id="processDefinitionKey" name="processDefinitionKey" />
+      <f:viewParam id="callbackUrl" name="callbackUrl" />
+      <f:event type="preRenderView"
+        listener="${symbol_pound}{fox.taskForm.startProcessInstanceByKeyForm(processDefinitionKey, callbackUrl)}" />
+    </f:metadata>
+    <title>Start Process: ${symbol_pound}{processDefinitionKey}</title>
+  </h:head>
+  <h:body>
+    <h1>Start Process: ${symbol_pound}{processDefinitionKey}</h1>
+    <h:form id="someForm">
+      <p>Here you would put the actual form to start the process in some
+        design normally either matching your task list or your business
+        application (or both in the best case).</p>
+      <h:commandButton id="submit_button" value="Start Process"
+        action="${symbol_pound}{fox.taskForm.completeProcessInstanceForm()}" />
+    </h:form>
+  </h:body>
+</ui:composition>
