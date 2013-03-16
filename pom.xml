@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.camunda.archetype</groupId>
-  <artifactId>camunda-archetype-parent</artifactId>
+  <groupId>org.camunda.bpm.archetype</groupId>
+  <artifactId>camunda-archetype-root</artifactId>
   <version>7.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -34,7 +34,7 @@
   <distributionManagement>
     <repository>
       <id>camunda-bpm-nexus</id>
-      <name>camunda-bpm-nexus</name>
+      <name>camunda BPM Maven Repository</name>
       <url>https://app.camunda.com/nexus/content/groups/public</url>
     </repository>
   </distributionManagement>

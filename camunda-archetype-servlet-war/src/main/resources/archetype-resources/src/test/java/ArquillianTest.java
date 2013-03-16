@@ -9,8 +9,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.activiti.engine.ProcessEngine;
-import org.activiti.engine.runtime.ProcessInstance;
+import org.camunda.bpm.engine.ProcessEngine;
+import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -31,24 +31,20 @@ public class ArquillianTest {
       .goOffline()
       .loadMetadataFromPom("pom.xml");
     
-    // if you experience problems with the authentication to the camunda fox
-    // repository the wrong maven configuration might be used.
-    // use this code to use your maven settings.xml in this case:
-    // .configureFrom(".../settings.xml")
-
     return ShrinkWrap
             .create(WebArchive.class, "${artifactId}.war")
-            // prepare as process application archive for fox platform
-            .addAsLibraries(resolver.artifact("com.camunda.fox.platform:fox-platform-client").resolveAsFiles())
+            // prepare as process application archive for camunda BPM Platform
             .addAsWebResource("META-INF/processes.xml", "WEB-INF/classes/META-INF/processes.xml")
-            .addAsWebResource("META-INF/beans.xml", "WEB-INF/beans.xml")
+            .addAsWebResource("WEB-INF/beans.xml", "WEB-INF/beans.xml")
             // boot persistence unit
             .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
             // add your own classes (could be done one by one as well)
             .addPackages(false, "${package}") // not recursive to skip package 'nonarquillian'
             // add process definition
             .addAsResource("process.bpmn")
-    // now you can add additional stuff required for your test case
+            // add process image for visualizations
+            .addAsResource("process.png")
+            // now you can add additional stuff required for your test case
     ;
   }
 

@@ -5,7 +5,7 @@
 <project name="${artifactId}" default="deploy">
 
 	<property file="build.properties" />
-	<property file="${symbol_dollar}{user.home}/.fox/build.properties" />
+	<property file="${symbol_dollar}{user.home}/.camunda/build.properties" />
 	<property name="target.dir" value="target" />
 
 	<condition property="mvn.executable" value="mvn.bat" else="mvn">
@@ -19,12 +19,12 @@
 		</exec>
 	</target>
 
-	<target name="deploy" depends="package.mvn" description="Copies the process application to the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.fox/build.properties'">
-		<fail unless="deploy.dir" message="No deployment folder has been configured. Please copy the file '${symbol_dollar}{basedir}/build.properties.example' to '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.fox/build.properties' and change it according to your environment." />
+	<target name="deploy" depends="package.mvn" description="Copies the process application to the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'">
+		<fail unless="deploy.dir" message="No deployment folder has been configured. Please copy the file '${symbol_dollar}{basedir}/build.properties.example' to '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties' and change it according to your environment." />
 		<copy file="${symbol_dollar}{target.dir}/${symbol_dollar}{ant.project.name}.war" todir="${symbol_dollar}{deploy.dir}" />
 	</target>
 
-	<target name="undeploy" description="Deletes the process application from the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.fox/build.properties'">
+	<target name="undeploy" description="Deletes the process application from the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'">
 		<delete file="${symbol_dollar}{deploy.dir}/${symbol_dollar}{ant.project.name}.war" />
 	</target>
 

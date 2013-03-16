@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor name="camunda-fox-process-application-war" xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+<archetype-descriptor name="camunda-archetype-servlet-war" xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <requiredProperties>
-    <requiredProperty key="fox-version"><defaultValue>6.2.2</defaultValue></requiredProperty>
+    <requiredProperty key="camunda-version"><defaultValue>7.0.0-alpha1</defaultValue></requiredProperty>
     <requiredProperty key="jboss-version"><defaultValue>7.1.3.Final</defaultValue></requiredProperty>
   </requiredProperties>
   <fileSets>
@@ -50,11 +50,6 @@
       <includes>
         <include>readme.txt</include>
         <include>build.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory></directory>
-      <includes>
         <include>build.properties.example</include>
       </includes>
     </fileSet>

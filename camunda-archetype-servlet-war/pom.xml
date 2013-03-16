@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.camunda.fox.archetype</groupId>
-  <artifactId>fox-archetype-process-application-war</artifactId>
-  <version>6.2.2-SNAPSHOT</version>
+  <groupId>org.camunda.bpm.archetype</groupId>
+  <artifactId>camunda-archetype-servlet-war</artifactId>
+  <version>7.0.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
-  <name>camunda fox Archetype: Process Application (WAR)</name>
-  <description>Maven archetype for process applications that use the camunda fox BPM Platform</description>
+  <name>camunda BPM Archetype: Process Application (Servlet, WAR)</name>
+  <description>Maven archetype for process applications that use the camunda BPM Platform</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,7 +33,7 @@
     </pluginManagement>
   </build>
 
-  <url>http://www.camunda.com/fox/</url>
+  <url>http://www.camunda.org</url>
   <organization>
     <name>camunda</name>
     <url>http://www.camunda.com</url>
@@ -53,8 +53,9 @@
 
   <distributionManagement>
     <repository>
-      <id>camunda-nexus</id>
-      <url>https://app.camunda.com/nexus/content/repositories/fox-ee/</url>
+      <id>camunda-bpm-nexus</id>
+      <name>camunda BPM Maven Repository</name>
+      <url>https://app.camunda.com/nexus/content/groups/public</url>
     </repository>
   </distributionManagement>
 </project>

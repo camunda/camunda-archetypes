@@ -7,7 +7,7 @@ ${symbol_pound} Environment Restrictions
 
 ${symbol_pound} Remarks to run this application
 There is no web interface to access the application. To get started refer to the
-Arquillian test case, which by default connects to a fox platform running
+Arquillian test case, which by default connects to a camunda BPM Platform running
 locally on JBoss AS 7.
 
 ${symbol_pound} Known Issues
