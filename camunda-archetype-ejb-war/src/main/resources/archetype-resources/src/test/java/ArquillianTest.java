@@ -34,6 +34,8 @@ public class ArquillianTest {
     return ShrinkWrap
             .create(WebArchive.class, "${artifactId}.war")
             // prepare as process application archive for camunda BPM Platform
+            .addAsLibraries(resolver.artifact("org.camunda.bpm.javaee:camunda-ejb-client").resolveAsFiles())
+            .addAsLibraries(resolver.artifact("org.camunda.bpm:camunda-engine-cdi").resolveAsFiles())
             .addAsWebResource("META-INF/processes.xml", "WEB-INF/classes/META-INF/processes.xml")
             .addAsWebResource("WEB-INF/beans.xml", "WEB-INF/beans.xml")
             // boot persistence unit

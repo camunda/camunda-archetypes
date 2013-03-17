@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.camunda.bpm.archetype</groupId>
-  <artifactId>camunda-archetype-servlet-war</artifactId>
+  <artifactId>camunda-archetype-ejb-war</artifactId>
   <version>7.0.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
-  <name>camunda BPM Archetype: Process Application (Servlet, WAR)</name>
-  <description>Maven archetype for process applications that use the camunda BPM Platform</description>
+  <name>camunda BPM Archetype: Process Application (EJB, WAR)</name>
+  <description>Maven archetype for process applications that use the camunda BPM Platform in a Java EE Container</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -10,6 +10,7 @@
   <name>camunda Archetypes Parent POM</name>
 
   <modules>
+    <module>camunda-archetype-ejb-war</module>
     <module>camunda-archetype-servlet-war</module>
   </modules>
 

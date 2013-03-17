@@ -8,7 +8,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>camunda BPM Archetype: Process Application (Servlet, WAR)</name>
-  <description>Maven archetype for process applications that use the camunda BPM Platform</description>
+  <description>Maven archetype for process applications that use the camunda BPM Platform in a Servlet Container</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
