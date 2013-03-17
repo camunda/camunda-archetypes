@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.camunda.bpm.BpmPlatform;
 import org.camunda.bpm.engine.ProcessEngine;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -48,8 +49,7 @@ public class ArquillianTest {
     ;
   }
 
-  @Inject
-  private ProcessEngine processEngine;
+  private ProcessEngine processEngine = BpmPlatform.getDefaultProcessEngine();
 
   /**
    * Tests that the process is executable and reaches its end.
