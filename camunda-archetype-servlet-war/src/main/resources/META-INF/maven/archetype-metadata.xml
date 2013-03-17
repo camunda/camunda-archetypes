@@ -17,6 +17,7 @@
       <directory>src/main/webapp</directory>
       <includes>
         <include>**/*.xhtml</include>
+        <include>**/*.html</include>
         <include>**/*.xml</include>
       </includes>
     </fileSet>
