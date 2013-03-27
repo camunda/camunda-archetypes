@@ -28,15 +28,16 @@
   </developers>
 
   <scm>
-    <connection>scm:git:ssh://git@bitbucket.org/camunda/fox-archetypes.git</connection>
-    <developerConnection>scm:git:ssh://git@bitbucket.org/camunda/fox-archetypes.git</developerConnection>
+    <connection>scm:git:ssh://git@github.com/camunda/camunda-archetypes.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/camunda/camunda-archetypes.git</developerConnection>
+    <url>scm:git:git@github.com/camunda/camunda-archetypes.git</url>
   </scm>
 
   <distributionManagement>
     <repository>
-      <id>camunda-bpm-nexus</id>
+      <id>camunda-nexus</id>
       <name>camunda BPM Maven Repository</name>
-      <url>https://app.camunda.com/nexus/content/groups/public</url>
+      <url>https://app.camunda.com/nexus/content/repositories/camunda-bpm</url>
     </repository>
   </distributionManagement>
 </project>
