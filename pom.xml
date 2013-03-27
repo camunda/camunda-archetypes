@@ -27,6 +27,19 @@
     </developer>
   </developers>
 
+<build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <scm>
     <connection>scm:git:ssh://git@github.com/camunda/camunda-archetypes.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/camunda/camunda-archetypes.git</developerConnection>
