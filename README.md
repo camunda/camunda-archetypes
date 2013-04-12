@@ -1,4 +1,4 @@
-camunda-archetypes
+camunda-archetypes - [![Build Status](https://buildhive.cloudbees.com/job/camunda/job/camunda-archetypes/badge/icon)](https://buildhive.cloudbees.com/job/camunda/job/camunda-archetypes/)
 ==================
 
 These are Maven Archetypes for camunda BPM platform, which enable a quickstart for developing process applications using the camunda-BPM-platform.
