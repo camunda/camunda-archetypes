@@ -3,8 +3,8 @@
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <requiredProperties>
-    <requiredProperty key="camunda-version"><defaultValue>7.0.0-alpha1</defaultValue></requiredProperty>
-    <requiredProperty key="jboss-version"><defaultValue>7.1.3.Final</defaultValue></requiredProperty>
+    <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
+    <requiredProperty key="jboss-version"><defaultValue>${version.jboss}</defaultValue></requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
