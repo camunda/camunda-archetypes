@@ -15,4 +15,5 @@ Now you should be able to use the archetypes when creating a new maven project i
 
 ###Commandline:
 
-```mvn archetype:generate -Dfilter=org.camunda.bpm.archetype: -DarchetypeCatalog=https://app.camunda.com/nexus/content/repositories/camunda-bpm```
+```mvn archetype:generate -Dfilter=org.camunda.bpm.archetype: 
+-DarchetypeCatalog=https://app.camunda.com/nexus/content/repositories/camunda-bpm```
