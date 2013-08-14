@@ -9,12 +9,12 @@
 
   <bean id="processEngineConfiguration" class="org.camunda.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
     <!--
-  	<property name="mailServerHost" value="localhost" />
-  	<property name="mailServerUsername" value="activiti" />
-  	<property name="mailServerPassword" value="activiti" />
-  	<property name="mailServerDefaultFrom" value="activiti@localhost" />
-  	<property name="mailServerPort" value="25" />
-  	-->
+    <property name="mailServerHost" value="localhost" />
+    <property name="mailServerUsername" value="camunda" />
+    <property name="mailServerPassword" value="camunda" />
+    <property name="mailServerDefaultFrom" value="camunda@localhost" />
+    <property name="mailServerPort" value="25" />
+    -->
   </bean>
 
 </beans>
