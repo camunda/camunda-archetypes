@@ -5,5 +5,5 @@
 # Alternatively, you can also copy it to '${symbol_dollar}{user.home}/.camunda/build.properties'
 # to have a central configuration that works with all camunda BPM projects
 
-# Defines the deployment folder in a camunda BPM installation.
+# Defines the deployment folder in a camunda BPM installation (backslashes need to be escaped or replaced by forward slashes).
 deploy.dir=C:/camunda/camunda-bpm-jboss-${camunda-version}/server/jboss-as-${jboss-version}/standalone/deployments
