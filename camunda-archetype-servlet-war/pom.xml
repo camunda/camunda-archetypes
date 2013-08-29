@@ -4,7 +4,7 @@
 
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-servlet-war</artifactId>
-  <version>7.0.0-Final</version>
+  <version>7.1.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>camunda BPM Archetype: Process Application (Servlet, WAR)</name>
@@ -88,7 +88,7 @@
     <connection>scm:git:ssh://git@github.com/camunda/camunda-archetypes.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/camunda/camunda-archetypes.git</developerConnection>
     <url>scm:git:git@github.com/camunda/camunda-archetypes.git</url>
-    <tag>7.0.0-Final</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
