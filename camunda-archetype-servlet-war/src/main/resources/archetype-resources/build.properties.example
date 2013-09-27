@@ -6,4 +6,5 @@
 # to have a central configuration that works with all camunda BPM projects
 
 # Defines the deployment folder in a camunda BPM installation (backslashes need to be escaped or replaced by forward slashes).
-deploy.dir=C:/camunda/camunda-bpm-jboss-${camunda-version}/server/jboss-as-${jboss-version}/standalone/deployments
+deploy.jboss.dir=C:/camunda/camunda-bpm-jboss-${camunda-version}/server/jboss-as-${jboss-version}/standalone/deployments
+deploy.tomcat.dir=C:/camunda/camunda-bpm-tomcat-${camunda-version}/server/apache-tomcat-${tomcat-version}/webapps

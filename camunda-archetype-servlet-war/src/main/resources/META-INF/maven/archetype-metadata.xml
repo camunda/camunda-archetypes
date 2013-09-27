@@ -5,6 +5,7 @@
   <requiredProperties>
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
     <requiredProperty key="jboss-version"><defaultValue>${version.jboss}</defaultValue></requiredProperty>
+    <requiredProperty key="tomcat-version"><defaultValue>${version.tomcat}</defaultValue></requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
