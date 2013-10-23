@@ -8,7 +8,9 @@
   <packaging>maven-archetype</packaging>
 
   <name>camunda BPM Archetype: Process Application (Servlet, WAR)</name>
-  <description>Maven archetype for process applications that use the camunda BPM Platform in a Servlet Container</description>
+  <description>Process application that uses a shared camunda BPM engine in a Servlet Container, e.g. Apache Tomcat.
+          Contains: Servlet Process Application, BPMN Process, Java Delegate, HTML5-based start and task forms,
+          JUnit Test with in-memory engine, Arquillian Test for JBoss AS7, Ant build script for one-click deployment in Eclipse</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

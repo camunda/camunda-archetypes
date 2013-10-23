@@ -8,7 +8,9 @@
   <packaging>maven-archetype</packaging>
 
   <name>camunda BPM Archetype: Process Application (EJB, WAR)</name>
-  <description>Maven archetype for process applications that use the camunda BPM Platform in a Java EE Container</description>
+  <description>Process application that uses a shared camunda BPM engine in a Java EE Container, e.g. JBoss AS7.
+          Contains: camunda EJB client, camunda CDI Integration, BPMN Process, Java Delegate as CDI bean, JSF-based start and task forms,
+          configuration for JPA (Hibernate), JUnit Test with in-memory engine, Arquillian Test for JBoss AS7, Ant build script for one-click deployment in Eclipse</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
