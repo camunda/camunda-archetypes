@@ -5,8 +5,9 @@ These are project templates for [camunda BPM platform](http://camunda.org/), whi
 
 ##Usage in Eclipse
 
-1. Add archetype catalog (Preferences -> Maven -> Archetypes -> Add Remote Catalog): **https://app.camunda.com/nexus/content/repositories/camunda-bpm/**
-2. Create Maven project from archetype (File -> New -> Project... -> Maven -> Maven Project)
+1. Add archetype catalog (**Preferences -> Maven -> Archetypes -> Add Remote Catalog**):
+    **https://app.camunda.com/nexus/content/repositories/camunda-bpm/**
+2. Create Maven project from archetype (**File -> New -> Project... -> Maven -> Maven Project**)
 
 
 ##Full Documentation
