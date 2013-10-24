@@ -1,19 +1,14 @@
-#camunda-archetypes - [![Build Status](https://buildhive.cloudbees.com/job/camunda/job/camunda-archetypes/badge/icon)](https://buildhive.cloudbees.com/job/camunda/job/camunda-archetypes/)
+#camunda Maven Archetypes - [![Build Status](https://buildhive.cloudbees.com/job/camunda/job/camunda-archetypes/badge/icon)](https://buildhive.cloudbees.com/job/camunda/job/camunda-archetypes/)
 
-These are Maven Archetypes for camunda BPM platform, which enable a quickstart for developing process applications using the camunda-BPM-platform.
-
-##Usage
+These are project templates for [camunda BPM platform](http://camunda.org/), which enable a quickstart for developing process applications.
 
 
-###Eclipse:
+##Usage in Eclipse
 
-* Open your Eclipse
-* Go to Preferences -> Maven -> Archetypes -> Add Remote Catalog
-* Enter for catalog-file the following url: https://app.camunda.com/nexus/content/repositories/camunda-bpm/archetype-catalog.xml
+1. Add archetype catalog (Preferences -> Maven -> Archetypes -> Add Remote Catalog): **https://app.camunda.com/nexus/content/repositories/camunda-bpm/**
+2. Create Maven project from archetype (File -> New -> Project... -> Maven -> Maven Project)
 
-Now you should be able to use the archetypes when creating a new maven project in eclipse.
 
-###Commandline:
+##Full Documentation
 
-```mvn archetype:generate -Dfilter=org.camunda.bpm.archetype: 
--DarchetypeCatalog=https://app.camunda.com/nexus/content/repositories/camunda-bpm```
+The complete documentation of the Maven Archetypes is provided as part of the [camunda BPM User Guide](http://docs.camunda.org/latest/guides/user-guide/#process-applications-maven-project-templates-archetypes).
