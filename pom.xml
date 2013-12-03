@@ -19,6 +19,7 @@
 
     <camunda.version>7.0.0-Final</camunda.version>
     <jboss.version>7.1.3.Final</jboss.version>
+    <arquillian.version>1.0.3.Final</arquillian.version>
     <tomcat.version>7.0.33</tomcat.version>
   </properties>
 
