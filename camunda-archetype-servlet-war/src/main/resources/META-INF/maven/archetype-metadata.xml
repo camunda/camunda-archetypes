@@ -4,6 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <requiredProperties>
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
+    <requiredProperty key="arquillian-version"><defaultValue>${version.arquillian}</defaultValue></requiredProperty>
     <requiredProperty key="jboss-version"><defaultValue>${version.jboss}</defaultValue></requiredProperty>
     <requiredProperty key="tomcat-version"><defaultValue>${version.tomcat}</defaultValue></requiredProperty>
   </requiredProperties>

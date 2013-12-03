@@ -19,6 +19,7 @@
 
   <properties>
     <version.camunda>${camunda.version}</version.camunda>
+    <version.arquillian>${arquillian.version}</version.arquillian>
     <version.jboss>${jboss.version}</version.jboss>
     <version.tomcat>${tomcat.version}</version.tomcat>
   </properties>

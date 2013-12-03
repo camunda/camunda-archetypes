@@ -14,9 +14,21 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <camunda.version>${camunda-version}</camunda.version>
+    <arquillian.version>${arquillian-version}</arquillian.version>
     <jboss.version>${jboss-version}</jboss.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jboss.arquillian</groupId>
+        <artifactId>arquillian-bom</artifactId>
+        <version>${arquillian.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <!-- process engine, needs to be provided -->
@@ -71,7 +83,6 @@
       <!-- Needed for ArquillianTest -->
       <groupId>org.jboss.arquillian.junit</groupId>
       <artifactId>arquillian-junit-container</artifactId>
-      <version>1.0.3.Final</version>
       <scope>test</scope>
     </dependency>
 
