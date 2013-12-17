@@ -41,7 +41,7 @@ public class ArquillianTest {
             .addAsWebResource("META-INF/processes.xml", "WEB-INF/classes/META-INF/processes.xml")
             // enable CDI
             .addAsWebResource("WEB-INF/beans.xml", "WEB-INF/beans.xml")
-            // boot persistence unit
+            // boot JPA persistence unit
             .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
             // add your own classes (could be done one by one as well)
             .addPackages(false, "${package}") // not recursive to skip package 'nonarquillian'
