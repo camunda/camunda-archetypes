@@ -29,9 +29,10 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
-      <!-- process engine -->
+      <!-- process engine, needs to be provided -->
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
       <version>${camunda.version}</version>

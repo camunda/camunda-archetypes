@@ -29,6 +29,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
       <!-- process engine, needs to be provided -->

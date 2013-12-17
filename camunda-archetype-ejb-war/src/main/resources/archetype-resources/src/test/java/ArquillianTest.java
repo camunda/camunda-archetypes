@@ -5,6 +5,7 @@ package ${package};
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -15,8 +16,7 @@ import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.jboss.shrinkwrap.resolver.api.DependencyResolvers;
-import org.jboss.shrinkwrap.resolver.api.maven.MavenDependencyResolver;
+import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -27,16 +27,19 @@ public class ArquillianTest {
 
   @Deployment
   public static WebArchive createDeployment() {
-    MavenDependencyResolver resolver = DependencyResolvers.use(MavenDependencyResolver.class)
-      .goOffline()
-      .loadMetadataFromPom("pom.xml");
-    
+    // resolve given dependencies from Maven POM
+    File[] libs = Maven.resolver()
+      .offline(true)
+      .loadPomFromFile("pom.xml")
+      .importRuntimeAndTestDependencies().resolve().withTransitivity().asFile();
+
     return ShrinkWrap
             .create(WebArchive.class, "${artifactId}.war")
+            // add needed dependencies
+            .addAsLibraries(libs)
             // prepare as process application archive for camunda BPM Platform
-            .addAsLibraries(resolver.artifact("org.camunda.bpm.javaee:camunda-ejb-client").resolveAsFiles())
-            .addAsLibraries(resolver.artifact("org.camunda.bpm:camunda-engine-cdi").resolveAsFiles())
             .addAsWebResource("META-INF/processes.xml", "WEB-INF/classes/META-INF/processes.xml")
+            // enable CDI
             .addAsWebResource("WEB-INF/beans.xml", "WEB-INF/beans.xml")
             // boot persistence unit
             .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
