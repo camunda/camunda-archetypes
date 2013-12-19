@@ -8,7 +8,6 @@
     <version>7.0.2-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-servlet-war</artifactId>
   <packaging>maven-archetype</packaging>
 
@@ -16,13 +15,6 @@
   <description>Process application that uses a shared camunda BPM engine in a Servlet Container, e.g. Apache Tomcat.
           Contains: Servlet Process Application, BPMN Process, Java Delegate, HTML5-based start and task forms,
           JUnit Test with in-memory engine, Arquillian Test for JBoss AS7, Ant build script for one-click deployment in Eclipse</description>
-
-  <properties>
-    <version.camunda>${camunda.version}</version.camunda>
-    <version.arquillian>${arquillian.version}</version.arquillian>
-    <version.jboss>${jboss.version}</version.jboss>
-    <version.tomcat>${tomcat.version}</version.tomcat>
-  </properties>
 
   <build>
     <extensions>
