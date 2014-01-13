@@ -37,7 +37,7 @@
 		      </p>
 					<p>		       
 			      <label>Name</label>
-			      <h:inputText disabled="true" id="name" value="#{processVariables['name']}" />
+			      <h:inputText disabled="false" id="name" value="#{processVariables['name']}" />
 			    </p>
 		      <h:commandButton id="submit_button" value="Start Process"
 		        action="${symbol_pound}{camunda.taskForm.completeProcessInstanceForm()}" styleClass="btn btn-primary" />
