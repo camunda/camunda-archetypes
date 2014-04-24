@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.nonarquillian;
+package ${package};
 
 import org.camunda.bpm.engine.impl.util.LogUtil;
 import org.camunda.bpm.engine.test.ProcessEngineTestCase;
