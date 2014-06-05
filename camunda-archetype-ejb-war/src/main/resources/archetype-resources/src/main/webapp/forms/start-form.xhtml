@@ -11,7 +11,7 @@
       <f:viewParam id="processDefinitionKey" name="processDefinitionKey" />
       <f:viewParam id="callbackUrl" name="callbackUrl" />
       <f:event type="preRenderView"
-        listener="${symbol_pound}{camunda.taskForm.startProcessInstanceByKeyForm(processDefinitionKey, callbackUrl)}" />
+        listener="${symbol_pound}{camundaTaskForm.startProcessInstanceByKeyForm()}" />
     </f:metadata>
     
     <h:outputStylesheet library="webjars/bootstrap/2.3.2/css" name="bootstrap.css"/>
@@ -40,7 +40,7 @@
 			      <h:inputText disabled="false" id="name" value="#{processVariables['name']}" />
 			    </p>
 		      <h:commandButton id="submit_button" value="Start Process"
-		        action="${symbol_pound}{camunda.taskForm.completeProcessInstanceForm()}" styleClass="btn btn-primary" />
+		        action="${symbol_pound}{camundaTaskForm.completeProcessInstanceForm()}" styleClass="btn btn-primary" />
 	      </fieldset>        
 	    </h:form>
     </div> 
