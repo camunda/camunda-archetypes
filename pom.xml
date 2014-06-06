@@ -2,6 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>org.camunda</groupId>
+    <artifactId>camunda-release-parent</artifactId>
+    <version>2.1</version>
+    <relativePath />
+  </parent>
+
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-root</artifactId>
   <version>7.1.1-SNAPSHOT</version>
@@ -60,17 +67,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
-
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.4</version>
-        <configuration>
-          <autoVersionSubmodules>true</autoVersionSubmodules>
-        </configuration>
-      </plugin>
-    </plugins>
   </build>
 
   <scm>
@@ -91,5 +87,10 @@
       <name>camunda BPM Maven Repository</name>
       <url>https://app.camunda.com/nexus/content/repositories/camunda-bpm</url>
     </repository>
+    <snapshotRepository>
+      <id>camunda-nexus</id>
+      <name>camunda BPM Maven Snapshot Repository</name>
+      <url>https://app.camunda.com/nexus/content/repositories/camunda-bpm-snapshots</url>
+    </snapshotRepository>
   </distributionManagement>
 </project>
