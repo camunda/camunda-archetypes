@@ -11,7 +11,7 @@
 
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-root</artifactId>
-  <version>7.1.1-SNAPSHOT</version>
+  <version>7.1.1</version>
   <packaging>pom</packaging>
 
   <name>camunda Archetypes Parent POM</name>
@@ -73,7 +73,7 @@
     <connection>scm:git:ssh://git@github.com/camunda/camunda-archetypes.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/camunda/camunda-archetypes.git</developerConnection>
     <url>https://github.com/camunda/camunda-archetypes</url>
-    <tag>HEAD</tag>
+    <tag>7.1.1</tag>
   </scm>
 
   <issueManagement>
