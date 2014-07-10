@@ -15,6 +15,7 @@ import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.junit.Test;
@@ -38,9 +39,9 @@ public class ArquillianTest {
             // add needed dependencies
             .addAsLibraries(libs)
             // prepare as process application archive for camunda BPM Platform
-            .addAsWebResource("META-INF/processes.xml", "WEB-INF/classes/META-INF/processes.xml")
+            .addAsResource("META-INF/processes.xml", "META-INF/processes.xml")
             // enable CDI
-            .addAsWebResource("WEB-INF/beans.xml", "WEB-INF/beans.xml")
+            .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
             // boot JPA persistence unit
             .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
             // add your own classes (could be done one by one as well)
