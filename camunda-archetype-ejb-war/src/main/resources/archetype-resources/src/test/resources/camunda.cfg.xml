@@ -8,6 +8,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean id="processEngineConfiguration" class="org.camunda.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+    <property name="expressionManager">
+        <bean class="org.camunda.bpm.engine.test.mock.MockExpressionManager"/>
+    </property>
     <!--
     <property name="mailServerHost" value="localhost" />
     <property name="mailServerUsername" value="camunda" />
