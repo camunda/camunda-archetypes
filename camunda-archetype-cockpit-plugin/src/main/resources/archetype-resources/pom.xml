@@ -15,13 +15,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <camunda.version>${camunda-version}</camunda.version>
 
-    <!-- This property must be present to make the pom.xml recognized as Plugin -->
+    <!-- This property must be present to make the pom.xml recognized as a plugin -->
     <camunda.plugin.category>${camunda-plugin-category}</camunda.plugin.category>
 
     <camunda.plugin.screenshot>screenshot.png</camunda.plugin.screenshot>
-    <!-- <camunda.plugin.screenshot.1>screenshot.png</camunda.plugin.screenshot.1> -->
+    <!-- <camunda.plugin.screenshot.1>screenshot2.png</camunda.plugin.screenshot.1> -->
     <camunda.plugin.testedOnVersion>${camunda-version}</camunda.plugin.testedOnVersion>
-    <!-- camunda.plugin.exampleProcessApplicationUrl></camunda.plugin.exampleProcessApplicationUrl -->
+    <!-- <camunda.plugin.exampleProcessApplicationUrl></camunda.plugin.exampleProcessApplicationUrl> -->
     <camunda.plugin.language>EN</camunda.plugin.language>
   </properties>
 
