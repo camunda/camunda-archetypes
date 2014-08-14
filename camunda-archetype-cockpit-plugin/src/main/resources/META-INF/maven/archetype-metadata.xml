@@ -56,7 +56,7 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>readme.txt</include>
+        <include>README.md</include>
         <include>build.xml</include>
         <include>build.properties.example</include>
       </includes>
