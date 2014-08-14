@@ -16,7 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <camunda.version>${camunda-version}</camunda.version>
 
-    <!-- This property must be present to make the pom.xml recognized as a plugin -->
+    <!-- This property must be present for the pom.xml to be recognized as a plugin -->
     <camunda.plugin.category>${camunda-plugin-category}</camunda.plugin.category>
 
     <camunda.plugin.screenshot>screenshot.png</camunda.plugin.screenshot>
@@ -60,6 +60,13 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.181</version>
       <scope>test</scope>
     </dependency>
 
