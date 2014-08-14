@@ -13,7 +13,7 @@
 
   <name>Camunda BPM Archetype: Cockpit Plugin</name>
   <description>Plugin for Camunda Cockpit, contains REST-Backend, MyBatis database query, HTML and JavaScript frontend, Ant build script for one-click deployment</description>
-
+  
   <build>
     <extensions>
       <extension>
