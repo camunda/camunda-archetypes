@@ -3,6 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.nonarquillian;
 
+import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.impl.util.LogUtil;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.test.Deployment;
@@ -17,13 +18,14 @@ import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
 public class InMemoryH2Test {
 
   @Rule
-  public ProcessEngineRule processEngineRule = new ProcessEngineRule();
+  public ProcessEngineRule rule = new ProcessEngineRule();
 
   private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
 
   // enable more detailed logging
   static {
-    LogUtil.readJavaUtilLoggingConfigFromClasspath();
+//    LogUtil.readJavaUtilLoggingConfigFromClasspath(); // process engine
+//    LogFactory.useJdkLogging(); // MyBatis
   }
 
   /**
