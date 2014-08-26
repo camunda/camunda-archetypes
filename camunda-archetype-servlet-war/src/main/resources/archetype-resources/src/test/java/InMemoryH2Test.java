@@ -7,6 +7,7 @@ import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.impl.util.LogUtil;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.test.Deployment;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -26,6 +27,11 @@ public class InMemoryH2Test {
   static {
 //    LogUtil.readJavaUtilLoggingConfigFromClasspath(); // process engine
 //    LogFactory.useJdkLogging(); // MyBatis
+  }
+
+  @Before
+  public void setup() {
+	init(rule.getProcessEngine());
   }
 
   /**
