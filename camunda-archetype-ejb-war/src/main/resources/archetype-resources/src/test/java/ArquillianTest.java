@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package};
 
-import static org.junit.Assert.assertEquals;
+import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
 
 import java.io.File;
 import java.util.List;
@@ -18,6 +18,7 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -57,6 +58,11 @@ public class ArquillianTest {
   @Inject
   private ProcessEngine processEngine;
 
+  @Before
+  public void setup() {
+	init(processEngine);
+  }
+
   /**
    * Tests that the process is executable and reaches its end.
    */
@@ -64,9 +70,9 @@ public class ArquillianTest {
   public void testProcessExecution() throws Exception {
     cleanUpRunningProcessInstances();
     
-    ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
+    ProcessInstance processInstance = runtimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
 
-    assertEquals(1, processEngine.getHistoryService().createHistoricProcessInstanceQuery().processInstanceId(processInstance.getId()).finished().count());
+    assertThat(processInstance).isEnded();
   }
 
   /**
@@ -74,9 +80,9 @@ public class ArquillianTest {
    * Better run test cases in a clean environment, but this is pretty handy for demo purposes
    */
   private void cleanUpRunningProcessInstances() {
-    List<ProcessInstance> runningInstances = processEngine.getRuntimeService().createProcessInstanceQuery().processDefinitionKey(PROCESS_DEFINITION_KEY).list();
+    List<ProcessInstance> runningInstances = processInstanceQuery().processDefinitionKey(PROCESS_DEFINITION_KEY).list();
     for (ProcessInstance processInstance : runningInstances) {
-      processEngine.getRuntimeService().deleteProcessInstance(processInstance.getId(), "deleted to have a clean environment for Arquillian");
+      runtimeService().deleteProcessInstance(processInstance.getId(), "deleted to have a clean environment for Arquillian");
     }
   }  
 }
