@@ -24,7 +24,7 @@
 		<copy file="${symbol_dollar}{target.dir}/${symbol_dollar}{ant.project.name}.war" todir="${symbol_dollar}{deploy.jboss.dir}" />
 	</target>
 
-	<target name="undeploy" description="Deletes the process application from the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'">
+	<target name="undeploy.jboss" description="Deletes the process application from the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'">
 		<delete file="${symbol_dollar}{deploy.jboss.dir}/${symbol_dollar}{ant.project.name}.war" />
 	</target>
 
