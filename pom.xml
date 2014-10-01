@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.camunda</groupId>
     <artifactId>camunda-release-parent</artifactId>
-    <version>2.2</version>
+    <version>2.4</version>
     <relativePath />
   </parent>
 
@@ -23,7 +23,6 @@
   </modules>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.camunda>7.1.0-Final</version.camunda>
     <version.arquillian>1.1.2.Final</version.arquillian>
     <version.jboss>7.2.0.Final</version.jboss>
