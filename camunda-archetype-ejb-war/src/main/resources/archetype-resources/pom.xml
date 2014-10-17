@@ -21,6 +21,7 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <!-- Needed for ArquillianTest -->
         <groupId>org.jboss.arquillian</groupId>
         <artifactId>arquillian-bom</artifactId>
         <version>${arquillian.version}</version>
@@ -67,10 +68,10 @@
     </dependency>
 
     <dependency>
-      <!-- Java EE 6 Specification -->
+      <!-- Java EE 6 APIs -->
       <groupId>org.jboss.spec</groupId>
       <artifactId>jboss-javaee-web-6.0</artifactId>
-      <version>2.0.0.Final</version>
+      <version>3.0.2.Final</version>
       <type>pom</type>
       <scope>provided</scope>
       <exclusions>
