@@ -6,6 +6,9 @@
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
     <requiredProperty key="arquillian-version"><defaultValue>${version.arquillian}</defaultValue></requiredProperty>
     <requiredProperty key="jboss-version"><defaultValue>${version.jboss}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-groupId"><defaultValue>${project.groupId}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-artifactId"><defaultValue>${project.artifactId}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-version"><defaultValue>${project.version}</defaultValue></requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -55,7 +58,7 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>readme.txt</include>
+        <include>README.md</include>
         <include>build.xml</include>
         <include>build.properties.example</include>
       </includes>

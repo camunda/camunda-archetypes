@@ -10,6 +10,9 @@
     <requiredProperty key="camunda-plugin-testedOnVersion"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-language"><defaultValue>EN</defaultValue></requiredProperty>
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-groupId"><defaultValue>${project.groupId}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-artifactId"><defaultValue>${project.artifactId}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-version"><defaultValue>${project.version}</defaultValue></requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
