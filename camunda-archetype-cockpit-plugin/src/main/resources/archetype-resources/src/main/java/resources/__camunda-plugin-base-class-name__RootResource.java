@@ -3,13 +3,13 @@ package ${package}.resources;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import org.camunda.bpm.cockpit.plugin.resource.AbstractPluginRootResource;
-import ${package}.SamplePlugin;
+import ${package}.${camunda-plugin-base-class-name};
 
-@Path("plugin/" + SamplePlugin.ID)
-public class SamplePluginRootResource extends AbstractPluginRootResource {
+@Path("plugin/" + ${camunda-plugin-base-class-name}.ID)
+public class ${camunda-plugin-base-class-name}RootResource extends AbstractPluginRootResource {
 
-  public SamplePluginRootResource() {
-    super(SamplePlugin.ID);
+  public ${camunda-plugin-base-class-name}RootResource() {
+    super(${camunda-plugin-base-class-name}.ID);
   }
 
   @Path("{engineName}/process-instance")

@@ -1,1 +1,1 @@
-${package}.SamplePlugin
+${package}.${camunda-plugin-base-class-name}

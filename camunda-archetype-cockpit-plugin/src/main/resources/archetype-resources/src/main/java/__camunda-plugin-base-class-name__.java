@@ -5,12 +5,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import ${package}.resources.SamplePluginRootResource;
+import ${package}.resources.${camunda-plugin-base-class-name}RootResource;
 import org.camunda.bpm.cockpit.plugin.spi.impl.AbstractCockpitPlugin;
 
-public class SamplePlugin extends AbstractCockpitPlugin {
+public class ${camunda-plugin-base-class-name} extends AbstractCockpitPlugin {
 
-  public static final String ID = "sample-plugin";
+  public static final String ID = "${camunda-plugin-id}";
 
   public String getId() {
     return ID;
@@ -20,7 +20,7 @@ public class SamplePlugin extends AbstractCockpitPlugin {
   public Set<Class<?>> getResourceClasses() {
     Set<Class<?>> classes = new HashSet<Class<?>>();
 
-    classes.add(SamplePluginRootResource.class);
+    classes.add(${camunda-plugin-base-class-name}RootResource.class);
 
     return classes;
   }

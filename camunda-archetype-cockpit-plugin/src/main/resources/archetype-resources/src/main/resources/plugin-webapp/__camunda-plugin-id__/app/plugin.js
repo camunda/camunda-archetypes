@@ -1,8 +1,9 @@
-ngDefine('cockpit.plugin.sample-plugin', function(module) {
+#set ($symbol_dollar = '$') 
+ngDefine('cockpit.plugin.${camunda-plugin-id}', function(module) {
 
   var DashboardController = function($scope, $http, Uri) {
 
-    $http.get(Uri.appUri("plugin://sample-plugin/default/process-instance"))
+    ${symbol_dollar}http.get(Uri.appUri("plugin://${camunda-plugin-id}/default/process-instance"))
       .success(function(data) {
         $scope.processInstanceCounts = data;
       });
@@ -14,9 +15,9 @@ ngDefine('cockpit.plugin.sample-plugin', function(module) {
   var Configuration = function Configuration(ViewsProvider) {
 
     ViewsProvider.registerDefaultView('cockpit.dashboard', {
-      id: 'process-definitions',
-      label: 'Deployed Processes',
-      url: 'plugin://sample-plugin/static/app/dashboard.html',
+      id: '${camunda-plugin-id}',
+      label: '${camunda-plugin-name}',
+      url: 'plugin://${camunda-plugin-id}/static/app/dashboard.html',
       controller: DashboardController,
 
       // make sure we have a higher priority than the default plugin

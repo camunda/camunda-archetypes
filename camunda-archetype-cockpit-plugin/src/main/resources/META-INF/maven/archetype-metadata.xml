@@ -3,8 +3,10 @@
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <requiredProperties>
+    <requiredProperty key="camunda-plugin-id"><defaultValue>sample-plugin</defaultValue></requiredProperty>
+    <requiredProperty key="camunda-plugin-base-class-name"><defaultValue>SamplePlugin</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-category"><defaultValue>Sample|Monitoring|Exproration|Business</defaultValue></requiredProperty>
-    <requiredProperty key="camunda-plugin-name"><defaultValue>My Plugin</defaultValue></requiredProperty>
+    <requiredProperty key="camunda-plugin-name"><defaultValue>My Sample Plugin</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-description"><defaultValue>This is a simple plugin that showcases the plugin system of Cockpit, the process monitoring tool of [Camunda BPM](http://docs.camunda.org).</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-screenshot"><defaultValue>screenshot.png</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-testedOnVersion"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
@@ -25,19 +27,12 @@
       </includes>
       <excludes>
         <exclude>sample-query.xml</exclude>
-        <exclude>**/*.js</exclude>
       </excludes>
     </fileSet>
-    <fileSet  filtered="true" packaged="true"  encoding="UTF-8">
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
         <include>sample-query.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet  filtered="false"  encoding="UTF-8">
-      <directory>src/main/resources</directory>
-      <includes>
-        <include>**/*.js</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">

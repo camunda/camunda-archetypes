@@ -24,14 +24,30 @@
 	<target name="install.cockpit.plugin">
 		<fail unless="deploy.jboss.dir" message="No deployment folder has been configured. Please copy the file '${symbol_dollar}{basedir}/build.properties.example' to '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties' and change it according to your environment." />
 		<path id="cockpit.file.id"> 
-		    <fileset dir="${symbol_dollar}{deploy.jboss.dir}"> 
-		        <include name="camunda-webapp-*jboss-*.war"/> 
-		     </fileset> 
+			<fileset dir="${symbol_dollar}{deploy.jboss.dir}"> 
+				<include name="camunda-webapp-*jboss-*.war"/> 
+			</fileset> 
 		</path> 
 		<property name="cockpit.file" refid="cockpit.file.id"/> 
 		<war destfile="${symbol_dollar}{cockpit.file}" update="true">
 			<zipfileset file="${symbol_dollar}{target.dir}/${symbol_dollar}{ant.project.name}.jar" fullpath="WEB-INF/lib/${symbol_dollar}{ant.project.name}.jar" />
 		</war>
+	</target>
+
+	<target name="undeploy.jboss" description="Deletes the cockpit plugin from the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'">
+		<path id="cockpit.file.id"> 
+			<fileset dir="${symbol_dollar}{deploy.jboss.dir}"> 
+				<include name="camunda-webapp-*jboss-*.war"/> 
+			</fileset> 
+		</path> 
+		<property name="cockpit.file" refid="cockpit.file.id"/>
+		<basename property="cockpit.filename" file="${symbol_dollar}{cockpit.file}"/>
+		<move file="${symbol_dollar}{cockpit.file}" todir="${symbol_dollar}{java.io.tmpdir}"/>
+		<zip destfile="${symbol_dollar}{cockpit.file}">
+			<zipfileset src="${symbol_dollar}{java.io.tmpdir}/${symbol_dollar}{cockpit.filename}">
+				<exclude name="WEB-INF/lib/${symbol_dollar}{ant.project.name}.jar"/>
+			</zipfileset>
+		</zip>
 	</target>
 
 </project>
