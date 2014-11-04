@@ -13,6 +13,8 @@ Built and tested against Camunda BPM version ${camunda-version}.
 Show me the important parts!
 ----------------------------
 
+![BPMN Process](src/main/resources/process.png)
+
 
 How does it work?
 -----------------
@@ -43,8 +45,8 @@ Environment Restrictions
 Built and tested against Camunda BPM version ${camunda-version}.
 
 
-Known Issues
-------------
+Known Limitations
+-----------------
 
 
 Improvements Backlog
