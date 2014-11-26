@@ -14,10 +14,14 @@
 
    <!-- Example configuration for a remote JBoss Enterprise Application Platform 6 or AS 7 instance -->
    <container qualifier="jboss" default="true">
-        <!-- By default, arquillian will use the JBOSS_HOME environment variable.  Alternatively, the configuration below can be uncommented. -->
-<!--         <configuration> -->
-<!--                 <property name="jbossHome">C:\tools\camunda-bpm-jboss-7.0.0-Final\server\jboss-as-7.1.3.Final</property> -->
-<!--         </configuration> -->
+      <configuration>
+         <!-- change this if you're using a port offset -->
+         <property name="managementPort">9999</property>
+      </configuration>
+      <!-- By default, arquillian will use the JBOSS_HOME environment variable.  Alternatively, the configuration below can be uncommented. -->
+<!--       <configuration> -->
+<!--          <property name="jbossHome">C:\tools\camunda-bpm-jboss-7.0.0-Final\server\jboss-as-7.1.3.Final</property> -->
+<!--       </configuration> -->
    </container>
 
 </arquillian> 
