@@ -4,6 +4,7 @@
 package ${package};
 
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
+import static org.junit.Assert.*;
 
 import java.io.File;
 import java.util.List;
