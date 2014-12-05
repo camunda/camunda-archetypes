@@ -11,7 +11,7 @@
 
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-root</artifactId>
-  <version>7.1.4-SNAPSHOT</version>
+  <version>7.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>camunda Archetypes Parent POM</name>
@@ -23,7 +23,7 @@
   </modules>
 
   <properties>
-    <version.camunda>7.1.0-Final</version.camunda>
+    <version.camunda>7.2.0</version.camunda>
     <version.arquillian>1.1.2.Final</version.arquillian>
     <version.jboss>7.2.0.Final</version.jboss>
     <version.tomcat>7.0.50</version.tomcat>
@@ -44,6 +44,11 @@
   <developers>
     <developer>
       <name>Falko Menge</name>
+      <organization>camunda services GmbH</organization>
+      <url>http://www.camunda.com</url>
+    </developer>
+    <developer>
+      <name>Bernd Rücker</name>
       <organization>camunda services GmbH</organization>
       <url>http://www.camunda.com</url>
     </developer>
