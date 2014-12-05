@@ -44,18 +44,10 @@
 
     <dependency>
       <!-- Java EE 6 APIs -->
-      <groupId>org.jboss.spec</groupId>
-      <artifactId>jboss-javaee-web-6.0</artifactId>
-      <version>3.0.2.Final</version>
-      <type>pom</type>
-      <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>xalan</artifactId>
-          <groupId>org.apache.xalan</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>6.0</version>
+		</dependency>
 
     <dependency>
       <groupId>junit</groupId>

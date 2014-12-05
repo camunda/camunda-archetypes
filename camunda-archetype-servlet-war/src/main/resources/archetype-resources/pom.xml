@@ -32,6 +32,20 @@
       <version>1.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- Required to use Sping dataformat in unit tests -->
+    <dependency>
+			<groupId>org.camunda.spin</groupId>
+			<artifactId>camunda-spin-dataformat-all</artifactId>
+			<version>1.0.0</version>
+      <scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.camunda.bpm</groupId>
+			<artifactId>camunda-engine-plugin-spin</artifactId>
+			<version>${camunda.version}</version>
+      <scope>test</scope>
+		</dependency>    
 
     <dependency>
       <groupId>javax.servlet</groupId>
