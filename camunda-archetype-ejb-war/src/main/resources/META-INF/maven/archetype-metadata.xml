@@ -22,6 +22,7 @@
       <includes>
         <include>**/*.xhtml</include>
         <include>**/*.xml</include>
+        <include>**/*.html</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
