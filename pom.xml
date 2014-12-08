@@ -11,7 +11,7 @@
 
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-root</artifactId>
-  <version>7.2.0-SNAPSHOT</version>
+  <version>7.2.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>camunda Archetypes Parent POM</name>
