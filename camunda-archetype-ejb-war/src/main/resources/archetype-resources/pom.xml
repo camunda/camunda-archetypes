@@ -59,20 +59,20 @@
       <version>1.2</version>
       <scope>test</scope>
     </dependency>
-    
-    <!-- Required to use Sping dataformat in unit tests -->
+
+    <!-- Required to use Spin dataformat in unit tests -->
     <dependency>
-			<groupId>org.camunda.spin</groupId>
-			<artifactId>camunda-spin-dataformat-all</artifactId>
-			<version>1.0.0</version>
+      <groupId>org.camunda.spin</groupId>
+      <artifactId>camunda-spin-dataformat-all</artifactId>
+      <version>1.0.0</version>
       <scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.camunda.bpm</groupId>
-			<artifactId>camunda-engine-plugin-spin</artifactId>
-			<version>${camunda.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine-plugin-spin</artifactId>
+      <version>${camunda.version}</version>
       <scope>test</scope>
-		</dependency>
+    </dependency>
 
     <dependency>
       <!-- Bootstrap for styling via Webjars project -->
@@ -83,11 +83,11 @@
 
     <dependency>
       <!-- Java EE 6 APIs -->
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-			<version>6.0</version>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>6.0</version>
       <scope>provided</scope>
-		</dependency>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
