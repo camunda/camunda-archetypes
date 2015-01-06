@@ -16,12 +16,23 @@
     <camunda.version>${camunda-version}</camunda.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.camunda.bpm</groupId>
+        <artifactId>camunda-bom</artifactId>
+        <version>${camunda.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <!-- process engine, needs to be provided -->
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
-      <version>${camunda.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -33,19 +44,17 @@
       <scope>test</scope>
     </dependency>
     
-    <!-- Required to use Sping dataformat in unit tests -->
+    <!-- Required to use Spin dataformat in unit tests -->
     <dependency>
-			<groupId>org.camunda.spin</groupId>
-			<artifactId>camunda-spin-dataformat-all</artifactId>
-			<version>1.0.0</version>
+      <groupId>org.camunda.spin</groupId>
+      <artifactId>camunda-spin-dataformat-all</artifactId>
       <scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.camunda.bpm</groupId>
-			<artifactId>camunda-engine-plugin-spin</artifactId>
-			<version>${camunda.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine-plugin-spin</artifactId>
       <scope>test</scope>
-		</dependency>    
+    </dependency>
 
     <dependency>
       <groupId>javax.servlet</groupId>
