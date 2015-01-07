@@ -108,6 +108,12 @@
       <artifactId>arquillian-protocol-servlet</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <!-- Needed for ArquillianTest -->
+      <groupId>org.jboss.shrinkwrap.resolver</groupId>
+      <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+      <scope>test</scope>
+    </dependency>
 
     <dependency>
       <!-- Needed for InMemoryH2Test -->
@@ -214,6 +220,20 @@
           <groupId>org.jboss.as</groupId>
           <artifactId>jboss-as-arquillian-container-remote</artifactId>
           <version>${jboss.version}</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>arq-wildfly-remote</id>
+      <dependencies>
+        <dependency>
+          <!-- Needed for ArquillianTest -->
+          <!-- Requires a running Wildfly with camunda BPM -->
+          <groupId>org.wildfly.arquillian</groupId>
+          <artifactId>wildfly-arquillian-container-remote</artifactId>
+          <version>1.0.0.Alpha4</version>
           <scope>test</scope>
         </dependency>
       </dependencies>

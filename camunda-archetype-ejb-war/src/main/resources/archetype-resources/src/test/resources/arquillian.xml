@@ -12,11 +12,11 @@
       <property name="deploymentExportPath">target/deploymentExport</property>
    </engine>
 
-   <!-- Example configuration for a remote JBoss Enterprise Application Platform 6 or AS 7 instance -->
+   <!-- Example configuration for a remote JBoss Enterprise Application Platform 6, AS 7 or Wildfly instance -->
    <container qualifier="jboss" default="true">
       <configuration>
          <!-- change this if you're using a port offset -->
-         <property name="managementPort">9999</property>
+         <!-- <property name="managementPort">9999</property> -->
       </configuration>
       <!-- By default, arquillian will use the JBOSS_HOME environment variable.  Alternatively, the configuration below can be uncommented. -->
 <!--       <configuration> -->
