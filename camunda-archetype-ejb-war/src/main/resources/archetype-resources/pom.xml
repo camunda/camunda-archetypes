@@ -21,6 +21,13 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>org.camunda.bpm</groupId>
+        <artifactId>camunda-bom</artifactId>
+        <version>${camunda.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
         <!-- Needed for ArquillianTest -->
         <groupId>org.jboss.arquillian</groupId>
         <artifactId>arquillian-bom</artifactId>
@@ -36,20 +43,17 @@
       <!-- process engine, needs to be provided -->
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
-      <version>${camunda.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <!-- client for Java EE application server integration, included in WAR as an alternative to write your own ProcessApplication class -->
       <groupId>org.camunda.bpm.javaee</groupId>
       <artifactId>camunda-ejb-client</artifactId>
-      <version>${camunda.version}</version>
     </dependency>
     <dependency>
       <!-- CDI integration, needs to be included in WAR, otherwise CDI can not work correctly -->
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine-cdi</artifactId>
-      <version>${camunda.version}</version>
     </dependency>
 
     <dependency>
@@ -64,13 +68,11 @@
     <dependency>
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-dataformat-all</artifactId>
-      <version>1.0.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine-plugin-spin</artifactId>
-      <version>${camunda.version}</version>
       <scope>test</scope>
     </dependency>
 
