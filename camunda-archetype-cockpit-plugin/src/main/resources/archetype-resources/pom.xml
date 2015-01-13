@@ -26,28 +26,40 @@
     <camunda.plugin.language>${camunda-plugin-language}</camunda.plugin.language>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.camunda.bpm</groupId>
+        <artifactId>camunda-bom</artifactId>
+        <version>${camunda.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <!-- Cockpit Plugin API, needs to be provided -->
       <groupId>org.camunda.bpm.webapp</groupId>
       <artifactId>camunda-webapp-core</artifactId>
+      <!-- not part of camunda bom -->
       <version>${camunda.version}</version>
       <scope>provided</scope>
-    </dependency>  
+    </dependency>
     <dependency>
       <!-- process engine, needs to be provided -->
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
-      <version>${camunda.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <!-- Java EE 6 APIs -->
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-			<version>6.0</version>
-		</dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>6.0</version>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
