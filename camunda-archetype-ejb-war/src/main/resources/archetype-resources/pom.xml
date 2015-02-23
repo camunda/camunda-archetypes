@@ -64,7 +64,7 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Required to use Spin dataformat in unit tests -->
+    <!-- Required to use Spin dataformat support in unit tests -->
     <dependency>
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-dataformat-all</artifactId>
@@ -73,6 +73,18 @@
     <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine-plugin-spin</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Required to use Connectors in unit tests -->
+    <dependency>
+      <groupId>org.camunda.connect</groupId>
+      <artifactId>camunda-connect-connectors-all</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine-plugin-connect</artifactId>
       <scope>test</scope>
     </dependency>
 
