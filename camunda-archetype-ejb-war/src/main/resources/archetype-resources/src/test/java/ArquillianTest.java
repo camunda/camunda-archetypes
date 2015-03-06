@@ -40,7 +40,7 @@ public class ArquillianTest {
             .create(WebArchive.class, "${artifactId}.war")
             // add needed dependencies
             .addAsLibraries(libs)
-            // prepare as process application archive for camunda BPM Platform
+            // prepare as process application archive for Camunda BPM Platform
             .addAsResource("META-INF/processes.xml", "META-INF/processes.xml")
             // enable CDI
             .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
