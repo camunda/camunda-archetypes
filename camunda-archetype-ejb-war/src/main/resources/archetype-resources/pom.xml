@@ -234,7 +234,7 @@
           <!-- Requires a running Wildfly with camunda BPM -->
           <groupId>org.wildfly.arquillian</groupId>
           <artifactId>wildfly-arquillian-container-remote</artifactId>
-          <version>1.0.0.Alpha4</version>
+          <version>1.0.0.Alpha5</version>
           <scope>test</scope>
           <exclusions>
             <exclusion>
