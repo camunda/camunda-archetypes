@@ -98,13 +98,24 @@
       <version>2.3.2</version>
     </dependency>
 
+    <!-- Java EE 6 APIs 
     <dependency>
-      <!-- Java EE 6 APIs -->
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>
       <version>6.0</version>
       <scope>provided</scope>
     </dependency>
+    Note that we cannot use the javax.javaee-api if running Arquillian, see
+    https://developer.jboss.org/wiki/WhatsTheCauseOfThisExceptionJavalangClassFormatErrorAbsentCode 
+    for the reasons why.
+    -->
+    <dependency>  
+       <groupId>org.jboss.spec</groupId>  
+       <artifactId>jboss-javaee-6.0</artifactId>  
+       <version>1.0.0.Final</version>  
+       <type>pom</type>  
+       <scope>provided</scope>  
+    </dependency>  	
 
     <dependency>
       <groupId>junit</groupId>
