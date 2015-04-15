@@ -23,7 +23,7 @@ public class ProcessInstanceResource extends AbstractCockpitPluginResource {
 
     return getQueryService()
         .executeQuery(
-          "cockpit.sample.selectProcessInstanceCountsByProcessDefinition",
+          "${package}.selectProcessInstanceCountsByProcessDefinition",
           new QueryParameters<ProcessInstanceCountDto>());
   }
 }
