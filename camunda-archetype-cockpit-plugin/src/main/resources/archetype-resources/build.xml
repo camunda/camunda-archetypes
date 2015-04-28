@@ -31,7 +31,7 @@
 		<fail unless="deploy.jboss.dir" message="No deployment folder has been configured. Please copy the file '${symbol_dollar}{basedir}/build.properties.example' to '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties' and change it according to your environment." />
 		<path id="cockpit.file.id"> 
 			<fileset dir="${symbol_dollar}{deploy.jboss.dir}"> 
-				<include name="camunda-webapp-*jboss-*.war"/> 
+				<include name="camunda-webapp-*.war"/> 
 			</fileset> 
 		</path> 
 		<property name="cockpit.file" refid="cockpit.file.id"/> 
@@ -43,7 +43,7 @@
 	<target name="undeploy.jboss" description="Deletes the cockpit plugin from the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'">
 		<path id="cockpit.file.id"> 
 			<fileset dir="${symbol_dollar}{deploy.jboss.dir}"> 
-				<include name="camunda-webapp-*jboss-*.war"/> 
+				<include name="camunda-webapp-*.war"/> 
 			</fileset> 
 		</path> 
 		<property name="cockpit.file" refid="cockpit.file.id"/>
