@@ -3,7 +3,7 @@ ngDefine('cockpit.plugin.${camunda-plugin-id}', function(module) {
 
   var DashboardController = function($scope, $http, Uri) {
 
-    ${symbol_dollar}http.get(Uri.appUri("plugin://${camunda-plugin-id}/default/process-instance"))
+    ${symbol_dollar}http.get(Uri.appUri("plugin://${camunda-plugin-id}/:engine/process-instance"))
       .success(function(data) {
         $scope.processInstanceCounts = data;
       });
