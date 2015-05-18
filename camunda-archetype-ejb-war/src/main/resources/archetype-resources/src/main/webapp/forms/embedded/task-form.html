@@ -1,17 +1,19 @@
 <strong>Here you would put the actual form to work on the task</strong>
 
-<p>You can invoke this form through the Camunda Tasklist
-  by setting the formKey of a User Task to 'embedded:app:forms/embedded/task-form.html'.</p>
+<p>
+  You can use this form through Camunda Tasklist
+  by setting the formKey of a BPMN User Task to:
+  <code>embedded:app:forms/embedded/task-form.html</code>
+</p>
 
 <form class="form-horizontal">
   <div class="control-group">
     <label class="control-label">Name</label>
     <div class="controls">
-      <input form-field type="string" name="name" readonly="true" />
       <input type="text" 
              cam-variable-name="name"
              readonly="true" 
-             class="form-control"/>      
+             class="form-control" />      
     </div>
   </div>
   <div class="control-group">
@@ -19,9 +21,9 @@
     <div class="controls">
       <input type="checkbox"
              cam-variable-name="approved"
-		         cam-variable-type="Boolean"
+             cam-variable-type="Boolean"
              name="approved"
-		         class="form-control" />
+             class="form-control" />
     </div>
   </div>
 </form>
