@@ -32,7 +32,7 @@ public class InMemoryH2Test {
 
   @Before
   public void setup() {
-	init(rule.getProcessEngine());
+    init(rule.getProcessEngine());
   }
 
   /**
