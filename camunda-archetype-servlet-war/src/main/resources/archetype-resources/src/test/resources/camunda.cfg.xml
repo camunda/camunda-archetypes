@@ -12,12 +12,12 @@
     <property name="expressionManager">
         <bean class="org.camunda.bpm.engine.test.mock.MockExpressionManager"/>
     </property>
-		<property name="processEnginePlugins">
-			<list>
-				<bean class="org.camunda.spin.plugin.impl.SpinProcessEnginePlugin" />
-				<bean class="org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin" />
-			</list>
-		</property>
+    <property name="processEnginePlugins">
+      <list>
+        <bean class="org.camunda.spin.plugin.impl.SpinProcessEnginePlugin" />
+        <bean class="org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin" />
+      </list>
+    </property>
   </bean>
 
 </beans>
