@@ -27,6 +27,6 @@ public class ${camunda-plugin-base-class-name} extends AbstractCockpitPlugin {
 
   @Override
   public List<String> getMappingFiles() {
-    return Arrays.asList("${package}".replace(".", "/") + "/sample-query.xml");
+    return Arrays.asList("${package}".replace(".", "/") + "/${camunda-plugin-id}-query.xml");
   }
 }

@@ -29,13 +29,13 @@
         <include>**/*</include>
       </includes>
       <excludes>
-        <exclude>sample-query.xml</exclude>
+        <exclude>*-query.xml</exclude>
       </excludes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
-        <include>sample-query.xml</include>
+        <include>*-query.xml</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">

@@ -1,5 +1,7 @@
 #set ($symbol_dollar = '$') 
-ngDefine('cockpit.plugin.${camunda-plugin-id}', function(module) {
+define(['angular'], function(angular) {
+
+  var ngModule = angular.module('cockpit.plugin.${camunda-plugin-id}', []);
 
   var DashboardController = function($scope, $http, Uri) {
 
@@ -27,7 +29,8 @@ ngDefine('cockpit.plugin.${camunda-plugin-id}', function(module) {
 
   Configuration.$inject = ['ViewsProvider'];
 
-  module.config(Configuration);
+  ngModule.config(Configuration);
+  ngModule.controller('DashboardController', [ '$scope' ]);
 
-  return module;
+  return ngModule;
 });
