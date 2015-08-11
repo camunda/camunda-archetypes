@@ -107,5 +107,33 @@
 
   <build>
     <finalName>\${project.artifactId}</finalName>
+    <plugins>
+      <!-- run this plugin with 
+      
+      first:
+      mvn clean tomcat7:deploy
+      
+      then:
+      mvn clean tomcat7:redeploy
+      
+      finally:
+      mvn tomcat7:undeploy
+      
+           To use this plugin, add these lines to your tomcat-users.xml: (inside the <tomcat-users>-tag)
+           <role rolename="manager-script"/>
+           <user username="admin" password="admin" roles="manager-script"/>
+                     
+       -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <url>http://localhost:8080/manager/text</url>
+          <username>admin</username>
+          <password>admin</password>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
