@@ -44,7 +44,7 @@ ${symbol_pound}${symbol_pound} License
 
 <!-- HTML snippet for index page
   <tr>
-    <td><img src="snippets/${artifactId}/screenshot.png" width="50"></td>
+    <td><img src="snippets/${artifactId}/screenshot.png" width="100"></td>
     <td><a href="snippets/${artifactId}">${camunda-plugin-name}</a></td>
     <td>${camunda-plugin-description}</td>
   </tr>

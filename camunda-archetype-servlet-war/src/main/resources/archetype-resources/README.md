@@ -40,7 +40,7 @@ ${symbol_pound}${symbol_pound} License
 
 <!-- HTML snippet for index page
   <tr>
-    <td><img src="snippets/${artifactId}/src/main/resources/process.png" width="50"></td>
+    <td><img src="snippets/${artifactId}/src/main/resources/process.png" width="100"></td>
     <td><a href="snippets/${artifactId}">${project-name}</a></td>
     <td>${project-description}</td>
   </tr>
