@@ -195,12 +195,12 @@
       <dependencies>
         <dependency>
           <!-- Needed for ArquillianTest -->
-          <!-- Requires a running JBoss AS7 with Camunda BPM
+          <!-- Requires a running WildFly with Camunda BPM
                change to other artifact for embedded start or different server -->
           <!-- Included here for convenience when running the test in Eclipse -->
-          <groupId>org.jboss.as</groupId>
-          <artifactId>jboss-as-arquillian-container-remote</artifactId>
-          <version>${jboss.version}</version>
+          <groupId>org.wildfly.arquillian</groupId>
+          <artifactId>wildfly-arquillian-container-remote</artifactId>
+          <version>1.0.1.Final</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -245,7 +245,7 @@
           <!-- Requires a running Wildfly with Camunda BPM -->
           <groupId>org.wildfly.arquillian</groupId>
           <artifactId>wildfly-arquillian-container-remote</artifactId>
-          <version>1.0.0.Alpha5</version>
+          <version>1.0.1.Final</version>
           <scope>test</scope>
           <exclusions>
             <exclusion>
