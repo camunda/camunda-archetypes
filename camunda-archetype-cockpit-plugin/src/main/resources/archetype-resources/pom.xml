@@ -100,7 +100,7 @@
         <artifactId>maven-antrun-plugin</artifactId>
         <configuration>
           <tasks>
-            <ant antfile="${basedir}/build.xml">
+            <ant antfile="\${basedir}/build.xml">
               <target name="install.cockpit.plugin" />
             </ant>
           </tasks>
