@@ -117,6 +117,30 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <!-- use logback as logger -->
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.1.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <!-- apache commons logging => slf4j -->
+      <artifactId>jcl-over-slf4j</artifactId>      
+      <version>1.7.7</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <!--  java util logging => slf4j -->
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>1.7.7</version>
+      <scope>test</scope>
+    </dependency>
+
     <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
 
   </dependencies>

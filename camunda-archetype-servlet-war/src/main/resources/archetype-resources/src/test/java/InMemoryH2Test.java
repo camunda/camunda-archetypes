@@ -24,15 +24,13 @@ public class InMemoryH2Test {
 
   private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
 
-  // enable more detailed logging
   static {
-//    LogUtil.readJavaUtilLoggingConfigFromClasspath(); // process engine
-//    LogFactory.useJdkLogging(); // MyBatis
+    LogFactory.useSlf4jLogging(); // MyBatis
   }
 
   @Before
   public void setup() {
-	init(rule.getProcessEngine());
+    init(rule.getProcessEngine());
   }
 
   /**
