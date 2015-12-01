@@ -93,6 +93,13 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency> 
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.0.13</version>
+      <scope>test</scope>
+    </dependency>
+
     <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
 
   </dependencies>

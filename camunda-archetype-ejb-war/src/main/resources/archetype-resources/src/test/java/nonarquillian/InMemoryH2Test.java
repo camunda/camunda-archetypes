@@ -4,7 +4,6 @@
 package ${package}.nonarquillian;
 
 import org.apache.ibatis.logging.LogFactory;
-import org.camunda.bpm.engine.impl.util.LogUtil;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.test.Deployment;
 import org.junit.Before;
@@ -26,8 +25,7 @@ public class InMemoryH2Test {
 
   // enable more detailed logging
   static {
-//    LogUtil.readJavaUtilLoggingConfigFromClasspath(); // process engine
-//    LogFactory.useJdkLogging(); // MyBatis
+    LogFactory.useSlf4jLogging(); // MyBatis
   }
   
   @Before
