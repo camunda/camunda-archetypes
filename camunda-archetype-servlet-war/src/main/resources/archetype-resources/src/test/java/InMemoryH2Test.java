@@ -25,7 +25,7 @@ public class InMemoryH2Test {
 
   // enable more detailed logging
   static {
-    LogFactory.useJdkLogging(); // MyBatis
+    LogFactory.useSlf4jLogging(); // MyBatis
   }
 
   @Before
