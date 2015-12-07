@@ -26,7 +26,7 @@ public class InMemoryH2Test {
   static {
     LogFactory.useSlf4jLogging(); // MyBatis
   }
-  
+
   @Before
   public void setup() {
     init(rule.getProcessEngine());
