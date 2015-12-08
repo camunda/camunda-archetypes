@@ -25,8 +25,8 @@
   <properties>
     <version.camunda>7.4.0</version.camunda>
     <version.arquillian>1.1.2.Final</version.arquillian>
-    <version.jboss>7.2.0.Final</version.jboss>
-    <version.tomcat>7.0.62</version.tomcat>
+    <version.jboss>7.2.1.Final</version.jboss>
+    <version.tomcat>8.0.24</version.tomcat>
   </properties>
 
   <licenses>
