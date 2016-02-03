@@ -50,3 +50,6 @@ ${symbol_pound}${symbol_pound} License
     <td>${project-description}</td>
   </tr>
 -->
+<!-- Tweet
+New @CamundaBPM example: ${project-name} - ${project-description} https://github.com/camunda/camunda-consulting/tree/master/snippets/${artifactId}
+-->
