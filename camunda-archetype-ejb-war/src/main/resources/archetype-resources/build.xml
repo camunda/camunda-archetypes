@@ -19,7 +19,9 @@
 		</exec>
 	</target>
 
-	<target name="deploy.jboss" depends="package.mvn" description="Copies the process application to the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'">
+	<target name="deploy.jboss" depends="package.mvn, copy.war.into.jboss" description="Copies the process application to the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'" />
+
+	<target name="copy.war.into.jboss">
 		<fail unless="deploy.jboss.dir" message="No deployment folder has been configured. Please copy the file '${symbol_dollar}{basedir}/build.properties.example' to '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties' and change it according to your environment." />
 		<copy file="${symbol_dollar}{target.dir}/${symbol_dollar}{ant.project.name}.war" todir="${symbol_dollar}{deploy.jboss.dir}" />
 	</target>
