@@ -16,7 +16,7 @@ define(['angular'], function(angular) {
 
   var Configuration = function Configuration(ViewsProvider) {
 
-    ViewsProvider.registerDefaultView('cockpit.dashboard', {
+    ViewsProvider.registerDefaultView('cockpit.processes.dashboard', {
       id: '${camunda-plugin-id}',
       label: '${camunda-plugin-name}',
       url: 'plugin://${camunda-plugin-id}/static/app/dashboard.html',

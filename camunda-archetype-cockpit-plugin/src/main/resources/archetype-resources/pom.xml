@@ -45,7 +45,8 @@
     <dependency>
       <!-- Cockpit Plugin API, needs to be provided -->
       <groupId>org.camunda.bpm.webapp</groupId>
-      <artifactId>camunda-webapp-core</artifactId>
+      <artifactId>camunda-webapp</artifactId>
+      <classifier>classes</classifier>
       <!-- not part of camunda bom -->
       <version>${camunda.version}</version>
       <scope>provided</scope>
