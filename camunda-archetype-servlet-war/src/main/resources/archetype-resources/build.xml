@@ -30,7 +30,7 @@
 		<delete file="${symbol_dollar}{deploy.jboss.dir}/${symbol_dollar}{ant.project.name}.war" />
 	</target>
 
-	<target name="deploy.tomcat" depends="copy.war.into.tomcat, package.mvn" description="Copies the process application to the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'" />
+	<target name="deploy.tomcat" depends="package.mvn, copy.war.into.tomcat" description="Copies the process application to the deployment directory defined in '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties'" />
 
 	<target name="copy.war.into.tomcat">
 		<fail unless="deploy.tomcat.dir" message="No deployment folder has been configured. Please copy the file '${symbol_dollar}{basedir}/build.properties.example' to '${symbol_dollar}{basedir}/build.properties' or '${symbol_dollar}{user.home}/.camunda/build.properties' and change it according to your environment." />
