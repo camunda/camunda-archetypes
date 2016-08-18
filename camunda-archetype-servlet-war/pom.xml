@@ -11,10 +11,10 @@
   <artifactId>camunda-archetype-servlet-war</artifactId>
   <packaging>maven-archetype</packaging>
 
-  <name>Camunda BPM Archetype: Process Application (Servlet, WAR)</name>
+  <name>Camunda BPM Archetype: Cockpit Plugin (JAR)</name>
   <description>Process application that uses a shared Camunda BPM engine in a Servlet Container, e.g. Apache Tomcat.
           Contains: Servlet Process Application, BPMN Process, Java Delegate, HTML5-based start and task forms,
-          JUnit Test with in-memory engine, Ant build script for one-click deployment in Eclipse</description>
+          JUnit Test with in-memory engine, Maven Plugins or Ant build script for one-click deployment in Eclipse</description>
 
   <build>
     <extensions>

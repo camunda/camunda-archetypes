@@ -11,7 +11,7 @@
   <artifactId>camunda-archetype-cockpit-plugin</artifactId>
   <packaging>maven-archetype</packaging>
 
-  <name>Camunda BPM Archetype: Cockpit Plugin</name>
+  <name>Camunda BPM Archetype: Cockpit Plugin (JAR)</name>
   <description>Plugin for Camunda Cockpit, contains REST-Backend, MyBatis database query, HTML and JavaScript frontend, Ant build script for one-click deployment</description>
 
   <build>
