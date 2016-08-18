@@ -55,6 +55,9 @@ public class InMemoryH2Test {
 	  //ProcessTestCoverage.calculate(processInstance, rule.getProcessEngine());
   }
 
+  /**
+   * @see <a href="../../../../../../../target/process-test-coverage/${artifactId}.html">Process Test Coverage Report</a> 
+   */
   @After
   public void calculateCoverageForAllTests() throws Exception {
     ProcessTestCoverage.calculate(rule.getProcessEngine());
