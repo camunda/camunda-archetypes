@@ -84,6 +84,18 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- Required to use Templates in unit tests -->
+    <dependency>
+      <groupId>org.camunda.template-engines</groupId>
+      <artifactId>camunda-template-engines-freemarker</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.template-engines</groupId>
+      <artifactId>camunda-template-engines-velocity</artifactId>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
