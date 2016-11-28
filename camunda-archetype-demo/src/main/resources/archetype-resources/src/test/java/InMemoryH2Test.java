@@ -51,6 +51,12 @@ public class InMemoryH2Test {
     ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
 
     assertThat(processInstance).isEnded();
+
+    // To inspect the DB, run the following line in the debugger
+    // then connect your browser to: http://localhost:8082
+    // and enter the JDBC URL: jdbc:h2:mem:camunda
+    org.h2.tools.Server.createWebServer("-web").start();
+
   }
 
 }
