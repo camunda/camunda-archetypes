@@ -50,8 +50,6 @@ public class ArquillianTest {
             .addPackages(false, "${package}") // not recursive to skip package 'nonarquillian'
             // add process definition
             .addAsResource("process.bpmn")
-            // add process image for visualizations
-            .addAsResource("process.png")
             // now you can add additional stuff required for your test case
     ;
   }
