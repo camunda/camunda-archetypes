@@ -8,7 +8,8 @@ import org.apache.camel.Processor;
 public class FirstMapValueToStringProcessor implements Processor {
 
   public void process(Exchange exchange) throws Exception {
-    Map map = exchange.getIn().getBody(Map.class);
+    @SuppressWarnings("unchecked")
+    Map<String, Object> map = exchange.getIn().getBody(Map.class);
     exchange.getIn().setBody(map.values().iterator().next().toString());
   }
 

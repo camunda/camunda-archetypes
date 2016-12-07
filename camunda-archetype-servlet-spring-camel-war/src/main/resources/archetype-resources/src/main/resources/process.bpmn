@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.6.0-nightly">
   <bpmn:process id="${artifactId}" name="${artifactId}" isExecutable="true">
-    <bpmn:startEvent id="StartEventProcessStarted" name="Variable &#39;myMar&#39; entered">
+    <bpmn:startEvent id="StartEventProcessStarted" name="Variable &#39;myMar&#39; entered" camunda:formKey="embedded:app:forms/start-form.html">
       <bpmn:outgoing>SequenceFlow1</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:endEvent id="EndEventProcessEnded" name="File&#10;written">
@@ -9,7 +9,7 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow1" sourceRef="StartEventProcessStarted" targetRef="Task_02l9hzl" />
     <bpmn:sequenceFlow id="SequenceFlow_1b0hbyl" sourceRef="Task_02l9hzl" targetRef="EndEventProcessEnded" />
-    <bpmn:serviceTask id="Task_02l9hzl" name="Write variable &#39;myVar&#39; to file" camunda:expression="${camel.sendTo(&#39;direct:variableToFile&#39;, &#39;myVar&#39;)}">
+    <bpmn:serviceTask id="Task_02l9hzl" name="Write variable &#39;myVar&#39; to file" camunda:expression="${camel.sendTo(&#39;direct:variableToFile&#39;, &#39;name&#39;)}">
       <bpmn:incoming>SequenceFlow1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1b0hbyl</bpmn:outgoing>
     </bpmn:serviceTask>
