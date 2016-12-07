@@ -1,4 +1,4 @@
-package ${package};
+package ${package}.camel;
 
 import java.util.Map;
 

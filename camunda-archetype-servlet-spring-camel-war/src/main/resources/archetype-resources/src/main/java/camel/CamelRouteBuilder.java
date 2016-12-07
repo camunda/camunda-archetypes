@@ -1,4 +1,4 @@
-package ${package};
+package ${package}.camel;
 
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
