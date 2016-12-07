@@ -8,7 +8,7 @@
     <version>7.6.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>camunda-archetype-servlet-war</artifactId>
+  <artifactId>camunda-archetype-servlet-spring-camel-war</artifactId>
   <packaging>maven-archetype</packaging>
 
   <name>Camunda BPM Archetype: Process Application (Servlet, WAR)</name>
