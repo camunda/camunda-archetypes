@@ -3,6 +3,8 @@
 #set( $symbol_escape = '\' )
 package ${package};
 
+import java.sql.SQLException;
+
 import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
@@ -47,7 +49,7 @@ public class InMemoryH2Test {
 
   @Test
   @Deployment(resources = "process.bpmn")
-  public void testHappyPath() {
+  public void testHappyPath() throws SQLException {
     ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
 
     assertThat(processInstance).isEnded();
