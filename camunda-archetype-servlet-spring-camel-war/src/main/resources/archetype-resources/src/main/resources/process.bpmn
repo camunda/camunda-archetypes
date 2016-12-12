@@ -9,7 +9,7 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow1" sourceRef="StartEventProcessStarted" targetRef="Task_02l9hzl" />
     <bpmn:sequenceFlow id="SequenceFlow_1b0hbyl" sourceRef="Task_02l9hzl" targetRef="EndEventProcessEnded" />
-    <bpmn:serviceTask id="Task_02l9hzl" name="Write variable &#39;name&#39; to file" camunda:expression="${camel.sendTo(&#39;direct:variableToFile&#39;, &#39;name&#39;)}">
+    <bpmn:serviceTask id="Task_02l9hzl" name="Write variable &#39;name&#39; to file" camunda:expression="${camel.sendTo('direct:variableToFile', 'name')}">
       <bpmn:incoming>SequenceFlow1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1b0hbyl</bpmn:outgoing>
     </bpmn:serviceTask>
