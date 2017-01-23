@@ -7,8 +7,6 @@
     <requiredProperty key="project-name"><defaultValue>Camunda BPM Process Engine Plugin</defaultValue></requiredProperty>
     <requiredProperty key="project-description"><defaultValue>A Plugin for [Camunda BPM](http://docs.camunda.org).</defaultValue></requiredProperty>
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
-    <requiredProperty key="jboss-version"><defaultValue>${version.jboss}</defaultValue></requiredProperty>
-    <requiredProperty key="tomcat-version"><defaultValue>${version.tomcat}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-groupId"><defaultValue>${project.groupId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-artifactId"><defaultValue>${project.artifactId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-version"><defaultValue>${project.version}</defaultValue></requiredProperty>
