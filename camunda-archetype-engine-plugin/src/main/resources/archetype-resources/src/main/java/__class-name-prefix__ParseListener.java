@@ -7,7 +7,6 @@ import org.camunda.bpm.engine.impl.bpmn.parser.BpmnParseListener;
 import org.camunda.bpm.engine.impl.pvm.process.ActivityImpl;
 import org.camunda.bpm.engine.impl.pvm.process.ScopeImpl;
 import org.camunda.bpm.engine.impl.util.xml.Element;
-import org.camunda.bpm.engine.repository.ProcessDefinition;
 
 public class ${class-name-prefix}ParseListener extends AbstractBpmnParseListener implements BpmnParseListener {
 
