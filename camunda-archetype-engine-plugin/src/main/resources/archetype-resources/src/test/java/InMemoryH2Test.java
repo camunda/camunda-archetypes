@@ -41,6 +41,10 @@ public class InMemoryH2Test {
   public void testHappyPath() {
 	  ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
 
+	  assertThat(processInstance).task("Task_DoSomething");
+	  
+	  complete(task());
+	  
 	  assertThat(processInstance).isEnded();
   }
 

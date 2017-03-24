@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor name="camunda-archetype-engine-plugin" xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+<archetype-descriptor name="camunda-archetype-servlet-spring-camel-war" xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <requiredProperties>
-    <requiredProperty key="class-name-prefix"><defaultValue>MySample</defaultValue></requiredProperty>
-    <requiredProperty key="project-name"><defaultValue>Camunda BPM Process Engine Plugin</defaultValue></requiredProperty>
-    <requiredProperty key="project-description"><defaultValue>A Plugin for [Camunda BPM](http://docs.camunda.org).</defaultValue></requiredProperty>
+    <requiredProperty key="project-name"><defaultValue>Camunda BPM Process Application</defaultValue></requiredProperty>
+    <requiredProperty key="project-description"><defaultValue>A Process Application for [Camunda BPM](http://docs.camunda.org).</defaultValue></requiredProperty>
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
+    <requiredProperty key="jboss-version"><defaultValue>${version.jboss}</defaultValue></requiredProperty>
+    <requiredProperty key="tomcat-version"><defaultValue>${version.tomcat}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-groupId"><defaultValue>${project.groupId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-artifactId"><defaultValue>${project.artifactId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-version"><defaultValue>${project.version}</defaultValue></requiredProperty>
@@ -19,9 +20,18 @@
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/webapp</directory>
+      <includes>
+        <include>**/*.xhtml</include>
+        <include>**/*.html</include>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
         <include>**/*.xml</include>
+        <include>**/*.bpmn</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
@@ -40,7 +50,6 @@
       <directory>src/test/resources</directory>
       <includes>
         <include>**/*.xml</include>
-        <include>**/*.bpmn</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">

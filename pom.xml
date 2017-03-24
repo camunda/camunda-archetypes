@@ -11,7 +11,7 @@
 
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-root</artifactId>
-  <version>7.6.0-SNAPSHOT</version>
+  <version>7.6.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>camunda Archetypes Parent POM</name>
@@ -19,6 +19,7 @@
   <modules>
     <module>camunda-archetype-ejb-war</module>
     <module>camunda-archetype-servlet-war</module>
+    <module>camunda-archetype-servlet-spring-camel-war</module>
     <module>camunda-archetype-cockpit-plugin</module>
     <module>camunda-archetype-engine-plugin</module>
     <module>camunda-archetype-demo</module>

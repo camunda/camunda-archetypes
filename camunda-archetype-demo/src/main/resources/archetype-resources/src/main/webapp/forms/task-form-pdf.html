@@ -1,0 +1,82 @@
+<strong>Here you would put the actual form to work on the task</strong>
+
+<p>
+  You can use this form through Camunda Tasklist
+  by setting the formKey of a BPMN User Task to:
+  <code>embedded:app:forms/task-form-pdf.html</code>
+</p>
+
+<form class="form-horizontal">
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-4">
+  <div class="control-group">
+    <label class="control-label">Name</label>
+    <div class="controls">
+      <input type="text" 
+             cam-variable-name="name"
+             readonly="true" 
+             class="form-control" />      
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Approve?</label>
+    <div class="controls">
+      <div class="radio">
+		  <label>
+		    <input type="radio" name="approved" value="yes">
+		    Yes
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="approved" value="no">
+		    No
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="approved" value="maybe">
+		    Maybe
+		  </label>
+		</div>
+		<script cam-script type="text/form-script">
+        var variableManager = camForm.variableManager;
+
+        camForm.on('form-loaded', function() {
+          $scope.contextPath = camForm.formUrl.split("/forms/")[0];
+        });
+
+        camForm.on('submit', function() {
+            // this callback is executed when the form is submitted, *before* the submit request to
+            // the server is executed
+
+            // creating a new variable will add it to the form submit
+            variableManager.createVariable({
+                name: 'approved',
+                type: 'String',
+                value: $('input:radio[name=approved]:checked').val(),
+                isDirty: true
+            });
+        });
+    	</script>
+    </div>
+  </div>
+  </div>
+  <div class="col-md-8">
+  	<object data="{{contextPath}}/file-variable?taskId={{taskId}}&variableName=document" type="application/pdf" style="width:100%; height:585px;">
+		 <p>
+		 	It appears you don't have a PDF plugin for this browser. No biggie... you can 
+		 	<a href="{{contextPath}}/file-variable?taskId={{taskId}}&variableName=document"> click here to download the PDF file.</a>
+		 </p>
+ 	</object>
+ 	
+ 	<script cam-script type="text/form-script">
+      camForm.on('form-loaded', function() {
+		$scope.taskId = camForm.taskId;
+		});
+ 	</script>
+  </div>
+</div>
+</div>  
+</form>

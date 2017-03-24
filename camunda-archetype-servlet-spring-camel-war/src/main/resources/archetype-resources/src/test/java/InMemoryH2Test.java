@@ -3,8 +3,6 @@
 #set( $symbol_escape = '\' )
 package ${package};
 
-import java.sql.SQLException;
-
 import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
@@ -29,8 +27,10 @@ public class InMemoryH2Test {
 
   private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
 
+  // enable more detailed logging
   static {
-    LogFactory.useSlf4jLogging(); // MyBatis
+//    LogUtil.readJavaUtilLoggingConfigFromClasspath(); // process engine
+//    LogFactory.useJdkLogging(); // MyBatis
   }
 
   @Before
@@ -49,16 +49,10 @@ public class InMemoryH2Test {
 
   @Test
   @Deployment(resources = "process.bpmn")
-  public void testHappyPath() throws SQLException {
-    ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
-
-    assertThat(processInstance).isEnded();
-
-    // To inspect the DB, run the following line in the debugger
-    // then connect your browser to: http://localhost:8082
-    // and enter the JDBC URL: jdbc:h2:mem:camunda
-    org.h2.tools.Server.createWebServer("-web").start();
-
+  public void testHappyPath() {
+	  //ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
+	  
+	  // Now: Drive the process by API and assert correct behavior by camunda-bpm-assert
   }
 
 }
