@@ -34,6 +34,14 @@
 
   <logger name="org.camunda.bpm.engine.cmd" level="debug" />
   <logger name="org.camunda.bpm.engine.persistence" level="debug" />
+  <logger name="org.camunda.bpm.engine.impl.persistence.entity" level="debug" />
+  <logger name="org.camunda.bpm.engine.impl.history.event" level="debug" />
+  <logger name="org.camunda.bpm.engine.impl.batch.history" level="debug" />
+  <logger name="org.camunda.bpm.engine.impl.batch" level="debug" />
+  <logger name="org.camunda.bpm.engine.history" level="debug" />
+  <logger name="org.camunda.bpm.engine.impl.cmmn.entity.repository" level="debug" />
+  <logger name="org.camunda.bpm.engine.impl.cmmn.entity.runtime" level="debug" />
+  <logger name="org.camunda.bpm.engine.impl.dmn.entity.repository" level="debug" />
   <logger name="org.camunda.bpm.engine.tx" level="debug" />
   <logger name="org.camunda.bpm.engine.cfg" level="debug" />
   <logger name="org.camunda.bpm.engine.jobexecutor" level="debug" />
