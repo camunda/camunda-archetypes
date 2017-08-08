@@ -12,4 +12,4 @@ These are project templates for [camunda BPM platform](http://camunda.org/), whi
 
 ## Full Documentation
 
-The complete documentation of the Maven Archetypes is provided as part of the [camunda BPM User Guide](https://docs.camunda.org/manual/7.4/user-guide/process-applications/maven-archetypes/).
+The complete documentation of the Maven Archetypes is provided as part of the [camunda BPM User Guide](https://docs.camunda.org/manual/latest/user-guide/process-applications/maven-archetypes/).
