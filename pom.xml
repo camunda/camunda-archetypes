@@ -6,7 +6,7 @@
     <groupId>org.camunda</groupId>
     <artifactId>camunda-release-parent</artifactId>
     <version>2.5</version>
-    <relativePath />
+    <relativePath/>
   </parent>
 
   <groupId>org.camunda.bpm.archetype</groupId>
@@ -23,6 +23,7 @@
     <module>camunda-archetype-cockpit-plugin</module>
     <module>camunda-archetype-engine-plugin</module>
     <module>camunda-archetype-demo</module>
+    <module>camunda-archetype-spring-boot-camel</module>
   </modules>
 
   <properties>
