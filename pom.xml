@@ -24,6 +24,7 @@
     <module>camunda-archetype-engine-plugin</module>
     <module>camunda-archetype-demo</module>
     <module>camunda-archetype-spring-boot-camel</module>
+    <module>camunda-archetype-spring-boot</module>
   </modules>
 
   <properties>

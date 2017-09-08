@@ -25,7 +25,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<camunda-spring-boot.version>2.3.0-SNAPSHOT</camunda-spring-boot.version>
-		<camunda-camel.version>0.6-SNAPSHOT</camunda-camel.version>
 		<camel.version>2.19.2</camel.version>
 	</properties>
 
@@ -34,19 +33,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-		</dependency>
-		<!-- camel -->
-			<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-spring-boot-starter</artifactId>
-			<version>${camel.version}</version>
 		</dependency>
 		
 		<!-- camunda -->
@@ -55,12 +50,6 @@
 			<artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
 			<version>${camunda-spring-boot.version}</version>
 		</dependency>
-		<dependency>
-		    <groupId>org.camunda.bpm.extension.camel</groupId>
-		    <artifactId>camunda-bpm-camel-spring</artifactId>
-		    <version>${camunda-camel.version}</version>
-		</dependency>
-		
 		
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -75,6 +64,7 @@
 			<version>4.12</version>
 			<scope>test</scope>
 	    </dependency>
+
 	</dependencies>
 
 	<repositories>
