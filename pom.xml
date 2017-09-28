@@ -30,6 +30,7 @@
     <version.arquillian>1.1.2.Final</version.arquillian>
     <version.jboss>7.2.1.Final</version.jboss>
     <version.tomcat>8.0.24</version.tomcat>
+    <version.camunda-test-coverage>0.3.1</version.camunda-test-coverage>
   </properties>
 
   <licenses>
