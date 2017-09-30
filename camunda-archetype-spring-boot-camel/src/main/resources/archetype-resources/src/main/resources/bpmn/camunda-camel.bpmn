@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.9.0">
+  <bpmn:process id="camunda-camel" name="camunda-camel" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="start">
+      <bpmn:outgoing>SequenceFlow_1o5resh</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1o5resh" sourceRef="StartEvent_1" targetRef="ServiceLog" />
+    <bpmn:scriptTask id="ServiceLog" name="ServiceLog">
+      <bpmn:incoming>SequenceFlow_1o5resh</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_18eh5ql</bpmn:outgoing>
+      <bpmn:script><![CDATA[println("AutoService")]]></bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:endEvent id="EndEvent_1fsoed6" name="end">
+      <bpmn:incoming>SequenceFlow_0zjrsll</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_18eh5ql" sourceRef="ServiceLog" targetRef="Service2Camel" />
+    <bpmn:sequenceFlow id="SequenceFlow_0zjrsll" sourceRef="Service2Camel" targetRef="EndEvent_1fsoed6" />
+    <bpmn:scriptTask id="Service2Camel" name="Service2Camel">
+      <bpmn:incoming>SequenceFlow_18eh5ql</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0zjrsll</bpmn:outgoing>
+      <bpmn:script><![CDATA[${camel.sendTo('direct:2camel')}]]></bpmn:script>
+    </bpmn:scriptTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="camunda-camel">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="180" y="138" width="23" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1o5resh_di" bpmnElement="SequenceFlow_1o5resh">
+        <di:waypoint xsi:type="dc:Point" x="209" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="305" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="257" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ScriptTask_1kd5yjy_di" bpmnElement="ServiceLog">
+        <dc:Bounds x="305" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1fsoed6_di" bpmnElement="EndEvent_1fsoed6">
+        <dc:Bounds x="824" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="833" y="142" width="19" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_18eh5ql_di" bpmnElement="SequenceFlow_18eh5ql">
+        <di:waypoint xsi:type="dc:Point" x="405" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="538" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="471.5" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0zjrsll_di" bpmnElement="SequenceFlow_0zjrsll">
+        <di:waypoint xsi:type="dc:Point" x="638" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="824" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="731" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ScriptTask_0ekc1td_di" bpmnElement="Service2Camel">
+        <dc:Bounds x="538" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
