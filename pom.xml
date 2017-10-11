@@ -23,6 +23,7 @@
     <module>camunda-archetype-cockpit-plugin</module>
     <module>camunda-archetype-engine-plugin</module>
     <module>camunda-archetype-demo</module>
+    <module>camunda-archetype-spring-boot</module>
   </modules>
 
   <properties>
@@ -31,6 +32,7 @@
     <version.jboss>7.2.1.Final</version.jboss>
     <version.tomcat>8.0.24</version.tomcat>
     <version.camunda-test-coverage>0.3.1</version.camunda-test-coverage>
+    <version.camundaSpringBoot>2.3.0-alpha1</version.camundaSpringBoot>
   </properties>
 
   <licenses>
