@@ -14,8 +14,9 @@
     <camunda.version>${camunda-version}</camunda.version>
     <camundaSpringBoot.version>${camunda-spring-boot-version}</camundaSpringBoot.version>
     <springBootStarter.version>1.5.7.RELEASE</springBootStarter.version>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <version.java>1.8</version.java>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
