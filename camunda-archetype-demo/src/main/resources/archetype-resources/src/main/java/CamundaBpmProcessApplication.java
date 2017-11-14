@@ -8,6 +8,11 @@ import org.camunda.bpm.application.ProcessApplication;
 import org.camunda.bpm.application.impl.ServletProcessApplication;
 import org.camunda.bpm.engine.ProcessEngine;
 
+import com.camunda.consulting.util.LicenseHelper;
+
+import static com.camunda.consulting.util.UserGenerator.*;
+import static com.camunda.consulting.util.FilterGenerator.*;
+
 /**
  * Process Application exposing this application's resources the process engine. 
  */
@@ -22,6 +27,8 @@ public class CamundaBpmProcessApplication extends ServletProcessApplication {
    */
   @PostDeploy
   public void onDeploymentFinished(ProcessEngine processEngine) {
+//    LicenseHelper.setLicense(processEngine);
+//    createDefaultUsers(processEngine);
 
     // start an initial process instance
 //    Map<String, Object> variables = new HashMap<String, Object>();
