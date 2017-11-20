@@ -15,7 +15,6 @@
     <property name="processEnginePlugins">
       <list>
         <bean class="org.camunda.spin.plugin.impl.SpinProcessEnginePlugin" />
-        <bean class="org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin" />
       </list>
     </property>
   </bean>

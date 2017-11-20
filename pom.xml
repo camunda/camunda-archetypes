@@ -19,7 +19,6 @@
   <modules>
     <module>camunda-archetype-ejb-war</module>
     <module>camunda-archetype-servlet-war</module>
-    <module>camunda-archetype-servlet-spring-camel-war</module>
     <module>camunda-archetype-cockpit-plugin</module>
     <module>camunda-archetype-engine-plugin</module>
     <module>camunda-archetype-demo</module>
@@ -27,7 +26,7 @@
   </modules>
 
   <properties>
-    <version.camunda>7.7.0</version.camunda>
+    <version.camunda>7.8.0-alpha4</version.camunda>
     <version.arquillian>1.1.2.Final</version.arquillian>
     <version.jboss>7.2.1.Final</version.jboss>
     <version.tomcat>8.0.24</version.tomcat>

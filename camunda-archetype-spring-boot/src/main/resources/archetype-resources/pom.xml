@@ -55,6 +55,12 @@
     </dependency>
 
     <dependency>
+      <groupId>org.camunda.bpm.springboot</groupId>
+      <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+      <version>${camundaSpringBoot.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
     </dependency>
@@ -69,51 +75,12 @@
       <artifactId>camunda-engine-plugin-spin</artifactId>
     </dependency>
 
-    <!-- Required to use Connectors -->
-    <dependency>
-      <groupId>org.camunda.connect</groupId>
-      <artifactId>camunda-connect-connectors-all</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine-plugin-connect</artifactId>
-    </dependency>
-
-    <!-- Required to use Templates -->
-    <dependency>
-      <groupId>org.camunda.template-engines</groupId>
-      <artifactId>camunda-template-engines-freemarker</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.camunda.template-engines</groupId>
-      <artifactId>camunda-template-engines-velocity</artifactId>
-    </dependency>
-
-    <dependency>
-      <!-- Bootstrap for styling via Webjars project -->
-      <groupId>org.webjars</groupId>
-      <artifactId>bootstrap</artifactId>
-      <version>2.3.2</version>
-    </dependency>
-
     <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-bpm-process-test-coverage -->
     <dependency>
       <groupId>org.camunda.bpm.extension</groupId>
       <artifactId>camunda-bpm-process-test-coverage</artifactId>
       <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
-    </dependency>
-
-    <!-- use logback as logger -->
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-    </dependency>
-
-    <!-- apache commons logging => slf4j -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
     </dependency>
 
     <!-- java util logging => slf4j -->
@@ -123,7 +90,7 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
+    <!-- Add your own dependencies here, if in compile scope, they are added to the jar -->
 
   </dependencies>
 
