@@ -19,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import ${package}.conf.CamundaEngineTestCoverageConfiguration;
+import ${package}.integration.conf.CamundaEngineTestCoverageConfiguration;
 
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
 import static org.junit.Assert.*;

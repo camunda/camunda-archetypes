@@ -159,6 +159,12 @@
 
     <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
 
+    <dependency>
+        <groupId>com.camunda.consulting.util</groupId>
+        <artifactId>camunda-util-demo-support</artifactId>
+        <version>0.4.0</version>    
+    </dependency>
+    
   </dependencies>
 
   <repositories>

@@ -7,18 +7,150 @@
 </p>
 
 <form class="form-horizontal">
+
+<!-- two-column layout -->
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-4">
+
+  <!-- table for listing existing variables -->
+  <script cam-script type="text/form-script">
+    var variableManager = camForm.variableManager;
+
+    camForm.on('form-loaded', function() {
+      camForm.variableManager.fetchVariable('name');
+    });
+
+    camForm.on('variables-fetched', function() {
+      // access to all process variables after the form has loaded
+      $scope.variables = variableManager.variables;
+    });
+  </script>
+  <h3>Process Variables</h3>
+  <table class="table table-striped">
+     <tr>
+        <td>Name</td>
+        <td>{{variables.name.value}}</td>
+     </tr>
+  </table>
+
+  <!-- read-only field -->
   <div class="control-group">
     <label class="control-label">Name</label>
     <div class="controls">
-      <input type="text" 
+      <input type="text"
              cam-variable-name="name"
              readonly="true" 
              class="form-control" />      
     </div>
   </div>
+
+  <!-- current date -->
+  <div class="control-group">
+    <label class="control-label">Creation Date</label>
+    <div class="controls">
+      <input type="text"
+             cam-variable-name="creationDate"
+             cam-variable-type="Date"
+             required
+             class="form-control" />
+      <script cam-script type="text/form-script">
+        var variableManager = camForm.variableManager;
+
+        camForm.on('variables-fetched', function() {
+          variableManager.variableValue('dateCreation', new Date().toISOString().substr(0, 19));
+        });
+
+      </script>
+    </div>
+  </div>
+
+  <!-- date picker ISO -->
+  <div class="control-group">
+    <label class="control-label">Date</label>
+    <div class="controls">
+      <p class="input-group">
+        <input type="text"
+             cam-variable-name="date"
+             cam-variable-type="Date"
+             class="form-control"
+             datepicker-popup="yyyy-MM-dd'T'HH:mm:ss"
+             is-open="dateFieldOpened" />
+
+        <span class="input-group-btn">
+          <button type="button"
+                  class="btn btn-default"
+                  ng-click="open($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </button>
+        </span>
+      </p>
+      <script cam-script type="text/form-script">
+        $scope.open = function($event) {
+          $event.preventDefault();
+          $event.stopPropagation();
+          $scope.dateFieldOpened = true;
+        };
+      </script>
+    </div>
+  </div>
+
+  <!-- 2nd date picker with German date format -->
+  <div class="control-group">
+    <label class="control-label">Date 2</label>
+    <div class="controls">
+      <p class="input-group">
+        <input type="text"
+             ng-model="date2"
+             required
+             class="form-control"
+             datepicker-popup="dd.MM.yyyy"
+             is-open="date2FieldOpened" />
+
+        <span class="input-group-btn">
+          <button type="button"
+                  class="btn btn-default"
+                  ng-click="open2($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </button>
+        </span>
+      </p>
+      <script cam-script type="text/form-script">
+        $scope.open2 = function($event) {
+          $event.preventDefault();
+          $event.stopPropagation();
+          $scope.date2FieldOpened = true;
+        };
+        camForm.on('submit', function() {
+          //add timezone offset for storing in UTC
+          var d = $scope.date2;
+          d.setTime( d.getTime() - d.getTimezoneOffset()*60*1000 );
+          camForm.variableManager.createVariable({
+              name: 'date2',
+              type: 'Date',
+              value: d,
+              isDirty: true
+          });
+        });
+      </script>
+    </div>
+  </div>
+
+  <!-- drop down list -->
+  <div class="control-group">
+    <label class="control-label">Select</label>
+    <div class="controls">
+      <select
+             cam-variable-name="selected"
+             cam-variable-type="String"
+             class="form-control">
+        <option selected="selected">foo</option>
+        <option>bar</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- radio buttons -->
   <div class="control-group">
     <label class="control-label">Approve?</label>
     <div class="controls">
@@ -43,10 +175,6 @@
 		<script cam-script type="text/form-script">
         var variableManager = camForm.variableManager;
 
-        camForm.on('form-loaded', function() {
-          $scope.contextPath = camForm.formUrl.split("/forms/")[0];
-        });
-
         camForm.on('submit', function() {
             // this callback is executed when the form is submitted, *before* the submit request to
             // the server is executed
@@ -62,21 +190,47 @@
     	</script>
     </div>
   </div>
+
+  <!-- file upload -->  
+  <div class="control-group">
+    <label class="control-label">Document</label>
+    <div class="controls">
+      <input type="file"
+        cam-variable-name="document"
+        cam-variable-type="File"
+        cam-max-filesize="10000000" />
+    </div>
   </div>
+
+  <!-- file download -->  
+  <div class="control-group">
+    <label class="control-label">Document</label>
+    <div class="controls">
+      <a cam-file-download="document"></a>
+    </div>
+  </div>
+
+  </div>
+  <!-- 2nd column -->
   <div class="col-md-8">
+  
+    <!-- PDF viewer -->  
   	<object data="{{contextPath}}/file-variable?taskId={{taskId}}&variableName=document" type="application/pdf" style="width:100%; height:585px;">
 		 <p>
 		 	It appears you don't have a PDF plugin for this browser. No biggie... you can 
 		 	<a href="{{contextPath}}/file-variable?taskId={{taskId}}&variableName=document"> click here to download the PDF file.</a>
 		 </p>
  	</object>
- 	
- 	<script cam-script type="text/form-script">
+    <script cam-script type="text/form-script">
       camForm.on('form-loaded', function() {
-		$scope.taskId = camForm.taskId;
-		});
- 	</script>
+        $scope.contextPath = camForm.formUrl.split("/forms/")[0];
+        $scope.taskId = camForm.taskId;
+      });
+    </script>
+
+  <!-- end two-column layout -->
   </div>
 </div>
 </div>  
+
 </form>
