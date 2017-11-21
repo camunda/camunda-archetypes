@@ -8,8 +8,9 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 /**
- * This is an empty service implementation illustrating how to use a plain Java 
- * class as a BPMN 2.0 Service Task delegate.
+ * This is an easy adapter implementation 
+ * illustrating how a Java Delegate can be used 
+ * from within a BPMN 2.0 Service Task.
  */
 @Named("logger")
 public class LoggerDelegate implements JavaDelegate {
