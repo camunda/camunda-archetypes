@@ -1,3 +1,7 @@
+spring.datasource:
+  url: jdbc:h2:./camunda-db;DB_CLOSE_DELAY=-1;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+  username: sa
+  password: sa
 camunda.bpm:
   admin-user:
     id: demo
@@ -5,10 +9,6 @@ camunda.bpm:
     firstName: Demo
   filter:
     create: All tasks
-spring.datasource:
-  url: jdbc:h2:./camunda-h2-dbs/process-engine;DB_CLOSE_DELAY=-1;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
-  ##shareable h2 database: jdbc:h2:./camunda-h2-dbs/process-engine;DB_CLOSE_DELAY=-1;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
-  username: sa
-  password: sa
 server.port: 8080
-    
+
+#shareable h2 database: jdbc:h2:./camunda-db;DB_CLOSE_DELAY=-1;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE

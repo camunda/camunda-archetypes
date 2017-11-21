@@ -160,6 +160,13 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>              
+        <configuration>                         
+		  <mainClass>${package}.CamundaApplication</mainClass>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
