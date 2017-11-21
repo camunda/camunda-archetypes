@@ -29,9 +29,9 @@ import javax.annotation.PostConstruct;
 /**
  * Test case starting an in-memory database-backed Process Engine.
  */
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(webEnvironment = WebEnvironment.NONE, //
-//    classes = CamundaEngineTestCoverageConfiguration.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = WebEnvironment.NONE, //
+    classes = CamundaEngineTestCoverageConfiguration.class)
 @Deployment(resources = "process.bpmn")
 public class IntegrationTest {
 
@@ -59,7 +59,7 @@ public class IntegrationTest {
     init(rule.getProcessEngine());
   }
 
-//  @Test
+  @Test
   public void testHappyPath() {
     //ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
     

@@ -1,2 +1,4 @@
+## Integration test configuration using spring boot
+
 spring.datasource:
-  url: jdbc:h2:mem:camunda;DB_CLOSE_ON_EXIT=false
+  url: jdbc:h2:mem:camunda-int;DB_CLOSE_ON_EXIT=false

@@ -50,6 +50,7 @@
       <directory>src/test/resources</directory>
       <includes>
         <include>**/*.xml</include>
+        <include>**/*.yaml</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
