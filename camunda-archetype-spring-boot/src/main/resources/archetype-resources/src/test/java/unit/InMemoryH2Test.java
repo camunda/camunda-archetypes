@@ -6,6 +6,7 @@ package ${package}.unit;
 import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
+import org.camunda.bpm.engine.test.mock.Mocks;
 import org.camunda.bpm.extension.process_test_coverage.junit.rules.TestCoverageProcessEngineRuleBuilder;
 import org.camunda.bpm.engine.test.Deployment;
 import org.junit.Before;
@@ -48,6 +49,9 @@ public class InMemoryH2Test {
   @Test
   @Deployment(resources = "process.bpmn")
   public void testHappyPath() {
+    // Register beans to be resolved when running without Spring Boot environment
+    //Mocks.register("logger", new LoggerDelegate());
+
 	  //ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
 	  
 	  // Now: Drive the process by API and assert correct behavior by camunda-bpm-assert

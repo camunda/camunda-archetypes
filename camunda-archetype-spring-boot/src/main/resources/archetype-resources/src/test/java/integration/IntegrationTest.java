@@ -74,11 +74,10 @@ public class IntegrationTest {
 
   @Test
   public void testHappyPath() {
+    // Either: Drive the process by API and assert correct behavior by camunda-bpm-assert, e.g.:
     //ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
     
-    // Now: Drive the process by API and assert correct behavior by camunda-bpm-assert
-
-    // Or: Define scenarios by using camunda-bpm-assert-scenario
+    // Or: Define scenarios by using camunda-bpm-assert-scenario:
 
     //ExecutableRunner starter = Scenario.run(myProcess) //
     //    .startByKey(PROCESS_DEFINITION_KEY);
@@ -90,7 +89,7 @@ public class IntegrationTest {
     //  task.complete();
     // });
 
-    // OK - everything prepared - let's go
+    // OK - everything prepared - let's go and execute the scenario
     //Scenario scenario = starter.execute();
 
     // now you can do some assertions   
