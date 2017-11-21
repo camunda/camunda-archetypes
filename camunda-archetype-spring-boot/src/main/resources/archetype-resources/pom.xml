@@ -12,6 +12,11 @@
 
   <properties>
     <camunda.version>${camunda-version}</camunda.version>
+    <!-- 
+    Adjust if you want to use EE:
+    <camunda.version>${camunda-version}-ee</camunda.version>
+    Make sure you also switch to the ee webapp dependency below
+    -->
     <camundaSpringBoot.version>${camunda-spring-boot-version}</camundaSpringBoot.version>
     <springBoot.version>1.5.7.RELEASE</springBoot.version>
 
@@ -54,6 +59,11 @@
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
+      <!-- 
+	    Adjust if you want to use EE:
+        <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
+    	Make sure you also use an EE version of Camunda - see above
+      -->
       <version>${camundaSpringBoot.version}</version>
     </dependency>
 
