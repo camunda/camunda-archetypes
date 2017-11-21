@@ -95,16 +95,6 @@
 		<scope>test</scope>
 	</dependency>
 	<dependency>
-		<!-- 
-		  make sure to use this version, see
-		  https://app.camunda.com/jira/browse/CAM-8296
-		-->
-		<groupId>org.assertj</groupId>
-		<artifactId>assertj-core</artifactId>
-		<version>1.7.1</version>
-		<scope>test</scope>			
-	</dependency>
-	<dependency>
 		<groupId>org.camunda.bpm.extension</groupId>
 		<artifactId>camunda-bpm-assert</artifactId>
 		<version>1.2</version>
