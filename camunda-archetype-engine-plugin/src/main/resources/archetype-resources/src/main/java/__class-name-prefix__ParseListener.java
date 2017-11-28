@@ -18,8 +18,8 @@ public class ${class-name-prefix}ParseListener extends AbstractBpmnParseListener
   @Override
   public void parseStartEvent(Element startEventElement, ScopeImpl scope, ActivityImpl startEvent) {
     LOGGER.info("Parsing Start Event "
-        + ", activtyId=" + startEvent.getId()
-        + ", activtyName='" + startEvent.getName() + "'"
+        + ", activityId=" + startEvent.getId()
+        + ", activityName='" + startEvent.getName() + "'"
         + ", scopeId=" + scope.getId()
         + ", scopeName=" + scope.getName());
   }
@@ -27,8 +27,8 @@ public class ${class-name-prefix}ParseListener extends AbstractBpmnParseListener
   @Override
   public void parseUserTask(Element userTaskElement, ScopeImpl scope, ActivityImpl activity) {
     LOGGER.info("Adding Task Listener to User Task:"
-        + " activtyId=" + activity.getId()
-        + ", activtyName='" + activity.getName() + "'"
+        + " activityId=" + activity.getId()
+        + ", activityName='" + activity.getName() + "'"
         + ", scopeId=" + scope.getId()
         + ", scopeName=" + scope.getName());
     ActivityBehavior behavior = activity.getActivityBehavior();
