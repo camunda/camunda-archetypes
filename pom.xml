@@ -11,7 +11,7 @@
 
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-root</artifactId>
-  <version>7.8.0-SNAPSHOT</version>
+  <version>7.8.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>camunda Archetypes Parent POM</name>
@@ -29,7 +29,7 @@
     <version.camunda>7.8.0</version.camunda>
     <version.arquillian>1.1.2.Final</version.arquillian>
     <version.jboss>7.2.1.Final</version.jboss>
-    <version.tomcat>8.0.24</version.tomcat>
+    <version.tomcat>8.0.47</version.tomcat>
     <version.camunda-test-coverage>0.3.2</version.camunda-test-coverage>
     <version.camundaSpringBoot>2.3.0</version.camundaSpringBoot>
   </properties>
