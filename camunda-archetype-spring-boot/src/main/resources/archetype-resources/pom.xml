@@ -15,7 +15,8 @@
     <!-- 
     Adjust if you want to use EE:
     <camunda.version>${camunda-version}-ee</camunda.version>
-    Make sure you also switch to the ee webapp dependency below
+    Make sure you also switch to the ee webapp dependency
+    and EE repository below
     -->
     <camundaSpringBoot.version>${camunda-spring-boot-version}</camundaSpringBoot.version>
     <springBoot.version>1.5.7.RELEASE</springBoot.version>
@@ -130,6 +131,15 @@
       <name>Camunda BPM Maven Repository</name>
       <url>https://app.camunda.com/nexus/content/groups/public</url>
     </repository>
+    <!-- enable this for EE dependencies
+    <repository>
+      <id>camunda-bpm-nexus-ee</id>
+      <name>camunda-bpm-nexus</name>
+      <url>
+        https://app.camunda.com/nexus/content/repositories/camunda-bpm-ee
+      </url>
+    </repository>
+    -->
   </repositories>
 
   <build>
