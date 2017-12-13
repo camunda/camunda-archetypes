@@ -19,19 +19,12 @@
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
-      <directory>src/main/webapp</directory>
-      <includes>
-        <include>**/*.xhtml</include>
-        <include>**/*.xml</include>
-        <include>**/*.html</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
         <include>**/*.xml</include>
         <include>**/*.bpmn</include>
         <include>**/*.yaml</include>
+        <include>**/*.html</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
