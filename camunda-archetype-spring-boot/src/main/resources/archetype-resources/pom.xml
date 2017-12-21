@@ -14,9 +14,9 @@
     <camunda.version>${camunda-version}</camunda.version>
     <!-- 
     Adjust if you want to use EE:
-    <camunda.version>${camunda-version}-ee</camunda.version>
-    Make sure you also switch to the ee webapp dependency
-    and EE repository below
+    <camunda.version>${camunda-version}-ee</camunda.version> 
+    Make sure you also switch to the ee webapp dependency 
+    and EE repository below 
     -->
     <camundaSpringBoot.version>${camunda-spring-boot-version}</camundaSpringBoot.version>
     <springBoot.version>1.5.7.RELEASE</springBoot.version>
@@ -61,9 +61,9 @@
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
       <!-- 
-	    Adjust if you want to use EE:
-        <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
-    	Make sure you also use an EE version of Camunda - see above
+      Adjust if you want to use EE: 
+      <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId> 
+      Make sure you also use an EE version of Camunda - see above
       -->
       <version>${camundaSpringBoot.version}</version>
     </dependency>
@@ -89,24 +89,24 @@
       <artifactId>camunda-engine-plugin-spin</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.extension</groupId>
+      <artifactId>camunda-bpm-assert</artifactId>
+      <version>1.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.extension</groupId>
+      <artifactId>camunda-bpm-assert-scenario</artifactId>
+      <version>0.2</version>
+      <scope>test</scope>
+    </dependency>
     <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-bpm-process-test-coverage -->
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-test</artifactId>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.camunda.bpm.extension</groupId>
-		<artifactId>camunda-bpm-assert</artifactId>
-		<version>1.2</version>
-		<scope>test</scope>
-	</dependency>	
-	<dependency>
-		<groupId>org.camunda.bpm.extension</groupId>
-		<artifactId>camunda-bpm-assert-scenario</artifactId>
-		<version>0.2</version>
-		<scope>test</scope>
-	</dependency> 
     <dependency>
       <groupId>org.camunda.bpm.extension</groupId>
       <artifactId>camunda-bpm-process-test-coverage</artifactId>
@@ -131,14 +131,12 @@
       <name>Camunda BPM Maven Repository</name>
       <url>https://app.camunda.com/nexus/content/groups/public</url>
     </repository>
-    <!-- enable this for EE dependencies
-    <repository>
-      <id>camunda-bpm-nexus-ee</id>
-      <name>camunda-bpm-nexus</name>
-      <url>
-        https://app.camunda.com/nexus/content/repositories/camunda-bpm-ee
-      </url>
-    </repository>
+    <!-- enable this for EE dependencies 
+    <repository> 
+      <id>camunda-bpm-nexus-ee</id> 
+      <name>camunda-bpm-nexus</name> 
+      <url>https://app.camunda.com/nexus/content/repositories/camunda-bpm-ee</url> 
+    </repository> 
     -->
   </repositories>
 
@@ -162,9 +160,9 @@
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>              
-        <configuration>                         
-		  <mainClass>${package}.CamundaApplication</mainClass>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>${package}.CamundaApplication</mainClass>
         </configuration>
       </plugin>
     </plugins>
