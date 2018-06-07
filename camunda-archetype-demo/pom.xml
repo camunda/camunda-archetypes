@@ -8,8 +8,8 @@
     <version>7.8.3-SNAPSHOT</version>
   </parent>
 
-  <!-- 
-    Unfortunately we cannot easily change the group id here - 
+  <!--
+    Unfortunately we cannot easily change the group id here -
     as it requires a different Sonartype account.
     <groupId>com.camunda.consulting</groupId>
   -->
@@ -29,7 +29,7 @@
         <version>2.2</version>
       </extension>
     </extensions>
-    
+
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -48,7 +48,7 @@
         </excludes>
       </resource>
     </resources>
-    
+
     <testResources>
       <testResource>
         <directory>src/test/resources</directory>

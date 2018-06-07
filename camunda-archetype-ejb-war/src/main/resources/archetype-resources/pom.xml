@@ -13,10 +13,15 @@
 
   <properties>
     <camunda.version>${camunda-version}</camunda.version>
+    <!--
+    Adjust if you want to use Camunda Enterprise Edition (EE):
+    <camunda.version>${camunda-version}-ee</camunda.version>
+    Make sure you also switch to EE repository below
+    -->
     <arquillian.version>${arquillian-version}</arquillian.version>
     <jboss.version>${jboss-version}</jboss.version>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
@@ -160,7 +165,7 @@
       <!-- Needed for InMemoryH2Test -->
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
-      <version>1.3.168</version>
+      <version>1.4.197</version>
       <scope>test</scope>
     </dependency>
 
@@ -176,7 +181,7 @@
       <!-- use logback as logger -->
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.1.2</version>
+      <version>1.1.3</version>
       <scope>test</scope>
     </dependency>
 
@@ -184,7 +189,7 @@
       <groupId>org.slf4j</groupId>
       <!-- apache commons logging => slf4j -->
       <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.7.7</version>
+      <version>1.7.25</version>
       <scope>test</scope>
     </dependency>
 
@@ -192,7 +197,7 @@
       <!--  java util logging => slf4j -->
       <groupId>org.slf4j</groupId>
       <artifactId>jul-to-slf4j</artifactId>
-      <version>1.7.7</version>
+      <version>1.7.25</version>
       <scope>test</scope>
     </dependency>
 
@@ -203,9 +208,16 @@
   <repositories>
     <repository>
       <id>camunda-bpm-nexus</id>
-      <name>Camunda BPM Maven Repository</name>
+      <name>Camunda Maven Repository</name>
       <url>https://app.camunda.com/nexus/content/groups/public</url>
     </repository>
+    <!-- enable this for EE dependencies (requires credentials in ~/.m2/settings.xml)
+    <repository>
+      <id>camunda-bpm-nexus-ee</id>
+      <name>Camunda Enterprise Maven Repository</name>
+      <url>https://app.camunda.com/nexus/content/repositories/camunda-bpm-ee</url>
+    </repository>
+    -->
     <repository>
       <id>jboss-public-repository</id>
       <name>JBoss Repository</name>
@@ -217,19 +229,19 @@
     <finalName>\${project.artifactId}</finalName>
     <plugins>
       <plugin>
-        <!-- Usage: mvn jboss-as:deploy See also: https://docs.jboss.org/jbossas/7/plugins/maven/latest/examples/deployment-example.html -->
+        <!-- Deploy to JBoss AS7: mvn clean jboss-as:deploy See also: https://docs.jboss.org/jbossas/7/plugins/maven/latest/examples/deployment-example.html -->
         <groupId>org.jboss.as.plugins</groupId>
         <artifactId>jboss-as-maven-plugin</artifactId>
-        <version>7.6.Final</version>
+        <version>7.9.Final</version>
       </plugin>
       <plugin>
-        <!-- Usage: mvn wildfly:deploy See also: https://docs.jboss.org/wildfly/plugins/maven/latest/examples/deployment-example.html -->
+        <!-- Deploy to Wildfly: mvn clean wildfly:deploy See also: https://docs.jboss.org/wildfly/plugins/maven/latest/examples/deployment-example.html -->
         <groupId>org.wildfly.plugins</groupId>
         <artifactId>wildfly-maven-plugin</artifactId>
-        <version>1.0.2.Final</version>
+        <version>1.2.1.Final</version>
       </plugin>
       <plugin>
-        <!-- Allows to deploy the application using: mvn clean package antrun:run
+        <!-- Deploy to JBoss using: mvn clean package antrun:run
              Follow the instructions in build.properties.example to make it work!-->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
@@ -258,7 +270,7 @@
           <!-- Included here for convenience when running the test in Eclipse -->
           <groupId>org.wildfly.arquillian</groupId>
           <artifactId>wildfly-arquillian-container-remote</artifactId>
-          <version>1.0.1.Final</version>
+          <version>2.1.0.Final</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -267,7 +279,6 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.17</version>
             <configuration>
               <excludes>
                 <!-- Exclusion for Arquillian test cases to avoid dependency on infrastructure
@@ -281,6 +292,7 @@
     </profile>
 
     <profile>
+      <!-- Start a Camunda JBoss AS7 distro and run: mvn clean test -Parq-jbossas-remote -->
       <id>arq-jbossas-remote</id>
       <dependencies>
         <dependency>
@@ -296,6 +308,7 @@
     </profile>
 
     <profile>
+      <!-- Start a Camunda Wildfly distro and run: mvn clean test -Parq-wildfly-remote -->
       <id>arq-wildfly-remote</id>
       <dependencies>
         <dependency>
@@ -303,7 +316,7 @@
           <!-- Requires a running Wildfly with Camunda BPM -->
           <groupId>org.wildfly.arquillian</groupId>
           <artifactId>wildfly-arquillian-container-remote</artifactId>
-          <version>1.0.1.Final</version>
+          <version>2.1.0.Final</version>
           <scope>test</scope>
           <exclusions>
             <exclusion>
