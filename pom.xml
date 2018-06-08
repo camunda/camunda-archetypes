@@ -26,12 +26,12 @@
   </modules>
 
   <properties>
-    <version.camunda>7.8.0</version.camunda>
+    <version.camunda>7.9.0</version.camunda>
     <version.arquillian>1.1.2.Final</version.arquillian>
     <version.jboss>7.2.1.Final</version.jboss>
-    <version.tomcat>8.0.47</version.tomcat>
+    <version.tomcat>9.0.5</version.tomcat>
     <version.camunda-test-coverage>0.3.2</version.camunda-test-coverage>
-    <version.camundaSpringBoot>2.3.0</version.camundaSpringBoot>
+    <version.camundaSpringBoot>3.0.0</version.camundaSpringBoot>
   </properties>
 
   <licenses>
