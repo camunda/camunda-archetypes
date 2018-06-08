@@ -43,7 +43,7 @@
         </excludes>
       </resource>
     </resources>
-    
+
     <testResources>
       <testResource>
         <directory>src/test/resources</directory>

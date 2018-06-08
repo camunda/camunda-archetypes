@@ -14,6 +14,11 @@
 
   <properties>
     <camunda.version>${camunda-version}</camunda.version>
+    <!--
+    Adjust if you want to use Camunda Enterprise Edition (EE):
+    <camunda.version>${camunda-version}-ee</camunda.version>
+    Make sure you also switch to EE repository below
+    -->
 
     <!-- This property must be present for the pom.xml to be recognized as a plugin -->
     <camunda.plugin.category>${camunda-plugin-category}</camunda.plugin.category>
@@ -24,8 +29,8 @@
     <!-- <camunda.plugin.exampleProcessApplicationUrl></camunda.plugin.exampleProcessApplicationUrl> -->
     <camunda.plugin.language>${camunda-plugin-language}</camunda.plugin.language>
 
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -76,7 +81,7 @@
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
-      <version>1.3.168</version>
+      <version>1.4.197</version>
       <scope>test</scope>
     </dependency>
 
@@ -87,16 +92,23 @@
   <repositories>
     <repository>
       <id>camunda-bpm-nexus</id>
-      <name>camunda-bpm-nexus</name>
+      <name>Camunda Maven Repository</name>
       <url>https://app.camunda.com/nexus/content/groups/public</url>
     </repository>
+    <!-- enable this for EE dependencies (requires credentials in ~/.m2/settings.xml)
+    <repository>
+      <id>camunda-bpm-nexus-ee</id>
+      <name>Camunda Enterprise Maven Repository</name>
+      <url>https://app.camunda.com/nexus/content/repositories/camunda-bpm-ee</url>
+    </repository>
+    -->
   </repositories>
 
   <build>
     <finalName>\${project.artifactId}</finalName>
     <plugins>
       <plugin>
-        <!-- Allows to deploy the plugin using: mvn clean package antrun:run
+        <!-- Deploy to Tomcat using: mvn clean package antrun:run
              Follow the instructions in build.properties.example to make it work!-->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>

@@ -23,7 +23,7 @@
         <version>2.2</version>
       </extension>
     </extensions>
-    
+
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -42,7 +42,7 @@
         </excludes>
       </resource>
     </resources>
-    
+
     <testResources>
       <testResource>
         <directory>src/test/resources</directory>
