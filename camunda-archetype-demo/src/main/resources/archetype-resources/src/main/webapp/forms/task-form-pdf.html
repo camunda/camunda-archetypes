@@ -17,10 +17,6 @@
   <script cam-script type="text/form-script">
     var variableManager = camForm.variableManager;
 
-    camForm.on('form-loaded', function() {
-      camForm.variableManager.fetchVariable('name');
-    });
-
     camForm.on('variables-fetched', function() {
       // access to all process variables after the form has loaded
       $scope.variables = variableManager.variables;
@@ -28,9 +24,9 @@
   </script>
   <h3>Process Variables</h3>
   <table class="table table-striped">
-     <tr>
-        <td>Name</td>
-        <td>{{variables.name.value}}</td>
+     <tr ng-repeat="variable in variables">
+        <td>{{variable.name}}</td>
+        <td>{{variable.value}}</td>
      </tr>
   </table>
 
@@ -50,7 +46,7 @@
     <label class="control-label">Creation Date</label>
     <div class="controls">
       <input type="text"
-             cam-variable-name="creationDate"
+             cam-variable-name="dateCreation"
              cam-variable-type="Date"
              required
              class="form-control" />
@@ -102,7 +98,6 @@
       <p class="input-group">
         <input type="text"
              ng-model="date2"
-             required
              class="form-control"
              datepicker-popup="dd.MM.yyyy"
              is-open="date2FieldOpened" />
@@ -122,9 +117,8 @@
           $scope.date2FieldOpened = true;
         };
         camForm.on('submit', function() {
-          //add timezone offset for storing in UTC
+          // variable date2 isn't created if you didn't select a date in the datepicker
           var d = $scope.date2;
-          d.setTime( d.getTime() - d.getTimezoneOffset()*60*1000 );
           camForm.variableManager.createVariable({
               name: 'date2',
               type: 'Date',
@@ -188,17 +182,6 @@
             });
         });
     	</script>
-    </div>
-  </div>
-
-  <!-- file upload -->  
-  <div class="control-group">
-    <label class="control-label">Document</label>
-    <div class="controls">
-      <input type="file"
-        cam-variable-name="document"
-        cam-variable-type="File"
-        cam-max-filesize="10000000" />
     </div>
   </div>
 

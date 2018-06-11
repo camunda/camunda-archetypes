@@ -1,0 +1,24 @@
+<strong>Here you would put the actual form to work on the task</strong>
+
+<p>
+  You can use this form through Camunda Tasklist
+  by setting the formKey of a BPMN User Task to:
+  <code>embedded:app:forms/task-form-upload.html</code>
+</p>
+
+<form class="form-horizontal">
+  <!-- file upload -->  
+  <div class="control-group">
+    <label class="control-label">Document</label>
+    <div class="controls">
+      <input type="file"
+        cam-variable-name="document"
+        cam-variable-type="File"
+        cam-max-filesize="10000000" />
+    </div>
+  </div>
+
+  <script cam-script type="text/form-script">
+  // custom JavaScript goes here
+  </script>
+</form>
