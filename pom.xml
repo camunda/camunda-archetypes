@@ -76,6 +76,26 @@
             <escapeString>\</escapeString>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>${plugin.version.nexus-staging}</version>
+          <executions>
+            <execution>
+              <id>central-deploy</id>
+              <phase>deploy</phase>
+              <goals>
+                <goal>deploy</goal>
+              </goals>
+              <configuration>
+                <serverId>central</serverId>
+                <nexusUrl>https://oss.sonatype.org</nexusUrl>
+                <skipNexusStagingDeployMojo>${skip.central.release}</skipNexusStagingDeployMojo>
+                <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
