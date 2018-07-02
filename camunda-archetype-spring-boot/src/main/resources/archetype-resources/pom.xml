@@ -78,6 +78,12 @@
       <artifactId>h2</artifactId>
     </dependency>
 
+    <!-- required to use H2 as a file based database  (Otherwise it's In-Memory) -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
     <!-- Required to use Spin dataformat support -->
     <dependency>
       <groupId>org.camunda.spin</groupId>
