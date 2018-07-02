@@ -11,7 +11,7 @@
 
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-root</artifactId>
-  <version>7.8.3-SNAPSHOT</version>
+  <version>7.9.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>camunda Archetypes Parent POM</name>
@@ -75,6 +75,26 @@
           <configuration>
             <escapeString>\</escapeString>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>${plugin.version.nexus-staging}</version>
+          <executions>
+            <execution>
+              <id>central-deploy</id>
+              <phase>deploy</phase>
+              <goals>
+                <goal>deploy</goal>
+              </goals>
+              <configuration>
+                <serverId>central</serverId>
+                <nexusUrl>https://oss.sonatype.org</nexusUrl>
+                <skipNexusStagingDeployMojo>${skip.central.release}</skipNexusStagingDeployMojo>
+                <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
