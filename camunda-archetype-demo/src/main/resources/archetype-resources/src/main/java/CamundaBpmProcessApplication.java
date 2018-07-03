@@ -29,6 +29,8 @@ public class CamundaBpmProcessApplication extends ServletProcessApplication {
   public void onDeploymentFinished(ProcessEngine processEngine) {
 //    LicenseHelper.setLicense(processEngine);
 //    createDefaultUsers(processEngine);
+//    addGroup(processEngine, "Agent", "Agent", "demo");
+//    addFilterUserAuthorization(processEngine, "demo", FILTER_myTasks, FILTER_groupTasksFilter, FILTER_followUp, FILTER_overdue, FILTER_allTasksFilter);
 
     // start an initial process instance
 //    Map<String, Object> variables = new HashMap<String, Object>();
