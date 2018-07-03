@@ -17,6 +17,12 @@
   <script cam-script type="text/form-script">
     var variableManager = camForm.variableManager;
 
+    camForm.on('form-loaded', function() {
+      // variables that are not already used in cam-variable bindings
+      // must be fetched explicitly
+      camForm.variableManager.fetchVariable('name');
+    });
+
     camForm.on('variables-fetched', function() {
       // access to all process variables after the form has loaded
       $scope.variables = variableManager.variables;
@@ -24,6 +30,10 @@
   </script>
   <h3>Process Variables</h3>
   <table class="table table-striped">
+     <tr>
+        <td>Name</td>
+        <td>{{variables.name.value}}</td>
+     </tr>
      <tr ng-repeat="variable in variables">
         <td>{{variable.name}}</td>
         <td>{{variable.value}}</td>
