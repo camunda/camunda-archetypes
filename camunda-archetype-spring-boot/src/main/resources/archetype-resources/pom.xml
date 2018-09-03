@@ -106,11 +106,11 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-        <!-- version 1.7.0 currently required by camunda-bpm-assert -->
-  		<groupId>org.assertj</groupId>
-  		<artifactId>assertj-core</artifactId>
-  		<version>1.7.0</version>
-        <scope>test</scope>
+      <!-- version 1.7.0 currently required by camunda-bpm-assert -->
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>1.7.0</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.camunda.bpm.extension</groupId>
