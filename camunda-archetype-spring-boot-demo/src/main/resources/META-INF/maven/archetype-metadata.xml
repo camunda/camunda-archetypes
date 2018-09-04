@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="camunda-archetype-ejb-war" xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="project-name"><defaultValue>Camunda Spring Boot Application</defaultValue></requiredProperty>
+    <requiredProperty key="project-description"><defaultValue>Spring Boot Application using [Camunda](http://docs.camunda.org).</defaultValue></requiredProperty>
+    <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
+    <requiredProperty key="camunda-spring-boot-version"><defaultValue>${version.camundaSpringBoot}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-groupId"><defaultValue>${project.groupId}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-artifactId"><defaultValue>${project.artifactId}</defaultValue></requiredProperty>
+    <requiredProperty key="archetype-version"><defaultValue>${project.version}</defaultValue></requiredProperty>
+  </requiredProperties>
+  <fileSets>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/main/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*.xml</include>
+        <include>**/*.bpmn</include>
+        <include>**/*.yaml</include>
+        <include>**/*.html</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*.png</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/test/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/test/resources</directory>
+      <includes>
+        <include>**/*.xml</include>
+        <include>**/*.yaml</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>src/test/resources</directory>
+      <includes>
+        <include>**/*.properties</include>
+      </includes>
+    </fileSet>
+    <!-- <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>README.md</include>
+      </includes>
+    </fileSet> -->
+  </fileSets>
+</archetype-descriptor>

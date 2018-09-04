@@ -23,6 +23,7 @@
     <module>camunda-archetype-engine-plugin</module>
     <module>camunda-archetype-demo</module>
     <module>camunda-archetype-spring-boot</module>
+    <module>camunda-archetype-spring-boot-demo</module>
   </modules>
 
   <properties>
