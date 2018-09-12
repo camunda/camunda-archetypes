@@ -19,6 +19,29 @@
   </div>
 
   <script cam-script type="text/form-script">
-  // custom JavaScript goes here
+    // custom JavaScript goes here
+
+    inject(['Uri', function(Uri) {
+
+      camForm.on('submit', function() {
+        // this callback is executed when the form is submitted, *before* the submit request to
+        // the server is executed
+
+        // store data in domain service and retrieve business key
+        $.ajax({
+          url: Uri.appUri('engine://engine/:engine/history/activity-instance/count'),
+          method: 'POST',
+          async: false,
+          data: JSON.stringify({ finished: true }),
+          contentType: 'application/json',
+          dataType: 'json',
+          success: function (data) {
+            camForm.businessKey = data.count
+          }
+        });
+
+      });
+
+    }]);
   </script>
 </form>
