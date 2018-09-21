@@ -14,3 +14,6 @@ camunda.bpm:
   filter:
     create: All Tasks
 server.port: 8080
+spring.devtools:
+    restart:
+      enabled: true
