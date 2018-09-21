@@ -56,6 +56,13 @@
   </dependencyManagement>
 
   <dependencies>
+    <!-- see https://github.com/camunda-consulting/code/tree/master/snippets/springboot-customized-webapps
+    <dependency>
+      <groupId>com.camunda.consulting</groupId>
+      <artifactId>springboot-customized-webapp-webjar</artifactId>
+      <version>${camunda.version}</version>
+    </dependency>
+    -->
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
@@ -65,6 +72,18 @@
       Make sure you also use an EE version of Camunda - see above
       -->
       <version>${camundaSpringBoot.version}</version>
+      <!-- needed when using springboot-customized-webapp-webjar
+      <exclusions>
+        <exclusion>
+          <groupId>org.camunda.bpm.webapp</groupId>
+          <artifactId>camunda-webapp-webjar</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.camunda.bpm.webapp</groupId>
+          <artifactId>camunda-webapp-webjar-ee</artifactId>
+        </exclusion>
+      </exclusions>
+      -->
     </dependency>
 
     <dependency>
