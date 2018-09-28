@@ -1,4 +1,4 @@
-package com.camunda.bpm.demo.report_process;
+package ${package};
 
 import org.camunda.bpm.engine.ProcessEngine;
 import org.springframework.beans.factory.annotation.Autowired;
