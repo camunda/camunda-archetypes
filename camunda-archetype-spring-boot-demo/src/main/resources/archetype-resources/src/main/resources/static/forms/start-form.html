@@ -1,3 +1,4 @@
+#set( $dollar = '$' )
 <strong>Here you would put the actual form to start the process</strong>
 
 <p>
@@ -28,7 +29,7 @@
         // the server is executed
 
         // store data in domain service and retrieve business key
-        $.ajax({
+        ${dollar}.ajax({
           url: Uri.appUri('engine://engine/:engine/history/activity-instance/count'),
           method: 'POST',
           async: false,
