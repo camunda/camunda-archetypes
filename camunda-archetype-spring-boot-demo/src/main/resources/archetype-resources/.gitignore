@@ -207,3 +207,6 @@ Session.vim
 *~
 # auto-generated tag files
 tags
+
+# H2 database file
+camunda-db.mv.db
