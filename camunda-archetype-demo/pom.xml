@@ -29,6 +29,16 @@
         <version>3.0.1</version>
       </extension>
     </extensions>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <!-- Required so that .gitignore gets included in archetypes; see https://issues.apache.org/jira/browse/MRESOURCES-190 -->
+          <addDefaultExcludes>false</addDefaultExcludes>
+        </configuration>
+      </plugin>
+    </plugins>
 
     <resources>
       <resource>
