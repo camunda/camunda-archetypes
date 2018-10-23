@@ -11,8 +11,8 @@
   <artifactId>camunda-archetype-spring-boot-demo</artifactId>
   <packaging>maven-archetype</packaging>
 
-  <name>Camunda BPM Archetype: Spring Boot Process Application</name>
-  <description>Process application that uses the Spring Boot Starter
+  <name>Camunda BPM Archetype: Demo Spring Boot Process Application</name>
+  <description>Demo application with lots of pre-built parts that uses the Spring Boot Starter
           Contains: BPMN Process, Java Delegate, HTML5- start and task forms,
           JUnit Test with in-memory engine and visual process test coverage</description>
 
