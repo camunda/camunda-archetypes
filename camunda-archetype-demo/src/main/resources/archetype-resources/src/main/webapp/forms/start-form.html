@@ -29,17 +29,18 @@
         // the server is executed
 
         // store data in domain service and retrieve business key
-        ${dollar}.ajax({
-          url: Uri.appUri('engine://engine/:engine/history/activity-instance/count'),
-          method: 'POST',
-          async: false,
-          data: JSON.stringify({ finished: true }),
-          contentType: 'application/json',
-          dataType: 'json',
-          success: function (data) {
-            camForm.businessKey = data.count
-          }
-        });
+// Does not work for Wildfly at the moment - Camunda 7.10.0-alpha6
+//        ${dollar}.ajax({
+//          url: Uri.appUri('engine://engine/:engine/history/activity-instance/count'),
+//          method: 'POST',
+//          async: false,
+//          data: JSON.stringify({ finished: true }),
+//          contentType: 'application/json',
+//          dataType: 'json',
+//          success: function (data) {
+//            camForm.businessKey = data.count
+//          }
+//        });
 
       });
 
