@@ -19,7 +19,7 @@
     and CE repository below
     -->
     <camundaSpringBoot.version>${camunda-spring-boot-version}</camundaSpringBoot.version>
-    <springBoot.version>2.0.2.RELEASE</springBoot.version>
+    <springBoot.version>2.1.1.RELEASE</springBoot.version>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
