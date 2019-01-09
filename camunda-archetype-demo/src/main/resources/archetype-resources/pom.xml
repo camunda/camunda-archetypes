@@ -19,6 +19,7 @@
     Make sure you also switch to the CE webapp dependency
     and CE repository below
     -->
+    <cxf.version>3.2.7</cxf.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -241,6 +242,30 @@
         <artifactId>wildfly-maven-plugin</artifactId>
         <version>1.2.1.Final</version>
       </plugin>
+<!--
+      <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-codegen-plugin</artifactId>
+        <version>${cxf.version}</version>
+        <executions>
+          <execution>
+            <id>generate-sources</id>
+            <phase>generate-sources</phase>
+            <configuration>
+                <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
+                <wsdlOptions>
+                    <wsdlOption>
+                        <wsdl>${basedir}/src/main/resources/wsdl/Antrag_v1_0.wsdl</wsdl>
+                    </wsdlOption>
+                </wsdlOptions>
+            </configuration>
+            <goals>
+                <goal>wsdl2java</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+-->
     </plugins>
   </build>
 </project>
