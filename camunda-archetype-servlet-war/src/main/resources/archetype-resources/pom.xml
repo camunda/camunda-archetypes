@@ -33,27 +33,14 @@
         <scope>import</scope>
         <type>pom</type>
       </dependency>
-      <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-dmn-bom</artifactId>
-        <version>${camunda.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
     <dependency>
-      <!-- process engine, needs to be provided -->
+      <!-- process engine, needs to be 'provided' because it's already a shared library in the container -->
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <!-- decision engine -->
-      <groupId>org.camunda.bpm.dmn</groupId>
-      <artifactId>camunda-engine-dmn</artifactId>
       <scope>provided</scope>
     </dependency>
 

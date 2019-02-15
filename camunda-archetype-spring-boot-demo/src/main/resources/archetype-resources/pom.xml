@@ -39,6 +39,7 @@
         <scope>import</scope>
         <type>pom</type>
       </dependency>
+      <!-- DMN BOM only needed for using the DMN engine standalone -->
       <dependency>
         <groupId>org.camunda.bpm.dmn</groupId>
         <artifactId>camunda-engine-dmn-bom</artifactId>

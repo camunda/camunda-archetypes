@@ -35,6 +35,7 @@
         <scope>import</scope>
         <type>pom</type>
       </dependency>
+      <!-- DMN BOM only needed for using the DMN engine standalone -->
       <dependency>
         <groupId>org.camunda.bpm.dmn</groupId>
         <artifactId>camunda-engine-dmn-bom</artifactId>
@@ -47,13 +48,13 @@
 
   <dependencies>
     <dependency>
-      <!-- process engine, needs to be provided -->
+      <!-- process engine, needs to be 'provided' because it's already a shared library in the container -->
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <!-- decision engine -->
+      <!-- decision engine, only needed for using the DMN engine standalone -->
       <groupId>org.camunda.bpm.dmn</groupId>
       <artifactId>camunda-engine-dmn</artifactId>
       <scope>provided</scope>
