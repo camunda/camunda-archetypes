@@ -21,16 +21,16 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
-        <include>**/*.xml</include>
-        <include>**/*.bpmn</include>
-        <include>**/*.yaml</include>
-        <include>**/*.html</include>
+        <include>**/*</include>
       </includes>
+      <excludes>
+        <exclude>**/*.html</exclude>
+      </excludes>
     </fileSet>
     <fileSet encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
-        <include>**/*.png</include>
+        <include>**/*.html</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">

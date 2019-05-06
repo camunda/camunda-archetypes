@@ -20,24 +20,15 @@
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="false" encoding="UTF-8">
       <directory>src/main/webapp</directory>
       <includes>
-        <include>**/*.xhtml</include>
-        <include>**/*.html</include>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>src/main/resources</directory>
-      <includes>
-        <include>**/*.xml</include>
-        <include>**/*.bpmn</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>src/main/resources</directory>
-      <includes>
-        <include>**/*.png</include>
+        <include>**/*</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -61,9 +52,9 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>README.md</include>
         <include>build.xml</include>
         <include>build.properties.example</include>
+        <include>README.md</include>
       </includes>
     </fileSet>
   </fileSets>
