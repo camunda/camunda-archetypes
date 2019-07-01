@@ -23,13 +23,12 @@ import static org.junit.Assert.*;
 import static org.assertj.core.api.Assertions.*;
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
 
-
 /**
  * Test case starting an in-memory database-backed Process Engine.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)
-public class ProcessTest {
+public class ProcessUnitTest {
 
   private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
 

@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 /**
  * Test case starting an in-memory database-backed Process Engine.
  */
-public class ProcessTest {
+public class ProcessUnitTest {
 
   @ClassRule
   @Rule
@@ -36,16 +36,21 @@ public class ProcessTest {
     init(rule.getProcessEngine());
   }
 
+  /**
+   * Just tests if the process definition is deployable.
+   */
+  @Test
+  @Deployment(resources = "process.bpmn")
+  public void testParsingAndDeployment() {
+    // nothing is done here, as we just want to check for exceptions during deployment
+  }
+
   @Test
   @Deployment(resources = "process.bpmn")
   public void testHappyPath() {
-	  ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
-
-	  assertThat(processInstance).task("Task_DoSomething");
+	  //ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
 	  
-	  complete(task());
-	  
-	  assertThat(processInstance).isEnded();
+	  // Now: Drive the process by API and assert correct behavior by camunda-bpm-assert
   }
 
 }
