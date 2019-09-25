@@ -1,6 +1,6 @@
 # Camunda Maven Archetypes
 
-These are project templates for [camunda BPM platform](http://camunda.org/), which enable a quickstart for developing process applications.
+These are project templates for [Camunda BPM](http://camunda.org/), which enable a quickstart for developing process applications.
 
 
 ## Usage in Eclipse
