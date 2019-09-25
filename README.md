@@ -1,4 +1,4 @@
-# camunda Maven Archetypes - [![Build Status](https://buildhive.cloudbees.com/job/camunda/job/camunda-archetypes/badge/icon)](https://buildhive.cloudbees.com/job/camunda/job/camunda-archetypes/)
+# Camunda Maven Archetypes
 
 These are project templates for [camunda BPM platform](http://camunda.org/), which enable a quickstart for developing process applications.
 
@@ -25,4 +25,4 @@ Select OK.  Then when creating a Maven project, you should see the camunda arche
 
 ## Full Documentation
 
-The complete documentation of the Maven Archetypes is provided as part of the [camunda BPM User Guide](https://docs.camunda.org/manual/latest/user-guide/process-applications/maven-archetypes/).
+The complete documentation of the Maven Archetypes is provided as part of the [Camunda BPM User Guide](https://docs.camunda.org/manual/latest/user-guide/process-applications/maven-archetypes/).
