@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.camunda.bpm.archetype</groupId>
+    <artifactId>camunda-archetype-root</artifactId>
+    <version>7.11.2-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>camunda-archetype-servlet-spring-camel-war</artifactId>
+  <packaging>maven-archetype</packaging>
+
+  <name>Camunda BPM Archetype: Process Application (Servlet, WAR)</name>
+  <description>Process application that uses a shared Camunda BPM engine in a Servlet Container, e.g. Apache Tomcat.
+          Contains: Servlet Process Application, BPMN Process, Java Delegate, HTML5-based start and task forms,
+          JUnit Test with in-memory engine, Maven Plugins or Ant build script for one-click deployment in Eclipse</description>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>3.1.0</version>
+      </extension>
+    </extensions>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>archetype-resources/pom.xml</include>
+          <include>META-INF/maven/archetype-metadata.xml</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>archetype-resources/pom.xml</exclude>
+          <exclude>META-INF/maven/archetype-metadata.xml</exclude>
+        </excludes>
+      </resource>
+    </resources>
+
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+  </build>
+</project>
