@@ -19,7 +19,7 @@
   <name>Camunda BPM Archetype: Process Application (EJB, WAR)</name>
   <description>Process application that uses a shared Camunda BPM engine in a Java EE Container, e.g. JBoss Wildfly.
           Contains: Camunda EJB Client, Camunda CDI Integration, BPMN Process, Java Delegate as CDI bean, HTML5-based start and task forms,
-          configuration for JPA (Hibernate), JUnit Test with in-memory engine and visual process test coverage, Arquillian Test for JBoss AS7 and Wildfly, Maven Plugins or Ant build script for one-click deployment in Eclipse</description>
+          configuration for JPA (Hibernate), JUnit Test with in-memory engine and visual process test coverage, Maven Plugins or Ant build script for one-click deployment in Eclipse</description>
 
   <build>
     <extensions>

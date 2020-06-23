@@ -52,21 +52,6 @@ ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} JBoss AS7 (using JB
 mvn clean jboss-as:deploy
 ```
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Arquillian Test
-There is also an `ArquillianTest`, which by default connects to a
-Camunda instance running locally on a Wildfly application server.
-
-1. Build and run the Arquillian test on Wildfly using:
-
-```bash
-mvn clean test -Parq-wildfly-remote
-```
-or on JBoss AS 7 using:
-
-```bash
-mvn clean test -Parq-jbossas-remote
-```
-
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Ant (and Maven)
 1. First copy the file `build.properties.example` to `build.properties`
 2. Edit the `build.properties` file and put the path to your application server inside it.
