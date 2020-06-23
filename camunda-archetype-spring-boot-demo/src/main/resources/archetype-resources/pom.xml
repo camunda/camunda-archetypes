@@ -135,6 +135,14 @@
       <artifactId>camunda-template-engines-velocity</artifactId>
     </dependency>
 
+    <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-bpm-process-test-coverage -->
+    <dependency>
+      <groupId>org.camunda.bpm.extension</groupId>
+      <artifactId>camunda-bpm-process-test-coverage</artifactId>
+      <version>${version.camunda-test-coverage}</version>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.camunda.bpm.extension</groupId>
       <artifactId>camunda-bpm-assert-scenario</artifactId>

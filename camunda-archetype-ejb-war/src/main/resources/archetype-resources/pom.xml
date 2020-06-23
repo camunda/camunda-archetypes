@@ -111,8 +111,8 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-bpm-process-test-coverage -->
     <dependency>
-      <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-bpm-process-test-coverage -->
       <groupId>org.camunda.bpm.extension</groupId>
       <artifactId>camunda-bpm-process-test-coverage</artifactId>
       <version>${version.camunda-test-coverage}</version>
