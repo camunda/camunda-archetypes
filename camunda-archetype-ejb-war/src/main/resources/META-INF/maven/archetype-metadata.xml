@@ -6,8 +6,8 @@
     <requiredProperty key="project-name"><defaultValue>Camunda BPM Process Application</defaultValue></requiredProperty>
     <requiredProperty key="project-description"><defaultValue>A Process Application for [Camunda BPM](http://docs.camunda.org).</defaultValue></requiredProperty>
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
-    <requiredProperty key="arquillian-version"><defaultValue>${version.arquillian}</defaultValue></requiredProperty>
     <requiredProperty key="jboss-version"><defaultValue>${version.jboss}</defaultValue></requiredProperty>
+    <requiredProperty key="arquillian-version"><defaultValue>${version.arquillian}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-groupId"><defaultValue>${project.groupId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-artifactId"><defaultValue>${project.artifactId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-version"><defaultValue>${project.version}</defaultValue></requiredProperty>
@@ -22,8 +22,17 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
+        <include>**/*.bpmn</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="false" encoding="UTF-8">
+      <directory>src/main/resources</directory>
+      <includes>
         <include>**/*</include>
       </includes>
+      <excludes>
+        <exclude>**/*.bpmn</exclude>
+      </excludes>
     </fileSet>
     <fileSet filtered="false" encoding="UTF-8">
       <directory>src/main/webapp</directory>
@@ -37,16 +46,10 @@
         <include>**/*.java</include>
       </includes>
     </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
+    <fileSet filtered="false" encoding="UTF-8">
       <directory>src/test/resources</directory>
       <includes>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>src/test/resources</directory>
-      <includes>
-        <include>**/*.properties</include>
+        <include>**/*</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">

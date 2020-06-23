@@ -1,16 +1,15 @@
-<strong>Here you would put the actual form to start the process</strong>
+<!--
+You can use this form through Camunda Tasklist
+by setting the formKey of a BPMN Start Event to:
+embedded:app:forms/start-form.html
+-->
 
-<p>
-  You can use this form through Camunda Tasklist
-  by setting the formKey of a BPMN Start Event to:
-  <code>embedded:app:forms/start-form.html</code>
-</p>
-
-<form class="form-horizontal">
+<form class="form-horizontal" role="form">
   <div class="form-group">
-    <label class="control-label">Your Name</label>
-    <div class="controls">
+    <label for="name" class="col-sm-2 control-label">Your Name</label>
+    <div class="col-sm-10">
       <input type="text"
+             name="name"
              cam-variable-name="name"
              cam-variable-type="String"
              required

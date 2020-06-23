@@ -71,7 +71,7 @@
       <artifactId>h2</artifactId>
     </dependency>
 
-    <!-- required to use H2 as a file based database  (Otherwise it's In-Memory) -->
+    <!-- required to use H2 as a file based database  (otherwise it's in-memory) -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -85,13 +85,6 @@
     <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine-plugin-spin</artifactId>
-    </dependency>
-
-    <!-- JAXB -->
-    <dependency>
-      <groupId>javax.xml.bind</groupId>
-      <artifactId>jaxb-api</artifactId>
-      <scope>runtime</scope>
     </dependency>
 
     <dependency>
@@ -134,6 +127,13 @@
     </dependency>
 
     <!-- Add your own dependencies here, if in compile scope, they are added to the jar -->
+
+    <!-- JAXB -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
   </dependencies>
 

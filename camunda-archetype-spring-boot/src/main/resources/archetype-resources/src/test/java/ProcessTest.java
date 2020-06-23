@@ -31,8 +31,6 @@ import javax.annotation.PostConstruct;
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)
 public class ProcessTest {
 
-  private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
-
   @Autowired
   private ProcessEngine processEngine;
 
@@ -40,7 +38,8 @@ public class ProcessTest {
     LogFactory.useSlf4jLogging(); // MyBatis
   }
 
-  @Rule @ClassRule
+  @ClassRule
+  @Rule
   public static ProcessEngineRule rule;
 
   @PostConstruct
@@ -54,12 +53,14 @@ public class ProcessTest {
   }
 
   @Test
-  @Deployment(resources="process.bpmn") // only required for process test coverage
+  @Deployment(resources = "process.bpmn") // only required for process test coverage
   public void testHappyPath() {
-    // Either: Drive the process by API and assert correct behavior by camunda-bpm-assert, e.g.:
-    //ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
-    
-    // Now: Drive the process by API and assert correct behavior by camunda-bpm-assert
+    // Drive the process by API and assert correct behavior by camunda-bpm-assert
+
+    ProcessInstance processInstance = processEngine().getRuntimeService()
+        .startProcessInstanceByKey(ProcessConstants.PROCESS_DEFINITION_KEY);
+
+    assertThat(processInstance).isEnded();
   }
 
 }

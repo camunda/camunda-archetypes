@@ -8,12 +8,17 @@
     <version>7.10.1-SNAPSHOT</version>
   </parent>
 
+  <!--
+    Unfortunately we cannot easily change the group id here -
+    as it requires a different Sonartype account.
+    <groupId>com.camunda.consulting</groupId>
+  -->
   <artifactId>camunda-archetype-ejb-war</artifactId>
   <packaging>maven-archetype</packaging>
 
   <name>Camunda BPM Archetype: Process Application (EJB, WAR)</name>
   <description>Process application that uses a shared Camunda BPM engine in a Java EE Container, e.g. JBoss Wildfly.
-          Contains: Camunda EJB Client, Camunda CDI Integration, BPMN Process, Java Delegate as CDI bean, HTML5- and JSF-based start and task forms,
+          Contains: Camunda EJB Client, Camunda CDI Integration, BPMN Process, Java Delegate as CDI bean, HTML5-based start and task forms,
           configuration for JPA (Hibernate), JUnit Test with in-memory engine and visual process test coverage, Arquillian Test for JBoss AS7 and Wildfly, Maven Plugins or Ant build script for one-click deployment in Eclipse</description>
 
   <build>

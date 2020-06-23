@@ -1,0 +1,98 @@
+<!--
+You can use this form through Camunda Tasklist
+by setting the formKey of a BPMN User Task to:
+embedded:app:forms/task-form-date-picker.html
+-->
+
+<form class="form-horizontal" role="form">
+
+  <!-- current date -->
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Creation Date</label>
+    <div class="col-sm-10">
+      <input type="text"
+             cam-variable-name="dateCreation"
+             cam-variable-type="Date"
+             required
+             class="form-control" />
+      <script cam-script type="text/form-script">
+        var variableManager = camForm.variableManager;
+
+        camForm.on('variables-fetched', function() {
+          variableManager.variableValue('dateCreation', new Date().toISOString().substr(0, 19));
+        });
+
+      </script>
+    </div>
+  </div>
+
+  <!-- date picker ISO -->
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Date</label>
+    <div class="col-sm-10">
+      <p class="input-group">
+        <input type="text"
+             cam-variable-name="date"
+             cam-variable-type="Date"
+             class="form-control"
+             uib-datepicker-popup="yyyy-MM-dd'T'HH:mm:ss"
+             is-open="dateFieldOpened" />
+
+        <span class="input-group-btn">
+          <button type="button"
+                  class="btn btn-default"
+                  ng-click="open($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </button>
+        </span>
+      </p>
+      <script cam-script type="text/form-script">
+        $scope.open = function($event) {
+          $event.preventDefault();
+          $event.stopPropagation();
+          $scope.dateFieldOpened = true;
+        };
+      </script>
+    </div>
+  </div>
+
+  <!-- 2nd date picker with German date format -->
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Date 2</label>
+    <div class="col-sm-10">
+      <p class="input-group">
+        <input type="text"
+             ng-model="date2"
+             class="form-control"
+             uib-datepicker-popup="dd.MM.yyyy"
+             is-open="date2FieldOpened" />
+
+        <span class="input-group-btn">
+          <button type="button"
+                  class="btn btn-default"
+                  ng-click="open2($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </button>
+        </span>
+      </p>
+      <script cam-script type="text/form-script">
+        $scope.open2 = function($event) {
+          $event.preventDefault();
+          $event.stopPropagation();
+          $scope.date2FieldOpened = true;
+        };
+        camForm.on('submit', function() {
+          // variable date2 isn't created if you didn't select a date in the datepicker
+          var d = $scope.date2;
+          camForm.variableManager.createVariable({
+              name: 'date2',
+              type: 'Date',
+              value: d,
+              isDirty: true
+          });
+        });
+      </script>
+    </div>
+  </div>
+
+</form>

@@ -37,7 +37,7 @@
         <include>**/*.bpmn</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
+    <fileSet filtered="false" encoding="UTF-8">
       <directory>src/test/resources</directory>
       <includes>
         <include>**/*.properties</include>

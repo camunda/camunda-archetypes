@@ -3,8 +3,8 @@
 #set( $symbol_escape = '\' )
 # Copy this file to 'build.properties' and modify it to match your system
 # Alternatively, you can also copy it to '${symbol_dollar}{user.home}/.camunda/build.properties'
-# to have a central configuration that works with all camunda BPM projects
+# to have a central configuration that works with all Camunda BPM projects
 
-# Defines the deployment folder in a camunda BPM installation (backslashes need to be escaped or replaced by forward slashes).
+# Defines the deployment folder in a Camunda BPM installation (backslashes need to be escaped or replaced by forward slashes).
 deploy.jboss.dir=C:/camunda/camunda-bpm-jboss-${camunda-version}/server/jboss-as-${jboss-version}/standalone/deployments
 deploy.tomcat.dir=C:/camunda/camunda-bpm-tomcat-${camunda-version}/server/apache-tomcat-${tomcat-version}/webapps

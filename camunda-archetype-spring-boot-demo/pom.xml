@@ -8,6 +8,11 @@
     <version>7.10.1-SNAPSHOT</version>
   </parent>
 
+  <!--
+    Unfortunately we cannot easily change the group id here -
+    as it requires a different Sonartype account.
+    <groupId>com.camunda.consulting</groupId>
+  -->
   <artifactId>camunda-archetype-spring-boot-demo</artifactId>
   <packaging>maven-archetype</packaging>
 
@@ -61,4 +66,5 @@
       </testResource>
     </testResources>
   </build>
+
 </project>

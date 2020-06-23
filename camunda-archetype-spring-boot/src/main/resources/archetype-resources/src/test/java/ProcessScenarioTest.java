@@ -37,8 +37,6 @@ import static org.junit.Assert.*;
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)
 public class ProcessScenarioTest {
 
-  private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
-
   @Autowired
   private ProcessEngine processEngine;
 
@@ -69,7 +67,7 @@ public class ProcessScenarioTest {
     // Define scenarios by using camunda-bpm-assert-scenario:
 
     //ExecutableRunner starter = Scenario.run(myProcess) //
-    //    .startByKey(PROCESS_DEFINITION_KEY);
+    //    .startByKey(ProcessConstants.PROCESS_DEFINITION_KEY);
 
     // when(myProcess.waitsAtReceiveTask(anyString())).thenReturn((messageSubscription) -> {
     //  messageSubscription.receive();

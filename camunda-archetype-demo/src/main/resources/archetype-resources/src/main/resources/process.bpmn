@@ -1,31 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.1.2">
   <bpmn:process id="${artifactId}" name="${artifactId}" isExecutable="true">
-    <bpmn:startEvent id="StartEventProcessStarted" name="Process&#10;started">
+    <bpmn:startEvent id="StartEvent" name="Request&#10;received" camunda:formKey="embedded:app:forms/start-form.html">
       <bpmn:outgoing>SequenceFlow1</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:endEvent id="EndEventProcessEnded" name="Process&#10;ended">
+    <bpmn:sequenceFlow id="SequenceFlow1" sourceRef="StartEvent" targetRef="ServiceTask_Logger" />
+    <bpmn:serviceTask id="ServiceTask_Logger" name="Log to console" camunda:class="${package}.LoggerDelegate">
       <bpmn:incoming>SequenceFlow1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow2" sourceRef="ServiceTask_Logger" targetRef="UserTask_Approve" />
+    <bpmn:userTask id="UserTask_Approve" name="Approve" camunda:formKey="embedded:app:forms/task-form.html">
+      <bpmn:incoming>SequenceFlow2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_12smwbc</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_12smwbc" sourceRef="UserTask_Approve" targetRef="UserTask_UploadDocument" />
+    <bpmn:userTask id="UserTask_UploadDocument" name="Upload document" camunda:formKey="embedded:app:forms/task-form-pdf-upload.html">
+      <bpmn:incoming>SequenceFlow_12smwbc</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0zocbfw</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0zocbfw" sourceRef="UserTask_UploadDocument" targetRef="UserTask_ReviewDocument" />
+    <bpmn:userTask id="UserTask_ReviewDocument" name="Review document" camunda:formKey="embedded:app:forms/task-form-pdf-viewer.html">
+      <bpmn:incoming>SequenceFlow_0zocbfw</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_08jyhlk</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_08jyhlk" sourceRef="UserTask_ReviewDocument" targetRef="UserTask_SelectDate" />
+    <bpmn:userTask id="UserTask_SelectDate" name="Select date" camunda:formKey="embedded:app:forms/task-form-date-picker.html">
+      <bpmn:incoming>SequenceFlow_08jyhlk</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0z2p45s</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0z2p45s" sourceRef="UserTask_SelectDate" targetRef="UserTask_ChangeDate" />
+    <bpmn:userTask id="UserTask_ChangeDate" name="Change date" camunda:formKey="embedded:app:forms/task-form-date-changer.html">
+      <bpmn:incoming>SequenceFlow_0z2p45s</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_16m351m</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="EndEvent" name="Request&#10;processed">
+      <bpmn:incoming>SequenceFlow_16m351m</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="SequenceFlow1" sourceRef="StartEventProcessStarted" targetRef="EndEventProcessEnded" />
+    <bpmn:sequenceFlow id="SequenceFlow_16m351m" sourceRef="UserTask_ChangeDate" targetRef="EndEvent" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="${artifactId}">
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEventProcessStarted">
-        <dc:Bounds x="173" y="102" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="EndEvent_0fkea3f_di" bpmnElement="EndEventProcessEnded">
-        <dc:Bounds x="556" y="102" width="36" height="36" />
+      <bpmndi:BPMNShape id="StartEvent_1x3yvag_di" bpmnElement="StartEvent">
+        <dc:Bounds x="120" y="116" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="529" y="138" width="90" height="20" />
+          <dc:Bounds x="118" y="159" width="42" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_08va5r8_di" bpmnElement="SequenceFlow1">
-        <di:waypoint xsi:type="dc:Point" x="209" y="120" />
-        <di:waypoint xsi:type="dc:Point" x="556" y="120" />
+      <bpmndi:BPMNEdge id="SequenceFlow_1nr52xp_di" bpmnElement="SequenceFlow1">
+        <di:waypoint x="156" y="134" />
+        <di:waypoint x="202" y="134" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1tiizv6_di" bpmnElement="UserTask_Approve">
+        <dc:Bounds x="353" y="94" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_12smwbc_di" bpmnElement="SequenceFlow_12smwbc">
+        <di:waypoint x="453" y="134" />
+        <di:waypoint x="504" y="134" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0ju9tk1_di" bpmnElement="UserTask_UploadDocument">
+        <dc:Bounds x="504" y="94" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0zocbfw_di" bpmnElement="SequenceFlow_0zocbfw">
+        <di:waypoint x="604" y="134" />
+        <di:waypoint x="655" y="134" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1w7xiuy_di" bpmnElement="UserTask_ReviewDocument">
+        <dc:Bounds x="655" y="94" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_08jyhlk_di" bpmnElement="SequenceFlow_08jyhlk">
+        <di:waypoint x="755" y="134" />
+        <di:waypoint x="806" y="134" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0kz3qb7_di" bpmnElement="UserTask_SelectDate">
+        <dc:Bounds x="806" y="94" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0z2p45s_di" bpmnElement="SequenceFlow_0z2p45s">
+        <di:waypoint x="906" y="134" />
+        <di:waypoint x="957" y="134" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0o0i9ht_di" bpmnElement="UserTask_ChangeDate">
+        <dc:Bounds x="957" y="94" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1uwz9fv_di" bpmnElement="EndEvent">
+        <dc:Bounds x="1106" y="116" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="337.5" y="110" width="90" height="20" />
+          <dc:Bounds x="1099" y="159" width="51" height="27" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_16m351m_di" bpmnElement="SequenceFlow_16m351m">
+        <di:waypoint x="1057" y="134" />
+        <di:waypoint x="1106" y="134" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1j60ym2_di" bpmnElement="ServiceTask_Logger">
+        <dc:Bounds x="202" y="94" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ebsnny_di" bpmnElement="SequenceFlow2">
+        <di:waypoint x="302" y="134" />
+        <di:waypoint x="353" y="134" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

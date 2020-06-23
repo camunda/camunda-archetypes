@@ -1,0 +1,82 @@
+<!--
+You can use this form through Camunda Tasklist
+by setting the formKey of a BPMN User Task to:
+embedded:app:forms/task-form-pdf-viewer.html
+-->
+
+<form role="form">
+
+<!-- two-column layout -->
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-4">
+
+  <!-- table for listing existing variables -->
+  <script cam-script type="text/form-script">
+    var variableManager = camForm.variableManager;
+
+    camForm.on('form-loaded', function() {
+      // variables that are not already used in cam-variable bindings
+      // must be fetched explicitly
+      camForm.variableManager.fetchVariable('name');
+//      camForm.variableManager.fetchVariable('');
+    });
+
+    camForm.on('variables-fetched', function() {
+      // access to all process variables after the form has loaded
+      $scope.variables = variableManager.variables;
+//      debugger;
+    });
+  </script>
+  <h3>Process Variables</h3>
+  <table class="table table-striped">
+    <tr>
+      <td>Name</td>
+      <td>{{variables.name.value}}</td>
+    </tr>
+<!--
+    <tr>
+      <td></td>
+      <td>{{variables..value}}</td>
+    </tr>
+-->
+    <tr ng-repeat="variable in variables">
+      <!-- TODO ignore file and object variables -->
+      <td>{{variable.name}}</td>
+      <td>{{variable.value}}</td>
+    </tr>
+  </table>
+
+  <!-- file download -->  
+  <div class="form-group">
+    <label class="control-label">Document</label>
+    <div class="controls">
+      <a cam-file-download="document"></a>
+    </div>
+  </div>
+
+  
+  </div>
+  <!-- 2nd column -->
+  <div class="col-md-8">
+  
+    <!-- PDF viewer -->  
+  	<object data="{{contextPath}}/file-variable?taskId={{taskId}}&variableName=document" type="application/pdf" style="width:100%; height:585px;">
+		 <p>
+		 	It appears you don't have a PDF plugin for this browser. No biggie... you can 
+		 	<a href="{{contextPath}}/file-variable?taskId={{taskId}}&variableName=document"> click here to download the PDF file.</a>
+		 </p>
+ 	</object>
+    <script cam-script type="text/form-script">
+      camForm.on('form-loaded', function() {
+        $scope.contextPath = camForm.formUrl.split("/forms/")[0];
+        $scope.taskId = camForm.taskId;
+      });
+    </script>
+
+  <!-- end two-column layout -->
+  </div>
+</div>
+</div>  
+
+</form>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>\${groupId}</groupId>
@@ -14,12 +15,13 @@
   <properties>
     <camunda.version>${camunda-version}</camunda.version>
     <!--
-    Adjust if you want to use Camunda Community Edition (CE):
-    <camunda.version>${camunda-version}</camunda.version>
-    Make sure you also switch to the CE webapp dependency
-    and CE repository below
+    Adjust if you want to use Camunda Enterprise Edition (EE):
+    <camunda.version>${camunda-version}-ee</camunda.version>
+    Make sure you also switch to the ee webapp dependency
+    and EE repository below
     -->
-    <cxf.version>3.2.7</cxf.version>
+    <cxf.version>3.3.1</cxf.version>
+
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,15 +50,9 @@
 
   <dependencies>
     <dependency>
-      <!-- process engine, needs to be 'provided' because it's already a shared library in the container -->
+      <!-- process engine, needs to be 'provided' because it's already a shared library in the application server -->
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <!-- decision engine, only needed for using the DMN engine standalone -->
-      <groupId>org.camunda.bpm.dmn</groupId>
-      <artifactId>camunda-engine-dmn</artifactId>
       <scope>provided</scope>
     </dependency>
 
@@ -66,42 +62,49 @@
       <artifactId>camunda-bpm-assert</artifactId>
       <version>1.2</version>
       <scope>test</scope>
+<!--
+      <groupId>org.camunda.bpm.assert</groupId>
+      <artifactId>camunda-bpm-assert</artifactId>
+      <version>3.0.0</version>
+      <scope>test</scope>
+-->
     </dependency>
 
-    <!-- Required to use Spin dataformat support in unit tests -->
+
+    <!-- Required to use Spin dataformat support -->
     <dependency>
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-dataformat-all</artifactId>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine-plugin-spin</artifactId>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
 
-    <!-- Required to use Connectors in unit tests -->
+    <!-- Required to use Connectors -->
     <dependency>
       <groupId>org.camunda.connect</groupId>
       <artifactId>camunda-connect-connectors-all</artifactId>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine-plugin-connect</artifactId>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
 
-    <!-- Required to use Templates in unit tests -->
+    <!-- Required to use Templates -->
     <dependency>
       <groupId>org.camunda.template-engines</groupId>
       <artifactId>camunda-template-engines-freemarker</artifactId>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.camunda.template-engines</groupId>
       <artifactId>camunda-template-engines-velocity</artifactId>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -134,45 +137,89 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- use logback as logger -->
     <dependency>
-      <!-- use logback as logger -->
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.1.3</version>
       <scope>test</scope>
     </dependency>
 
+    <!-- apache commons logging => slf4j -->
     <dependency>
       <groupId>org.slf4j</groupId>
-      <!-- apache commons logging => slf4j -->
       <artifactId>jcl-over-slf4j</artifactId>
       <version>1.7.25</version>
       <scope>test</scope>
     </dependency>
 
+    <!-- java util logging => slf4j -->
     <dependency>
-      <!--  java util logging => slf4j -->
       <groupId>org.slf4j</groupId>
       <artifactId>jul-to-slf4j</artifactId>
       <version>1.7.25</version>
       <scope>test</scope>
     </dependency>
 
+    <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
+
+    <!-- used in FileVariableServlet -->
     <dependency>
-      <!-- used in FileVariableServlet -->
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.6</version>
     </dependency>
-
-    <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
-
     <dependency>
-        <groupId>com.camunda.consulting.util</groupId>
-        <artifactId>camunda-util-demo-support</artifactId>
-        <version>0.4.3</version>
+      <groupId>com.camunda.consulting.util</groupId>
+      <artifactId>camunda-util-demo-support</artifactId>
+      <version>0.4.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.camunda.consulting.util</groupId>
+      <artifactId>camunda-util-demo-data-generator</artifactId>
+      <version>0.5.3</version>
     </dependency>
 
+    <!-- JAX-RS client implementation-->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-rs-client</artifactId>
+      <version>${cxf.version}</version>
+    </dependency>
+
+    <!-- JAXB -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-core</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+    <!-- JAX-WS -->
+    <dependency>
+    	<groupId>javax.xml.ws</groupId>
+    	<artifactId>jaxws-api</artifactId>
+    	<version>2.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.jws</groupId>
+      <artifactId>jsr181-api</artifactId>
+      <version>1.0-MR1</version>
+    </dependency>
   </dependencies>
 
   <repositories>
@@ -192,6 +239,18 @@
   <build>
     <finalName>\${project.artifactId}</finalName>
     <plugins>
+      <plugin>
+        <!-- Deploy to Wildfly: mvn clean wildfly:deploy See also: https://docs.jboss.org/wildfly/plugins/maven/latest/examples/deployment-example.html -->
+        <groupId>org.wildfly.plugins</groupId>
+        <artifactId>wildfly-maven-plugin</artifactId>
+        <version>2.0.1.Final</version>
+      </plugin>
+      <plugin>
+        <!-- Deploy to JBoss AS7: mvn clean jboss-as:deploy See also: https://docs.jboss.org/jbossas/7/plugins/maven/latest/examples/deployment-example.html -->
+        <groupId>org.jboss.as.plugins</groupId>
+        <artifactId>jboss-as-maven-plugin</artifactId>
+        <version>7.9.Final</version>
+      </plugin>
       <plugin>
         <!-- Deploy to Tomcat using: mvn clean package antrun:run
              Follow the instructions in build.properties.example to make it work!-->
@@ -231,19 +290,7 @@
           <password>admin</password>
         </configuration>
       </plugin>
-      <plugin>
-        <!-- Deploy to JBoss AS7: mvn clean jboss-as:deploy See also: https://docs.jboss.org/jbossas/7/plugins/maven/latest/examples/deployment-example.html -->
-        <groupId>org.jboss.as.plugins</groupId>
-        <artifactId>jboss-as-maven-plugin</artifactId>
-        <version>7.9.Final</version>
-      </plugin>
-      <plugin>
-        <!-- Deploy to Wildfly: mvn clean wildfly:deploy See also: https://docs.jboss.org/wildfly/plugins/maven/latest/examples/deployment-example.html -->
-        <groupId>org.wildfly.plugins</groupId>
-        <artifactId>wildfly-maven-plugin</artifactId>
-        <version>1.2.1.Final</version>
-      </plugin>
-<!--
+<!-- JAX-WS example for generating a SOAP client out of WSDL
       <plugin>
         <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-codegen-plugin</artifactId>
@@ -269,4 +316,5 @@
 -->
     </plugins>
   </build>
+
 </project>
