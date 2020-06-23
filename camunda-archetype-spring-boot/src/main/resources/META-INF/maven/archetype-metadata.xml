@@ -7,6 +7,7 @@
     <requiredProperty key="project-description"><defaultValue>Spring Boot Application using [Camunda](http://docs.camunda.org).</defaultValue></requiredProperty>
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
     <requiredProperty key="camunda-spring-boot-version"><defaultValue>${version.camundaSpringBoot}</defaultValue></requiredProperty>
+    <requiredProperty key="spring-boot-version"><defaultValue>${version.springBoot}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-groupId"><defaultValue>${project.groupId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-artifactId"><defaultValue>${project.artifactId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-version"><defaultValue>${project.version}</defaultValue></requiredProperty>

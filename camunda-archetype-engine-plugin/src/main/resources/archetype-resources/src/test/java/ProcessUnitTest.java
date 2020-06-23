@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 /**
  * Test case starting an in-memory database-backed Process Engine.
  */
-public class InMemoryH2Test {
+public class ProcessUnitTest {
 
   static {
     LogFactory.useSlf4jLogging(); // MyBatis

@@ -28,13 +28,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
 import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
+
 
 /**
  * Test case starting an in-memory database-backed Process Engine.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)
-public class ProcessTest {
+public class ProcessUnitTest {
 
   @Autowired
   private ProcessEngine processEngine;

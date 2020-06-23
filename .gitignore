@@ -6,3 +6,4 @@ target/
 *.iml
 .idea/
 .vscode/
+.DS_Store

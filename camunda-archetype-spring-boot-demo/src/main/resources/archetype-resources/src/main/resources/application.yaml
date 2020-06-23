@@ -17,3 +17,7 @@ server.port: 8080
 spring.devtools:
     restart:
       enabled: false # Do not enable this with ObjectValues as variables!
+camunda.bpm.job-execution:
+#   deployment-aware: true
+   wait-time-in-millis: 5000
+   max-wait: 10000
