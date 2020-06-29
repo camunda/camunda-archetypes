@@ -49,12 +49,15 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
+        <include>.project</include>
         <include>README.md</include>
       </includes>
     </fileSet>
     <fileSet filtered="false" encoding="UTF-8">
       <directory></directory>
       <includes>
+        <include>.classpath</include>
+        <include>.settings/*</include>
         <include>.gitignore</include>
         <include>settings.xml</include>
       </includes>
