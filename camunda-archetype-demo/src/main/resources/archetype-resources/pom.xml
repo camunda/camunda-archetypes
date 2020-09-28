@@ -300,10 +300,10 @@
             <id>generate-sources</id>
             <phase>generate-sources</phase>
             <configuration>
-                <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
+                <sourceRoot>\${project.build.directory}/generated/cxf</sourceRoot>
                 <wsdlOptions>
                     <wsdlOption>
-                        <wsdl>${basedir}/src/main/resources/wsdl/Antrag_v1_0.wsdl</wsdl>
+                        <wsdl>\${basedir}/src/main/resources/wsdl/Antrag_v1_0.wsdl</wsdl>
                     </wsdlOption>
                 </wsdlOptions>
             </configuration>
