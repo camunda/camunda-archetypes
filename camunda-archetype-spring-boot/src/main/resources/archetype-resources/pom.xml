@@ -57,19 +57,16 @@
       <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
       Make sure you also use an EE version of Camunda - see above
       -->
-      <version>${camundaSpringBoot.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-      <version>${camundaSpringBoot.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-      <version>${camundaSpringBoot.version}</version>
     </dependency>
 
     <dependency>
