@@ -1,4 +1,4 @@
-# H2 database file
+# Camunda H2 database file
 camunda-db.mv.db
 camunda-db.trace.db
 
