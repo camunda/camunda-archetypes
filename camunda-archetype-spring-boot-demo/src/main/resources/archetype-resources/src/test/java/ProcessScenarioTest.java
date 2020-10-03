@@ -5,12 +5,16 @@ import org.camunda.bpm.engine.ProcessEngine;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.test.Deployment;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
+import org.camunda.bpm.scenario.ProcessScenario;
+import org.camunda.bpm.spring.boot.starter.test.helper.StandaloneInMemoryTestConfiguration;
 import org.camunda.bpm.extension.process_test_coverage.junit.rules.TestCoverageProcessEngineRuleBuilder;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -36,7 +40,7 @@ import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
  * Test case starting an in-memory database-backed Process Engine.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+@SpringBootTest
 public class ProcessScenarioTest {
 
   @Autowired
@@ -46,8 +50,6 @@ public class ProcessScenarioTest {
     LogFactory.useSlf4jLogging(); // MyBatis
   }
 
-  //@Rule
-  //public final ProcessEngineRule processEngine = new StandaloneInMemoryTestConfiguration().rule();
   @Rule @ClassRule
   public static ProcessEngineRule rule;
 

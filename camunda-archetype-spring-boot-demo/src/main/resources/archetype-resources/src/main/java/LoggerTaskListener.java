@@ -23,13 +23,13 @@ public class LoggerTaskListener implements TaskListener {
   public void notify(DelegateTask task) {
 
     LOGGER.info("\n\n  ... LoggerDelegate invoked by "
-        + "activtyName='" + execution.getCurrentActivityName() + "'"
-        + ", activtyId=" + execution.getCurrentActivityId()
-        + ", processDefinitionId=" + execution.getProcessDefinitionId()
-        + ", processInstanceId=" + execution.getProcessInstanceId()
-        + ", businessKey=" + execution.getProcessBusinessKey()
-        + ", executionId=" + execution.getId()
-        + ", variables=" + execution.getVariables()
+        + "activtyName='" + task.getExecution().getCurrentActivityName() + "'"
+        + ", activtyId=" + task.getExecution().getCurrentActivityId()
+        + ", processDefinitionId=" + task.getProcessDefinitionId()
+        + ", processInstanceId=" + task.getProcessInstanceId()
+        + ", businessKey=" + task.getExecution().getProcessBusinessKey()
+        + ", executionId=" + task.getId()
+        + ", variables=" + task.getVariables()
         + " \n\n");
 
   }

@@ -35,7 +35,7 @@ import static org.assertj.core.api.Assertions.*;
  * Test case starting an in-memory database-backed Process Engine.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+@SpringBootTest
 public class ProcessUnitTest {
 
   @Autowired
