@@ -1,7 +1,6 @@
-#set($hash = '#')
 spring.datasource:
-  url: jdbc:h2:./camunda-db;DB_CLOSE_DELAY=-1;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
-${hash}shareable h2 database: jdbc:h2:./camunda-db;DB_CLOSE_DELAY=-1;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+  url: jdbc:h2:./camunda-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#shareable h2 database: jdbc:h2:./camunda-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
   username: sa
   password: sa
 spring.h2.console.enabled: true
@@ -13,10 +12,11 @@ camunda.bpm:
     lastName: Demo
   filter:
     create: All Tasks
+  default-serialization-format: application/json
 server.port: 8080
 spring.devtools:
     restart:
-      enabled: true
+      enabled: false # Do not enable this with ObjectValues as variables!
 camunda.bpm.job-execution:
 #   deployment-aware: true
    wait-time-in-millis: 5000

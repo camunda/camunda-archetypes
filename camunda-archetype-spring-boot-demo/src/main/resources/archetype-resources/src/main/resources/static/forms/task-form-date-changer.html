@@ -1,16 +1,14 @@
-<strong>Here you would put the actual form to work on the task</strong>
+<!--
+You can use this form through Camunda Tasklist
+by setting the formKey of a BPMN User Task to:
+embedded:/forms/task-form-date-changer.html
+-->
 
-<p>
-  You can use this form through Camunda Tasklist
-  by setting the formKey of a BPMN User Task to:
-  <code>embedded:app:forms/task-form-change-date2.html</code>
-</p>
-
-<form class="form-horizontal">
+<form class="form-horizontal" role="form">
 
   <!-- 2nd date picker with German date format -->
   <div class="form-group">
-    <label class="control-label">Date 2</label>
+    <label class="col-sm-2 control-label">Date 2</label>
     <div class="controls">
       <p class="input-group">
         <input type="text"

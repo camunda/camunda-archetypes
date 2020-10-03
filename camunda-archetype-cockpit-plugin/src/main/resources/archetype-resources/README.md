@@ -37,15 +37,5 @@ Built and tested against Camunda BPM version ${camunda-version}.
 
 ${symbol_pound}${symbol_pound} Known Limitations
 
-${symbol_pound}${symbol_pound} Improvements Backlog
-
 ${symbol_pound}${symbol_pound} License
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-<!-- HTML snippet for index page
-  <tr>
-    <td><img src="snippets/${artifactId}/screenshot.png" width="100"></td>
-    <td><a href="snippets/${artifactId}">${camunda-plugin-name}</a></td>
-    <td>${camunda-plugin-description}</td>
-  </tr>
--->

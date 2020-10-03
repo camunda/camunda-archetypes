@@ -18,7 +18,6 @@
     Make sure you also switch to the ee webapp dependency
     and EE repository below
     -->
-    <camundaSpringBoot.version>${camunda-spring-boot-version}</camundaSpringBoot.version>
     <springBoot.version>${spring-boot-version}</springBoot.version>
 
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -57,19 +56,17 @@
       <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
       Make sure you also use an EE version of Camunda - see above
       -->
-      <version>${camundaSpringBoot.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-      <version>${camundaSpringBoot.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-      <version>${camundaSpringBoot.version}</version>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -77,7 +74,7 @@
       <artifactId>h2</artifactId>
     </dependency>
 
-    <!-- required to use H2 as a file based database  (Otherwise it's In-Memory) -->
+    <!-- required to use H2 as a file based database  (otherwise it's in-memory) -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -93,16 +90,18 @@
       <artifactId>camunda-engine-plugin-spin</artifactId>
     </dependency>
 
+    <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-bpm-process-test-coverage -->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>org.camunda.bpm.extension</groupId>
+      <artifactId>camunda-bpm-process-test-coverage</artifactId>
+      <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.bpm.extension</groupId>
       <artifactId>camunda-bpm-assert-scenario</artifactId>
-      <version>0.2</version>
+      <version>${version.camunda-bpm-assert-scenario}</version>
       <scope>test</scope>
     </dependency>
 
@@ -114,6 +113,13 @@
     </dependency>
 
     <!-- Add your own dependencies here, if in compile scope, they are added to the jar -->
+
+    <!-- JAXB -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
   </dependencies>
 

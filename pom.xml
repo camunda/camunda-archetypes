@@ -5,13 +5,13 @@
   <parent>
     <groupId>org.camunda</groupId>
     <artifactId>camunda-release-parent</artifactId>
-    <version>3.1</version>
+    <version>3.7</version>
     <relativePath />
   </parent>
 
   <groupId>org.camunda.bpm.archetype</groupId>
   <artifactId>camunda-archetype-root</artifactId>
-  <version>7.11.2-SNAPSHOT</version>
+  <version>7.14.0-alpha4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>camunda Archetypes Parent POM</name>
@@ -19,7 +19,8 @@
   <modules>
     <module>camunda-archetype-ejb-war</module>
     <module>camunda-archetype-servlet-war</module>
-    <module>camunda-archetype-cockpit-plugin</module>
+<!-- Needs to be adjusted to new plugin system
+    <module>camunda-archetype-cockpit-plugin</module>-->
     <module>camunda-archetype-engine-plugin</module>
     <module>camunda-archetype-demo</module>
     <module>camunda-archetype-spring-boot</module>
@@ -27,11 +28,14 @@
   </modules>
 
   <properties>
-    <version.camunda>7.11.0</version.camunda>
+    <version.camunda>7.14.0-alpha4</version.camunda>
     <version.camunda-test-coverage>0.3.2</version.camunda-test-coverage>
-    <version.springBoot>2.1.5.RELEASE</version.springBoot>
-    <version.camundaSpringBoot>3.3.1</version.camundaSpringBoot>
-    
+    <version.springBoot>2.3.4.RELEASE</version.springBoot>
+    <version.assertj-core>3.16.1</version.assertj-core>
+    <version.camunda-bpm-assert>7.0.0</version.camunda-bpm-assert>
+    <version.camunda-bpm-assert-scenario>1.0.0</version.camunda-bpm-assert-scenario>
+    <version.junit>4.13</version.junit>
+    <version.h2>1.4.200</version.h2>
   </properties>
 
   <licenses>
@@ -41,23 +45,11 @@
     </license>
   </licenses>
 
-  <url>http://www.camunda.org</url>
+  <url>https://www.camunda.com</url>
   <organization>
-    <name>camunda services GmbH</name>
+    <name>Camunda Services GmbH</name>
     <url>http://www.camunda.com</url>
   </organization>
-  <developers>
-    <developer>
-      <name>Falko Menge</name>
-      <organization>camunda services GmbH</organization>
-      <url>http://www.camunda.com</url>
-    </developer>
-    <developer>
-      <name>Bernd Rücker</name>
-      <organization>camunda services GmbH</organization>
-      <url>http://www.camunda.com</url>
-    </developer>
-  </developers>
 
   <build>
     <pluginManagement>

@@ -17,7 +17,8 @@ ${symbol_pound}${symbol_pound} How does it work?
 ${symbol_pound}${symbol_pound} How to use it?
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Unit Test
-You can run the JUnit test [InMemoryH2Test](src/main/resources/archetype-resources/src/test/java/InMemoryH2Test.java) in your IDE or using:
+You can run the JUnit test [ProcessTest](src/test/java/${packageInPathFormat}/ProcessTest.java) in your IDE or using:
+
 ```bash
 mvn clean test
 ```
@@ -29,6 +30,7 @@ from our [Download Page](https://camunda.com/download/).
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Manually
 1. Build the application using:
+
 ```bash
 mvn clean package
 ```
@@ -40,6 +42,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Apache Tomcat (usin
 1. First copy the file `build.properties.example` to `build.properties`
 2. Edit the `build.properties` file and put the path to your Tomcat into `deploy.tomcat.dir`.
 3. Build and deploy the process application using:
+
 ```bash
 mvn clean package antrun:run
 ```
@@ -52,12 +55,14 @@ ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Apache Tomcat (usin
 1. Create a user in Tomcat with the role `manager-script`.
 2. Add the user's credentials to the `tomcat7-maven-plugin` configuration in the [pom.xml](pom.xml) file.
 3. Build and deploy the process application using:
+
 ```bash
 mvn clean tomcat7:deploy
 ```
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Wildfly (using Wildfly Maven Plugin)
 1. Build and deploy the process application using:
+
 ```bash
 mvn clean wildfly:deploy
 ```
@@ -72,10 +77,12 @@ ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Ant (and Maven)
 1. First copy the file `build.properties.example` to `build.properties`
 2. Edit the `build.properties` file and put the path to your application server inside it.
 3. Build and deploy the process application using:
+
 ```bash
 ant deploy.tomcat
 ```
 or
+
 ```bash
 ant deploy.jboss
 ```
@@ -98,13 +105,6 @@ ${symbol_pound}${symbol_pound} Known Limitations
 ${symbol_pound}${symbol_pound} License
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
-<!-- HTML snippet for index page
-  <tr>
-    <td><img src="snippets/${artifactId}/src/main/resources/process.png" width="100"></td>
-    <td><a href="snippets/${artifactId}">${project-name}</a></td>
-    <td>${project-description}</td>
-  </tr>
--->
 <!-- Tweet
 New @Camunda example: ${project-name} - ${project-description} https://github.com/camunda-consulting/code/tree/master/snippets/${artifactId}
 -->

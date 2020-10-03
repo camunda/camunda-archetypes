@@ -8,6 +8,11 @@
     <version>7.11.2-SNAPSHOT</version>
   </parent>
 
+  <!--
+    Unfortunately we cannot easily change the group id here -
+    as it requires a different Sonartype account.
+    <groupId>com.camunda.consulting</groupId>
+  -->
   <artifactId>camunda-archetype-cockpit-plugin</artifactId>
   <packaging>maven-archetype</packaging>
 

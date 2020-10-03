@@ -5,16 +5,21 @@
   <parent>
     <groupId>org.camunda.bpm.archetype</groupId>
     <artifactId>camunda-archetype-root</artifactId>
-    <version>7.11.2-SNAPSHOT</version>
+    <version>7.14.0-alpha4-SNAPSHOT</version>
   </parent>
 
+  <!--
+    Unfortunately we cannot easily change the group id here -
+    as it requires a different Sonartype account.
+    <groupId>com.camunda.consulting</groupId>
+  -->
   <artifactId>camunda-archetype-servlet-war</artifactId>
   <packaging>maven-archetype</packaging>
 
-  <name>Camunda BPM Archetype: Process Application (Servlet, WAR)</name>
+  <name>Camunda BPM Archetype: Servlet Process Application (WAR)</name>
   <description>Process application that uses a shared Camunda BPM engine in a Servlet Container, e.g. Apache Tomcat.
           Contains: Servlet Process Application, BPMN Process, Java Delegate, HTML5-based start and task forms,
-          JUnit Test with in-memory engine, Maven Plugins or Ant build script for one-click deployment in Eclipse</description>
+          JUnit Test with in-memory engine and visual process test coverage, Maven Plugins or Ant build script for one-click deployment in Eclipse</description>
 
   <build>
     <extensions>
@@ -51,4 +56,5 @@
       </testResource>
     </testResources>
   </build>
+
 </project>

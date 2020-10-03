@@ -5,9 +5,14 @@
   <parent>
     <groupId>org.camunda.bpm.archetype</groupId>
     <artifactId>camunda-archetype-root</artifactId>
-    <version>7.11.2-SNAPSHOT</version>
+    <version>7.14.0-alpha4-SNAPSHOT</version>
   </parent>
 
+  <!--
+    Unfortunately we cannot easily change the group id here -
+    as it requires a different Sonartype account.
+    <groupId>com.camunda.consulting</groupId>
+  -->
   <artifactId>camunda-archetype-spring-boot</artifactId>
   <packaging>maven-archetype</packaging>
 

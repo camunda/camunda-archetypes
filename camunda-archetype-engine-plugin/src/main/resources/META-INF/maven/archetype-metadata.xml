@@ -5,7 +5,7 @@
   <requiredProperties>
     <requiredProperty key="class-name-prefix"><defaultValue>MySample</defaultValue></requiredProperty>
     <requiredProperty key="project-name"><defaultValue>Camunda BPM Process Engine Plugin</defaultValue></requiredProperty>
-    <requiredProperty key="project-description"><defaultValue>A Plugin for [Camunda BPM](http://docs.camunda.org).</defaultValue></requiredProperty>
+    <requiredProperty key="project-description"><defaultValue>A plugin for [Camunda BPM](http://docs.camunda.org).</defaultValue></requiredProperty>
     <requiredProperty key="camunda-version"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-groupId"><defaultValue>${project.groupId}</defaultValue></requiredProperty>
     <requiredProperty key="archetype-artifactId"><defaultValue>${project.artifactId}</defaultValue></requiredProperty>
@@ -21,13 +21,7 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/resources</directory>
       <includes>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>src/main/resources</directory>
-      <includes>
-        <include>**/*.png</include>
+        <include>**/*</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -43,7 +37,7 @@
         <include>**/*.bpmn</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
+    <fileSet filtered="false" encoding="UTF-8">
       <directory>src/test/resources</directory>
       <includes>
         <include>**/*.properties</include>
@@ -53,8 +47,6 @@
       <directory></directory>
       <includes>
         <include>README.md</include>
-        <include>build.xml</include>
-        <include>build.properties.example</include>
       </includes>
     </fileSet>
   </fileSets>

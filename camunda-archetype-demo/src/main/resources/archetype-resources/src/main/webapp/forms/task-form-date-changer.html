@@ -1,0 +1,55 @@
+<!--
+You can use this form through Camunda Tasklist
+by setting the formKey of a BPMN User Task to:
+embedded:app:forms/task-form-date-changer.html
+-->
+
+<form class="form-horizontal" role="form">
+
+  <!-- 2nd date picker with German date format -->
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Date 2</label>
+    <div class="controls">
+      <p class="input-group">
+        <input type="text"
+             ng-model="date2"
+             class="form-control"
+             uib-datepicker-popup="dd.MM.yyyy"
+             is-open="date2FieldOpened" />
+
+        <span class="input-group-btn">
+          <button type="button"
+                  class="btn btn-default"
+                  ng-click="open2($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </button>
+        </span>
+      </p>
+      <script cam-script type="text/form-script">
+        $scope.open2 = function($event) {
+          $event.preventDefault();
+          $event.stopPropagation();
+          $scope.date2FieldOpened = true;
+        };
+        camForm.on('form-loaded', function() {
+          // tell the form SDK to fetch the variable named 'customer'
+          camForm.variableManager.fetchVariable('date2');
+        });
+        camForm.on('variables-fetched', function() {
+          // work with the variable (bind it to the current AngularJS $scope)
+          $scope.date2 = camForm.variableManager.variableValue('date2');
+        });
+        camForm.on('submit', function() {
+          // variable date2 isn't created if you didn't select a date in the datepicker
+          var d = $scope.date2;
+          console.log('date now ' + d);
+          camForm.variableManager.variableValue('date2', $scope.date2);
+        });
+      </script>
+    </div>
+  </div>
+
+  <script cam-script type="text/form-script">
+  // custom JavaScript goes here
+  </script>
+</form>

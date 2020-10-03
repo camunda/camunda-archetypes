@@ -1,0 +1,44 @@
+<!--
+You can use this form through Camunda Tasklist
+by setting the formKey of a BPMN User Task to:
+embedded:app:forms/task-form-pdf-upload.html
+-->
+
+<form class="form-horizontal" role="form">
+  <!-- file upload -->  
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="documentUpload">Document</label>
+    <div class="col-sm-10">
+      <input type="file"
+        id="documentUpload"
+        cam-variable-name="document"
+        cam-variable-type="File"
+        cam-max-filesize="10000000"
+        class="form-control"/>
+      <div class="help-block">This field is required</div>
+    </div>
+  </div>
+
+  <script cam-script type="text/form-script">
+    var fileUpload = $('#documentUpload');
+    var fileUploadHelpBlock = $('.help-block', fileUpload.parent());
+
+    function flagFileUpload() {
+      var hasFile = fileUpload.get(0).files.length > 0;
+      fileUpload[hasFile ? 'removeClass' : 'addClass']('ng-invalid');
+      fileUploadHelpBlock[hasFile ? 'removeClass' : 'addClass']('error');
+      return hasFile;
+    }
+
+    fileUpload.on('change', function () {
+      flagFileUpload();
+    });
+
+    camForm.on('submit', function(evt) {
+      var hasFile = flagFileUpload();
+
+      // prevent submit if user has not provided a file
+      evt.submitPrevented = !hasFile;
+    });
+  </script>
+</form>

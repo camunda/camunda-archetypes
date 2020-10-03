@@ -17,7 +17,8 @@ ${symbol_pound}${symbol_pound} How does it work?
 ${symbol_pound}${symbol_pound} How to use it?
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Unit Test
-You can run the JUnit test [InMemoryH2Test](src/main/resources/archetype-resources/src/test/java/InMemoryH2Test.java) in your IDE or using:
+You can run the JUnit test [ProcessTest](src/test/java/${packageInPathFormat}/ProcessTest.java) in your IDE or using:
+
 ```bash
 mvn clean test
 ```
@@ -25,10 +26,11 @@ mvn clean test
 ${symbol_pound}${symbol_pound}${symbol_pound} Deployment to an Application Server
 You can also build and deploy the process application to an application server.
 For an easy start you can download JBoss Wildfly with a pre-installed Camunda
-from our [Download Page](https://camunda.com/download/).
+from our [Download Page](https://downloads.camunda.cloud/release/camunda-bpm/wildfly/).
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Manually
 1. Build the application using:
+
 ```bash
 mvn clean package
 ```
@@ -38,33 +40,23 @@ For a faster 1-click (re-)deployment see the alternatives below.
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Wildfly (using Wildfly Maven Plugin)
 1. Build and deploy the process application using:
+
 ```bash
 mvn clean wildfly:deploy
 ```
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} JBoss AS7 (using JBoss AS Maven Plugin)
 1. Build and deploy the process application using:
+
 ```bash
 mvn clean jboss-as:deploy
-```
-
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Arquillian Test
-There is also an `ArquillianTest`, which by default connects to a
-Camunda instance running locally on a Wildfly application server.
-
-1. Build and run the Arquillian test on Wildfly using:
-```bash
-mvn clean test -Parq-wildfly-remote
-```
-or on JBoss AS 7 using:
-```bash
-mvn clean test -Parq-jbossas-remote
 ```
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Ant (and Maven)
 1. First copy the file `build.properties.example` to `build.properties`
 2. Edit the `build.properties` file and put the path to your application server inside it.
 3. Build and deploy the process application using:
+
 ```bash
 ant deploy.jboss
 ```
@@ -87,13 +79,6 @@ ${symbol_pound}${symbol_pound} Known Limitations
 ${symbol_pound}${symbol_pound} License
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
-<!-- HTML snippet for index page
-  <tr>
-    <td><img src="snippets/${artifactId}/src/main/resources/process.png" width="100"></td>
-    <td><a href="snippets/${artifactId}">${project-name}</a></td>
-    <td>${project-description}</td>
-  </tr>
--->
 <!-- Tweet
 New @Camunda example: ${project-name} - ${project-description} https://github.com/camunda-consulting/code/tree/master/snippets/${artifactId}
 -->

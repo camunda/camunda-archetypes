@@ -17,7 +17,8 @@ ${symbol_pound}${symbol_pound} How does it work?
 ${symbol_pound}${symbol_pound} How to use it?
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Unit Test
-You can run the JUnit test [InMemoryH2Test](src/main/resources/archetype-resources/src/test/java/ProcessTest.java) in your IDE or using:
+You can run the JUnit test [ProcessTest](src/test/java/${packageInPathFormat}/ProcessTest.java) in your IDE or using:
+
 ```bash
 mvn clean test
 ```
@@ -27,18 +28,21 @@ You can also build and run the process application with Spring Boot.
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Manually
 1. Build the application using:
+
 ```bash
 mvn clean package
 ```
 2. Run the *.jar file from the `target` directory using:
+
 ```bash
-java -jar target/${project-name}.jar
+java -jar target/${project-artifactId}.jar
 ```
 
 For a faster 1-click (re-)deployment see the alternatives below.
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Maven Spring Boot Plugin
 1. Build and deploy the process application using:
+
 ```bash
 mvn clean package spring-boot:run
 ```
@@ -60,13 +64,6 @@ ${symbol_pound}${symbol_pound} Known Limitations
 ${symbol_pound}${symbol_pound} License
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
-<!-- HTML snippet for index page
-  <tr>
-    <td><img src="snippets/${artifactId}/src/main/resources/process.png" width="100"></td>
-    <td><a href="snippets/${artifactId}">${project-name}</a></td>
-    <td>${project-description}</td>
-  </tr>
--->
 <!-- Tweet
 New @Camunda example: ${project-name} - ${project-description} https://github.com/camunda-consulting/code/tree/master/snippets/${artifactId}
 -->

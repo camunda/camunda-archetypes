@@ -13,14 +13,13 @@
   <properties>
     <camunda.version>${camunda-version}</camunda.version>
     <!--
-    Adjust if you want to use Camunda Community Edition (CE):
-    <camunda.version>${camunda-version}</camunda.version>
-    Make sure you also switch to the CE webapp dependency
-    and CE repository below
+    Adjust if you want to use Camunda Enterprise Edition (EE):
+    <camunda.version>${camunda-version}-ee</camunda.version>
+    Make sure you also switch to the ee webapp dependency
+    and EE repository below
     -->
-    <camundaSpringBoot.version>${camunda-spring-boot-version}</camundaSpringBoot.version>
     <springBoot.version>${spring-boot-version}</springBoot.version>
-    <cxf.version>3.2.7</cxf.version>
+    <cxf.version>3.3.1</cxf.version>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -39,14 +38,6 @@
         <scope>import</scope>
         <type>pom</type>
       </dependency>
-      <!-- DMN BOM only needed for using the DMN engine standalone -->
-      <dependency>
-        <groupId>org.camunda.bpm.dmn</groupId>
-        <artifactId>camunda-engine-dmn-bom</artifactId>
-        <version>${camunda.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
@@ -58,22 +49,14 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- see https://github.com/camunda-consulting/code/tree/master/snippets/springboot-customized-webapps
-    <dependency>
-      <groupId>com.camunda.consulting</groupId>
-      <artifactId>springboot-customized-webapp-webjar</artifactId>
-      <version>${camunda.version}</version>
-    </dependency>
-    -->
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
       <!--
-      Adjust if you want to use CE:
-      <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
-      Make sure you also use an CE version of Camunda - see above
+      Adjust if you want to use EE:
+      <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
+      Make sure you also use an EE version of Camunda - see above
       -->
-      <version>${camundaSpringBoot.version}</version>
       <!-- needed when using springboot-customized-webapp-webjar
       <exclusions>
         <exclusion>
@@ -87,17 +70,23 @@
       </exclusions>
       -->
     </dependency>
+    <!-- see https://github.com/camunda-consulting/code/tree/master/snippets/springboot-customized-webapps
+    <dependency>
+      <groupId>com.camunda.consulting</groupId>
+      <artifactId>springboot-customized-webapp-webjar</artifactId>
+      <version>${camunda.version}</version>
+    </dependency>
+    -->
 
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-      <version>${camundaSpringBoot.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-      <version>${camundaSpringBoot.version}</version>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -105,7 +94,7 @@
       <artifactId>h2</artifactId>
     </dependency>
 
-    <!-- required to use H2 as a file based database  (Otherwise it's In-Memory) -->
+    <!-- required to use H2 as a file based database  (otherwise it's in-memory) -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -125,10 +114,12 @@
     <dependency>
       <groupId>org.camunda.connect</groupId>
       <artifactId>camunda-connect-connectors-all</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine-plugin-connect</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <!-- Required to use Templates -->
@@ -141,10 +132,18 @@
       <artifactId>camunda-template-engines-velocity</artifactId>
     </dependency>
 
+    <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-bpm-process-test-coverage -->
+    <dependency>
+      <groupId>org.camunda.bpm.extension</groupId>
+      <artifactId>camunda-bpm-process-test-coverage</artifactId>
+      <version>${version.camunda-test-coverage}</version>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.camunda.bpm.extension</groupId>
       <artifactId>camunda-bpm-assert-scenario</artifactId>
-      <version>0.2</version>
+      <version>${version.camunda-bpm-assert-scenario}</version>
       <scope>test</scope>
     </dependency>
 
@@ -157,17 +156,56 @@
 
     <!-- Add your own dependencies here, if in compile scope, they are added to the jar -->
 
+    <!-- Do not enable this with ObjectValues as variables! -->
+    <!--
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <scope>runtime</scope>
     </dependency>
+    -->
     <dependency>
       <groupId>com.camunda.consulting.util</groupId>
       <artifactId>camunda-util-demo-support</artifactId>
       <version>0.4.3</version>
     </dependency>
+    <dependency>
+      <groupId>com.camunda.consulting.util</groupId>
+      <artifactId>camunda-util-demo-data-generator</artifactId>
+      <version>0.5.3</version>
+    </dependency>
 
+    <!-- JAXB -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-core</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+    <!-- JAX-WS -->
+    <dependency>
+    	<groupId>javax.xml.ws</groupId>
+    	<artifactId>jaxws-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.jws</groupId>
+      <artifactId>jsr181-api</artifactId>
+      <version>1.0-MR1</version>
+    </dependency>
   </dependencies>
 
   <repositories>
@@ -210,7 +248,7 @@
           <mainClass>${package}.CamundaApplication</mainClass>
         </configuration>
       </plugin>
-<!--
+<!-- JAX-WS example for generating a SOAP client out of WSDL
       <plugin>
         <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-codegen-plugin</artifactId>
@@ -220,10 +258,10 @@
             <id>generate-sources</id>
             <phase>generate-sources</phase>
             <configuration>
-                <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
+                <sourceRoot>\${project.build.directory}/generated/cxf</sourceRoot>
                 <wsdlOptions>
                     <wsdlOption>
-                        <wsdl>${basedir}/src/main/resources/wsdl/Antrag_v1_0.wsdl</wsdl>
+                        <wsdl>\${basedir}/src/main/resources/wsdl/Antrag_v1_0.wsdl</wsdl>
                     </wsdlOption>
                 </wsdlOptions>
             </configuration>

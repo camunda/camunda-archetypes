@@ -1,5 +1,4 @@
-#set($hash = '#')
-$hash Test configuration using spring-boot
+# Test configuration using spring-boot
 
 camunda.bpm:
   job-execution.enabled: false

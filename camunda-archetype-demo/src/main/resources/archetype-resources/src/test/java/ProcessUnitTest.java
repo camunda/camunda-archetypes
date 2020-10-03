@@ -3,13 +3,17 @@
 #set( $symbol_escape = '\' )
 package ${package};
 
+import java.util.Arrays;
 import java.sql.SQLException;
 
 import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.test.ProcessEngineRule;
-import org.camunda.bpm.extension.process_test_coverage.junit.rules.TestCoverageProcessEngineRuleBuilder;
 import org.camunda.bpm.engine.test.Deployment;
+import org.camunda.bpm.engine.test.ProcessEngineRule;
+import org.camunda.bpm.engine.variable.Variables;
+import org.camunda.bpm.engine.variable.Variables.SerializationDataFormats;
+import org.camunda.bpm.engine.variable.value.ObjectValue;
+import org.camunda.bpm.extension.process_test_coverage.junit.rules.TestCoverageProcessEngineRuleBuilder;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Rule;
@@ -23,41 +27,41 @@ import static org.junit.Assert.*;
  */
 public class ProcessUnitTest {
 
-  @ClassRule
-  @Rule
-  public static ProcessEngineRule rule = TestCoverageProcessEngineRuleBuilder.create().build();
-
-  private static final String PROCESS_DEFINITION_KEY = "${artifactId}";
-
   static {
     LogFactory.useSlf4jLogging(); // MyBatis
   }
+
+  @ClassRule
+  @Rule
+  public static ProcessEngineRule rule = TestCoverageProcessEngineRuleBuilder.create().build();
 
   @Before
   public void setup() {
     init(rule.getProcessEngine());
   }
 
-  /**
-   * Just tests if the process definition is deployable.
-   */
-  @Test
-  @Deployment(resources = "process.bpmn")
-  public void testParsingAndDeployment() {
-    // nothing is done here, as we just want to check for exceptions during deployment
-  }
-
   @Test
   @Deployment(resources = "process.bpmn")
   public void testHappyPath() throws SQLException {
-    ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
+    // Drive the process by API and assert correct behavior by camunda-bpm-assert
 
-    assertThat(processInstance).isEnded();
+    ObjectValue documents = Variables
+      .objectValue(Arrays.asList(new String[]{"one", "two", "three"}))
+      .serializationDataFormat(SerializationDataFormats.JSON)
+      .create();
+
+    ProcessInstance processInstance = runtimeService()
+        .createProcessInstanceByKey(ProcessConstants.PROCESS_DEFINITION_KEY)
+        .businessKey("23")
+        .setVariable("documents", documents)
+        .execute();
+
+    assertThat(processInstance).isWaitingAt("UserTask_Approve");
 
     // To inspect the DB, run the following line in the debugger
     // then connect your browser to: http://localhost:8082
     // and enter the JDBC URL: jdbc:h2:mem:camunda
-    org.h2.tools.Server.createWebServer("-web").start();
+//    org.h2.tools.Server.createWebServer("-web").start();
 
   }
 

@@ -1,3 +1,6 @@
+# Camunda H2 database file
+camunda-db.mv.db
+camunda-db.trace.db
 
 .metadata
 bin/
@@ -101,6 +104,8 @@ hs_err_pid*
 ## Plugin-specific files:
 
 # IntelliJ
+.idea
+*.iml
 /out/
 
 # mpeltonen/sbt-idea plugin
@@ -208,5 +213,32 @@ Session.vim
 # auto-generated tag files
 tags
 
-# H2 database file
-camunda-db.mv.db
+# Scala/Play/SBT
+logs/
+project/project/
+project/target/
+target/
+tmp/
+.history
+dist/
+RUNNING_PID
+
+# NodeJS. See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+node_modules/
+.pnp/
+.pnp.js
+coverage/
+build/
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.vscode

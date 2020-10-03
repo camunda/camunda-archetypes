@@ -5,15 +5,20 @@
   <parent>
     <groupId>org.camunda.bpm.archetype</groupId>
     <artifactId>camunda-archetype-root</artifactId>
-    <version>7.11.2-SNAPSHOT</version>
+    <version>7.14.0-alpha4-SNAPSHOT</version>
   </parent>
 
+  <!--
+    Unfortunately we cannot easily change the group id here -
+    as it requires a different Sonartype account.
+    <groupId>com.camunda.consulting</groupId>
+  -->
   <artifactId>camunda-archetype-engine-plugin</artifactId>
   <packaging>maven-archetype</packaging>
 
   <name>Camunda BPM Archetype: Process Engine Plugin (JAR)</name>
   <description>Process engine plugin for Camunda BPM.
-          Contains: ProcessEnginePlugin, ParseListener, JUnit Test with in-memory engine, BPMN Process for testing.</description>
+          Contains: ProcessEnginePlugin, ParseListener, JUnit Test with in-memory engine, BPMN process for testing.</description>
 
   <build>
     <extensions>
@@ -50,4 +55,5 @@
       </testResource>
     </testResources>
   </build>
+
 </project>

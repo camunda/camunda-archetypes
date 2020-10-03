@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>\${groupId}</groupId>
@@ -48,6 +49,13 @@
 
   <dependencies>
     <dependency>
+      <!-- process engine, needs to be provided -->
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
       <!-- Cockpit Plugin API, needs to be provided -->
       <groupId>org.camunda.bpm.webapp</groupId>
       <artifactId>camunda-webapp</artifactId>
@@ -56,15 +64,9 @@
       <version>${camunda.version}</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <!-- process engine, needs to be provided -->
-      <groupId>org.camunda.bpm</groupId>
-      <artifactId>camunda-engine</artifactId>
-      <scope>provided</scope>
-    </dependency>
 
+    <!-- Java EE 6 APIs -->
     <dependency>
-      <!-- Java EE 6 APIs -->
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>
       <version>6.0</version>
@@ -79,13 +81,12 @@
     </dependency>
 
     <dependency>
+      <!-- Needed for InMemoryH2Test -->
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <version>1.4.197</version>
       <scope>test</scope>
     </dependency>
-
-    <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
 
   </dependencies>
 
@@ -122,4 +123,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
