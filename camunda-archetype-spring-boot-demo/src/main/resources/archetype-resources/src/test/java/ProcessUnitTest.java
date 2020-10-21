@@ -77,10 +77,7 @@ public class ProcessUnitTest {
 
     assertThat(processInstance).isWaitingAt("UserTask_Approve");
 
-    // To inspect the DB, run the following line in the debugger
-    // then connect your browser to: http://localhost:8082
-    // and enter the JDBC URL: jdbc:h2:mem:camunda
-//    org.h2.tools.Server.createWebServer("-web").start();
+    // To inspect the DB connect your browser to: http://localhost:8080/h2-console/
 
   }
 
