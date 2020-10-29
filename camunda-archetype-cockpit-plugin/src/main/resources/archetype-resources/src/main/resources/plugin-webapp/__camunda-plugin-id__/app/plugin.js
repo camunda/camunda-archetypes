@@ -31,9 +31,9 @@ export default {
   id: "${camunda-plugin-id}",
   pluginPoint: "cockpit.processes.dashboard",
   priority: 12,
-  render: (container, { cockpitApi, engine }) => {
+  render: (container, { api }) => {
     fetch(
-      `${cockpitApi}/plugin/${camunda-plugin-id}/${engine}/process-instance`
+      `${api.cockpitApi}/plugin/${camunda-plugin-id}/${api.engine}/process-instance`
     ).then(async res => {
       const processInstanceCounts = await res.json();
       container.innerHTML = generateHTML(processInstanceCounts);
