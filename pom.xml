@@ -28,11 +28,11 @@
   </modules>
 
   <properties>
-    <version.camunda>7.14.0-alpha4</version.camunda>
-    <version.camunda-test-coverage>0.3.2</version.camunda-test-coverage>
+    <version.camunda>7.14.0</version.camunda>
+    <version.camunda-test-coverage>0.4.0</version.camunda-test-coverage>
     <version.springBoot>2.3.4.RELEASE</version.springBoot>
     <version.assertj-core>3.16.1</version.assertj-core>
-    <version.camunda-bpm-assert>7.0.0</version.camunda-bpm-assert>
+    <version.camunda-bpm-assert>8.0.0</version.camunda-bpm-assert>
     <version.camunda-bpm-assert-scenario>1.0.0</version.camunda-bpm-assert-scenario>
     <version.junit>4.13</version.junit>
     <version.h2>1.4.200</version.h2>
@@ -44,12 +44,6 @@
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
-
-  <url>https://www.camunda.com</url>
-  <organization>
-    <name>Camunda Services GmbH</name>
-    <url>http://www.camunda.com</url>
-  </organization>
 
   <build>
     <pluginManagement>
@@ -67,26 +61,6 @@
             <escapeString>\</escapeString>
           </configuration>
         </plugin>
-        <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>${plugin.version.nexus-staging}</version>
-          <executions>
-            <execution>
-              <id>central-deploy</id>
-              <phase>deploy</phase>
-              <goals>
-                <goal>deploy</goal>
-              </goals>
-              <configuration>
-                <serverId>central</serverId>
-                <nexusUrl>https://oss.sonatype.org</nexusUrl>
-                <skipNexusStagingDeployMojo>${skip.central.release}</skipNexusStagingDeployMojo>
-                <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -97,11 +71,6 @@
     <url>https://github.com/camunda/camunda-archetypes</url>
     <tag>HEAD</tag>
   </scm>
-
-  <issueManagement>
-    <system>Jira</system>
-    <url>https://app.camunda.com/jira/browse/CAM/</url>
-  </issueManagement>
 
   <distributionManagement>
     <repository>
