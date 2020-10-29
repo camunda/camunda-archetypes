@@ -21,7 +21,7 @@
     <module>camunda-archetype-servlet-war</module>
     <module>camunda-archetype-cockpit-plugin</module>
     <module>camunda-archetype-engine-plugin</module>
-    <module>camunda-archetype-demo</module>
+    <module>camunda-archetype-servlet-war-demo</module>
     <module>camunda-archetype-spring-boot</module>
     <module>camunda-archetype-spring-boot-demo</module>
   </modules>
