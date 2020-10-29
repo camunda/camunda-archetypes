@@ -60,8 +60,12 @@
       <directory></directory>
       <includes>
         <include>README.md</include>
-        <include>build.xml</include>
-        <include>build.properties.example</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="false" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>screenshot.png</include>
       </includes>
     </fileSet>
   </fileSets>
