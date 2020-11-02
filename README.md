@@ -7,7 +7,7 @@ These are project templates for [Camunda BPM](http://camunda.org/), which enable
 A local build of all archetypes can be achieved with `mvn clean source:jar install` in the root directory. 
 You can also build separate archetypes in their respective modules with the same command.
 
-Besides, a couple of utility scripts that can aid in development can be found in the `utility` directory.
+Besides, a couple of utility scripts that can aid in development can be found in the `utilities` directory.
 
 ## Contributing
 
