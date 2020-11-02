@@ -2,27 +2,22 @@
 
 These are project templates for [Camunda BPM](http://camunda.org/), which enable a quickstart for developing process applications.
 
+## Build from Source
 
-## Usage in Eclipse
+A local build of all archetypes can be achieved with `mvn clean source:jar install` in the root directory. 
+You can also build separate archetypes in their respective modules with the same command.
 
-1. Add archetype catalog (**Preferences -> Maven -> Archetypes -> Add Remote Catalog**):
-    **https://app.camunda.com/nexus/content/repositories/camunda-bpm/**
-2. Create Maven project from archetype (**File -> New -> Project... -> Maven -> Maven Project**)
+Besides, a couple of utility scripts that can aid in development can be found in the `utility` directory.
 
-## Usage in IntelliJ IDEA
+## Contributing
 
-1.  While in any project, navigate to "**File > Settings... > Plugins**".  
-
-Search for plugin in the Marketplace labeled "**Maven Archetype Catalogs**" and install, then restart IDEA to complete install.
-
-2.  In an open project, navigate to: "**File > Settings... > Build,Execution,Deployment > Build Tools > Maven Archetype Catalogs**"
-
-Click the plus sign (**+**) on the right side of the settings dialog to add an Archetype Catalog to the list.  NOTE:  you must add "archetype-catalog.xml", as the URL must be a direct file location.  Like so:
-
-**https://app.camunda.com/nexus/content/repositories/camunda-bpm/archetype-catalog.xml**
-
-Select OK.  Then when creating a Maven project, you should see the camunda archetypes listed.
+Have a look at our [contribution guide](https://github.com/camunda/camunda-bpm-platform/blob/master/CONTRIBUTING.md) for how to contribute to this repository.
+If you are creating issues in our issue tracker, you can add the `component` named `archetypes`.
 
 ## Full Documentation
 
 The complete documentation of the Maven Archetypes is provided as part of the [Camunda BPM User Guide](https://docs.camunda.org/manual/latest/user-guide/process-applications/maven-archetypes/).
+
+## License
+
+The source files in this repository are made available under the [Apache License Version 2.0](./LICENSE).
