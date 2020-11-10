@@ -35,7 +35,7 @@ mvn clean package
 2. Run the *.jar file from the `target` directory using:
 
 ```bash
-java -jar target/${project-artifactId}.jar
+java -jar target/${artifactId}.jar
 ```
 
 For a faster 1-click (re-)deployment see the alternatives below.
