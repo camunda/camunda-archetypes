@@ -57,7 +57,7 @@ and inspect it using
 [Camunda Cockpit](http://docs.camunda.org/latest/guides/user-guide/#cockpit).
 
 ${symbol_pound}${symbol_pound} Environment Restrictions
-Built and tested against Camunda BPM version ${camunda-version}.
+Built and tested against Camunda Platform version ${camunda-version}.
 
 ${symbol_pound}${symbol_pound} Known Limitations
 

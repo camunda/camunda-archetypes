@@ -27,7 +27,7 @@ Discover more Cockpit plugins in the
 [Camunda Cockpit examples](https://github.com/camunda/camunda-bpm-examples/tree/master/cockpit)
 
 ${symbol_pound}${symbol_pound} Environment Restrictions
-Built and tested against Camunda BPM version ${camunda-version}.
+Built and tested against Camunda Platform version ${camunda-version}.
 
 ${symbol_pound}${symbol_pound} License
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).

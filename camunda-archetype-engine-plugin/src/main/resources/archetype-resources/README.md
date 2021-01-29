@@ -16,10 +16,10 @@ ${symbol_pound}${symbol_pound} How does it work?
 
 ${symbol_pound}${symbol_pound} How to use it?
 To get started refer to `InMemoryH2Test` and `camunda.cfg.xml`.
-For using it in production you have to [integrate the plugin into your Camunda BPM configuration](https://docs.camunda.org/manual/latest/user-guide/process-engine/process-engine-plugins/).
+For using it in production you have to [integrate the plugin into your Camunda Platform configuration](https://docs.camunda.org/manual/latest/user-guide/process-engine/process-engine-plugins/).
 
 ${symbol_pound}${symbol_pound} Environment Restrictions
-Built and tested against Camunda BPM version ${camunda-version}.
+Built and tested against Camunda Platform version ${camunda-version}.
 
 ${symbol_pound}${symbol_pound} Known Limitations
 
