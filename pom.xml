@@ -74,12 +74,12 @@
   <distributionManagement>
     <repository>
       <id>camunda-nexus</id>
-      <name>camunda BPM Maven Repository</name>
+      <name>Camunda Platform Maven Repository</name>
       <url>https://app.camunda.com/nexus/content/repositories/camunda-bpm</url>
     </repository>
     <snapshotRepository>
       <id>camunda-nexus</id>
-      <name>camunda BPM Maven Snapshot Repository</name>
+      <name>Camunda Platform Maven Snapshot Repository</name>
       <url>https://app.camunda.com/nexus/content/repositories/camunda-bpm-snapshots</url>
     </snapshotRepository>
   </distributionManagement>

@@ -7,7 +7,7 @@
     <requiredProperty key="camunda-plugin-base-class-name"><defaultValue>CockpitPlugin</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-category"><defaultValue>Please select one of Sample|Monitoring|Exploration|Business</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-name"><defaultValue>Camunda Cockpit Plugin</defaultValue></requiredProperty>
-    <requiredProperty key="camunda-plugin-description"><defaultValue>A simple plugin that showcases the plugin system of Cockpit, the process monitoring tool of [Camunda BPM](http://docs.camunda.org).</defaultValue></requiredProperty>
+    <requiredProperty key="camunda-plugin-description"><defaultValue>A simple plugin that showcases the plugin system of Cockpit, the process monitoring tool of [Camunda Platform](http://docs.camunda.org).</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-screenshot"><defaultValue>screenshot.png</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-testedOnVersion"><defaultValue>${version.camunda}</defaultValue></requiredProperty>
     <requiredProperty key="camunda-plugin-language"><defaultValue>EN</defaultValue></requiredProperty>

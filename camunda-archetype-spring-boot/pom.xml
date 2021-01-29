@@ -16,7 +16,7 @@
   <artifactId>camunda-archetype-spring-boot</artifactId>
   <packaging>maven-archetype</packaging>
 
-  <name>Camunda BPM Archetype: Spring Boot Process Application</name>
+  <name>Camunda Platform Archetype: Spring Boot Process Application</name>
   <description>Process application that uses the Spring Boot Starter
           Contains: BPMN Process, Java Delegate, HTML5- start and task forms,
           JUnit Test with in-memory engine and visual process test coverage</description>

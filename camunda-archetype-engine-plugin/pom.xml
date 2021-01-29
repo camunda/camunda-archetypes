@@ -16,7 +16,7 @@
   <artifactId>camunda-archetype-engine-plugin</artifactId>
   <packaging>maven-archetype</packaging>
 
-  <name>Camunda BPM Archetype: Process Engine Plugin (JAR)</name>
+  <name>Camunda Platform Archetype: Process Engine Plugin (JAR)</name>
   <description>Process engine plugin for Camunda BPM.
           Contains: ProcessEnginePlugin, ParseListener, JUnit Test with in-memory engine, BPMN process for testing.</description>
 
