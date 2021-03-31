@@ -27,13 +27,13 @@
   </modules>
 
   <properties>
-    <version.camunda>7.14.0</version.camunda>
+    <version.camunda>7.15.0</version.camunda>
     <version.camunda-test-coverage>0.4.0</version.camunda-test-coverage>
-    <version.springBoot>2.3.4.RELEASE</version.springBoot>
-    <version.assertj-core>3.16.1</version.assertj-core>
-    <version.camunda-bpm-assert>8.0.0</version.camunda-bpm-assert>
+    <version.springBoot>2.4.4</version.springBoot>
+    <version.assertj-core>3.18.1</version.assertj-core>
+    <version.camunda-bpm-assert>10.0.0</version.camunda-bpm-assert>
     <version.camunda-bpm-assert-scenario>1.0.0</version.camunda-bpm-assert-scenario>
-    <version.junit>4.13</version.junit>
+    <version.junit>4.13.1</version.junit>
     <version.h2>1.4.200</version.h2>
   </properties>
 
