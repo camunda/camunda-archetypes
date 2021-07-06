@@ -2,6 +2,11 @@
 
 These are project templates for [Camunda Platform](http://camunda.org/), which enable a quickstart for developing process applications.
 
+## Template repositories
+We provide a template repository for every Camunda Archetype. Every repository contains a project generated from one specific archetype. You can find the whole list on [GitHub](https://github.com/camunda?q=camunda-bpm-archetype-).
+
+With every new release of the Archetypes, we will update those repositories with a new version as well. This allows to investigate possible update paths from one Camunda version to another and also enables you to simply update your existing project by pulling in the latest changes.
+
 ## Build from Source
 
 A local build of all archetypes can be achieved with `mvn clean source:jar install` in the root directory. 
