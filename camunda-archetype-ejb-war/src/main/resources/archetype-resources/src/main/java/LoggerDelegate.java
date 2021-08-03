@@ -20,8 +20,8 @@ public class LoggerDelegate implements JavaDelegate {
   public void execute(DelegateExecution execution) throws Exception {
     
     LOGGER.info("\n\n  ... LoggerDelegate invoked by "
-            + "activtyName='" + execution.getCurrentActivityName() + "'"
-            + ", activtyId=" + execution.getCurrentActivityId()
+            + "activityName='" + execution.getCurrentActivityName() + "'"
+            + ", activityId=" + execution.getCurrentActivityId()
             + ", processDefinitionId=" + execution.getProcessDefinitionId()
             + ", processInstanceId=" + execution.getProcessInstanceId()
             + ", businessKey=" + execution.getProcessBusinessKey()
