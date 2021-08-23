@@ -69,9 +69,9 @@ under the License.
    |-->
   <servers>
     <server>
-	<id>camunda-bpm-nexus-ee</id>
-	<username>YOUR_USERNAME</username>
-	<password>YOUR_PASSWORD</password>
+      <id>camunda-bpm-nexus-ee</id>
+      <username>YOUR_USERNAME</username>
+      <password>YOUR_PASSWORD</password>
     </server>
   </servers>
 
