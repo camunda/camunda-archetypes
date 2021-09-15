@@ -20,7 +20,7 @@
     Make sure you also switch to the ee webapp dependency
     and EE repository below
     -->
-    <cxf.version>3.3.1</cxf.version>
+    <cxf.version>3.4.4</cxf.version>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
