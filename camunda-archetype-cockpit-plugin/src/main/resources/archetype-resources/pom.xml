@@ -107,21 +107,6 @@
 
   <build>
     <finalName>\${project.artifactId}</finalName>
-    <plugins>
-      <plugin>
-        <!-- Deploy to Tomcat using: mvn clean package antrun:run
-             Follow the instructions in build.properties.example to make it work!-->
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <configuration>
-          <tasks>
-            <ant antfile="\${basedir}/build.xml">
-              <target name="install.cockpit.plugin" />
-            </ant>
-          </tasks>
-        </configuration>
-      </plugin>
-    </plugins>
   </build>
 
 </project>
