@@ -19,7 +19,7 @@
   <name>Camunda Platform Archetype: Servlet Process Application (WAR)</name>
   <description>Process application that uses a shared Camunda Platform engine in a Servlet Container, e.g. Apache Tomcat.
           Contains: Servlet Process Application, BPMN Process, Java Delegate, HTML5-based start and task forms,
-          JUnit Test with in-memory engine and visual process test coverage, Maven Plugins or Ant build script for one-click deployment in Eclipse</description>
+          JUnit Test with in-memory engine and visual process test coverage, Maven Plugins</description>
 
   <build>
     <extensions>

@@ -17,7 +17,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>Camunda Platform Archetype: Cockpit Plugin (JAR)</name>
-  <description>Plugin for Camunda Cockpit, contains REST-Backend, MyBatis database query, HTML and JavaScript frontend, Ant build script for one-click deployment</description>
+  <description>Plugin for Camunda Cockpit, contains REST-Backend, MyBatis database query, HTML and JavaScript frontend</description>
 
   <build>
     <extensions>

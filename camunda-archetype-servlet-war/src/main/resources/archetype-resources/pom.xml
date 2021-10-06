@@ -172,19 +172,6 @@
         <artifactId>jboss-as-maven-plugin</artifactId>
         <version>7.9.Final</version>
       </plugin>
-      <plugin>
-        <!-- Deploy to Tomcat using: mvn clean package antrun:run
-             Follow the instructions in build.properties.example to make it work!-->
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <configuration>
-          <tasks>
-            <ant antfile="\${basedir}/build.xml">
-              <target name="copy.war.into.tomcat" />
-            </ant>
-          </tasks>
-        </configuration>
-      </plugin>
       <!-- Tomcat Maven Plugin
 
       Deploy to Tomcat using:
