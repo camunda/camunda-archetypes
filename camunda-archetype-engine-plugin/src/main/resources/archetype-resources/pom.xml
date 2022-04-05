@@ -46,9 +46,8 @@
 
     <dependency>
       <!-- AssertJ Testing Library -->
-      <groupId>org.camunda.bpm.assert</groupId>
+      <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-bpm-assert</artifactId>
-      <version>${version.camunda-bpm-assert}</version>
     </dependency>
 
     <!-- Required by camunda-bpm-assert -->
@@ -77,7 +76,14 @@
     <dependency>
       <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-bpm-process-test-coverage -->
       <groupId>org.camunda.bpm.extension</groupId>
-      <artifactId>camunda-bpm-process-test-coverage</artifactId>
+      <artifactId>camunda-bpm-process-test-coverage-core</artifactId>
+      <version>${version.camunda-test-coverage}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.camunda.bpm.extension</groupId>
+      <artifactId>camunda-bpm-process-test-coverage-junit4</artifactId>
       <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
     </dependency>

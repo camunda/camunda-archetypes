@@ -24,7 +24,6 @@ import org.camunda.bpm.scenario.Scenario;
 import org.camunda.bpm.scenario.run.ProcessRunner.ExecutableRunner;
 
 import org.mockito.Mock;
-import static org.mockito.Matchers.*;
 import static org.mockito.Mockito.*;
 
 import javax.annotation.PostConstruct;
