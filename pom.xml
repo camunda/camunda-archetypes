@@ -27,7 +27,7 @@
   </modules>
 
   <properties>
-    <version.camunda>7.18.0-alpha6</version.camunda>
+    <version.camunda>7.18.0</version.camunda>
     <version.camunda-test-coverage>1.0.3</version.camunda-test-coverage>
     <version.springBoot>2.7.3</version.springBoot>
     <version.assertj-core>3.20.2</version.assertj-core>
