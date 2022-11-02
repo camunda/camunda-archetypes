@@ -1,6 +1,6 @@
 # Camunda Maven Archetypes
 
-These are project templates for [Camunda Platform](http://camunda.org/), which enable a quickstart for developing process applications.
+These are project templates for [Camunda Platform 7](https://camunda.com/platform-7/), which enable a quickstart for developing process applications.
 
 ## Template repositories
 We provide a template repository for every Camunda Archetype. Every repository contains a project generated from one specific archetype. You can find the whole list on [GitHub](https://github.com/camunda?q=camunda-bpm-archetype-).
@@ -21,7 +21,7 @@ If you are creating issues in our issue tracker, you can add the `component` nam
 
 ## Full Documentation
 
-The complete documentation of the Maven Archetypes is provided as part of the [Camunda Platform User Guide](https://docs.camunda.org/manual/latest/user-guide/process-applications/maven-archetypes/).
+The complete documentation of the Maven Archetypes is provided as part of the [Camunda Platform 7 User Guide](https://docs.camunda.org/manual/latest/user-guide/process-applications/maven-archetypes/).
 
 ## License
 
