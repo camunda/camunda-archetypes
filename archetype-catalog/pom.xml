@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.camunda.bpm.archetype</groupId>
+    <artifactId>camunda-archetype-root</artifactId>
+    <version>7.19.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>archetype-catalog</artifactId>
+
+  <packaging>pom</packaging>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <version.download.plugin>1.3.0</version.download.plugin>
+    <version.build.helper.plugin>1.10</version.build.helper.plugin>
+    <catalog.path>~/.m2/repository/</catalog.path>
+  </properties>
+
+  <!-- adding dependencies to all archetypes to move this project at the bottom of the reactor -->
+  <dependencies>
+    <dependency>
+      <groupId>org.camunda.bpm.archetype</groupId>
+      <artifactId>camunda-archetype-ejb-war</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.archetype</groupId>
+      <artifactId>camunda-archetype-engine-plugin</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.archetype</groupId>
+      <artifactId>camunda-archetype-servlet-war</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.archetype</groupId>
+      <artifactId>camunda-archetype-servlet-war-demo</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.archetype</groupId>
+      <artifactId>camunda-archetype-spring-boot</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.archetype</groupId>
+      <artifactId>camunda-archetype-spring-boot-demo</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.googlecode.maven-download-plugin</groupId>
+        <artifactId>download-maven-plugin</artifactId>
+        <version>${version.download.plugin}</version>
+        <executions>
+          <execution>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>https://artifacts.camunda.com/artifactory/camunda-bpm/archetype-catalog.xml</url>
+              <outputFileName>archetype-catalog.xml</outputFileName>
+              <outputDirectory>${catalog.path}</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>${version.build.helper.plugin}</version>
+        <executions>
+          <execution>
+            <id>bsh-property</id>
+            <goals>
+              <goal>bsh-property</goal>
+            </goals>
+            <configuration>
+              <properties>
+                <property>skip.catalog.deploy</property>
+              </properties>
+              <source>skip.catalog.deploy =
+                project.getVersion().endsWith("-SNAPSHOT") ? false : true;
+              </source>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>deploy-file</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy-file</goal>
+            </goals>
+            <configuration>
+              <groupId>org.camunda.bpm.archetype</groupId>
+              <artifactId>archetype-catalog</artifactId>
+              <version>${project.version}</version>
+              <generatePom>false</generatePom>
+              <skip>${skip.catalog.deploy}</skip>
+              <file>${catalog.path}\archetype-catalog.xml</file>
+              <!-- Deployment simulation by storing the catalog locally -->
+              <url>file:~/</url>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

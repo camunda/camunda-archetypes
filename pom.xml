@@ -24,6 +24,7 @@
     <module>camunda-archetype-servlet-war-demo</module>
     <module>camunda-archetype-spring-boot</module>
     <module>camunda-archetype-spring-boot-demo</module>
+    <module>archetype-catalog</module>
   </modules>
 
   <properties>
