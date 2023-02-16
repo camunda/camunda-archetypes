@@ -64,12 +64,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
     </dependency>
@@ -90,18 +84,33 @@
       <artifactId>camunda-engine-plugin-spin</artifactId>
     </dependency>
 
-    <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-bpm-process-test-coverage -->
     <dependency>
-      <groupId>org.camunda.bpm.extension</groupId>
-      <artifactId>camunda-bpm-process-test-coverage-core</artifactId>
-      <version>${version.camunda-test-coverage}</version>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-bpm-junit5</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-bpm-assert</artifactId>
       <scope>test</scope>
     </dependency>
 
+    <!-- Used to generate test coverage reports, see https://github.com/camunda-community-hub/camunda-process-test-coverage -->
     <dependency>
-      <groupId>org.camunda.bpm.extension</groupId>
-      <artifactId>camunda-bpm-process-test-coverage-junit4</artifactId>
-      <version>${version.camunda-test-coverage}</version>
+      <groupId>org.camunda.community.process_test_coverage</groupId>
+      <artifactId>camunda-process-test-coverage-junit5-platform-7</artifactId>
+      <version>2.0.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.community.process_test_coverage</groupId>
+      <artifactId>camunda-process-test-coverage-spring-test-platform-7</artifactId>
+      <version>2.0.0</version>
       <scope>test</scope>
     </dependency>
 
@@ -170,6 +179,11 @@
         <configuration>
           <mainClass>${package}.CamundaApplication</mainClass>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M9</version>
       </plugin>
     </plugins>
   </build>
