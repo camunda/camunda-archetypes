@@ -27,13 +27,14 @@
   </modules>
 
   <properties>
-    <version.camunda>7.18.0</version.camunda>
+    <version.camunda>7.19.0</version.camunda>
     <version.camunda-test-coverage>1.0.3</version.camunda-test-coverage>
-    <version.springBoot>2.7.3</version.springBoot>
-    <version.assertj-core>3.20.2</version.assertj-core>
+    <version.springBoot>2.7.9</version.springBoot>
+    <version.assertj-core>3.22.0</version.assertj-core>
     <version.camunda-bpm-assert-scenario>1.1.1</version.camunda-bpm-assert-scenario>
     <version.junit>4.13.2</version.junit>
     <version.h2>2.1.214</version.h2>
+    <version.maven-war-plugin>3.3.2</version.maven-war-plugin>
   </properties>
 
   <licenses>
@@ -46,6 +47,12 @@
   <build>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${version.maven-war-plugin}</version>
+        </plugin>
+
         <plugin>
           <artifactId>maven-archetype-plugin</artifactId>
           <version>3.1.0</version>

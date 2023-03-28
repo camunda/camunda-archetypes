@@ -1,5 +1,8 @@
 @Library("camunda-ci") _
 buildMavenAndDeployToMavenCentral([
   jdk:8,
-  mvn: 3.5
+  mvn: 3.5,
+  extraJdks: [
+   'openjdk-jdk-17-latest'
+  ]
 ])
