@@ -90,6 +90,12 @@
     </dependency>
 
     <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-bpm-junit5</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
     </dependency>
@@ -132,17 +138,16 @@
       <artifactId>camunda-template-engines-velocity</artifactId>
     </dependency>
 
-    <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-bpm-process-test-coverage -->
+    <!-- Used to generate test coverage reports, see https://github.com/camunda-community-hub/camunda-process-test-coverage -->
     <dependency>
-      <groupId>org.camunda.bpm.extension</groupId>
-      <artifactId>camunda-bpm-process-test-coverage-core</artifactId>
+      <groupId>org.camunda.community.process_test_coverage</groupId>
+      <artifactId>camunda-process-test-coverage-junit5-platform-7</artifactId>
       <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
-      <groupId>org.camunda.bpm.extension</groupId>
-      <artifactId>camunda-bpm-process-test-coverage-junit4</artifactId>
+      <groupId>org.camunda.community.process_test_coverage</groupId>
+      <artifactId>camunda-process-test-coverage-spring-test-platform-7</artifactId>
       <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
     </dependency>
@@ -248,6 +253,11 @@
         <configuration>
           <mainClass>${package}.CamundaApplication</mainClass>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${version.maven-surefire-plugin}</version>
       </plugin>
 <!-- JAX-WS example for generating a SOAP client out of WSDL
       <plugin>

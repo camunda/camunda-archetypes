@@ -104,13 +104,13 @@
     <dependency>
       <groupId>org.camunda.community.process_test_coverage</groupId>
       <artifactId>camunda-process-test-coverage-junit5-platform-7</artifactId>
-      <version>2.0.0</version>
+      <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.camunda.community.process_test_coverage</groupId>
       <artifactId>camunda-process-test-coverage-spring-test-platform-7</artifactId>
-      <version>2.0.0</version>
+      <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
     </dependency>
 
@@ -183,7 +183,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M9</version>
+        <version>${version.maven-surefire-plugin}</version>
       </plugin>
     </plugins>
   </build>

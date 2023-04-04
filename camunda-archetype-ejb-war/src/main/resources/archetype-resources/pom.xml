@@ -102,9 +102,8 @@
     </dependency>
 
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${version.junit}</version>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-bpm-junit5</artifactId>
       <scope>test</scope>
     </dependency>
 
@@ -116,17 +115,16 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Used to generate test coverage reports, see https://github.com/camunda/camunda-bpm-process-test-coverage -->
+    <!-- Used to generate test coverage reports, see https://github.com/camunda-community-hub/camunda-process-test-coverage -->
     <dependency>
-      <groupId>org.camunda.bpm.extension</groupId>
-      <artifactId>camunda-bpm-process-test-coverage-core</artifactId>
+      <groupId>org.camunda.community.process_test_coverage</groupId>
+      <artifactId>camunda-process-test-coverage-junit5-platform-7</artifactId>
       <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
-      <groupId>org.camunda.bpm.extension</groupId>
-      <artifactId>camunda-bpm-process-test-coverage-junit4</artifactId>
+      <groupId>org.camunda.community.process_test_coverage</groupId>
+      <artifactId>camunda-process-test-coverage-spring-test-platform-7</artifactId>
       <version>${version.camunda-test-coverage}</version>
       <scope>test</scope>
     </dependency>
@@ -135,7 +133,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.1.3</version>
+      <version>${version.logback}</version>
       <scope>test</scope>
     </dependency>
 
@@ -143,7 +141,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.7.25</version>
+      <version>${version.slf4j}</version>
       <scope>test</scope>
     </dependency>
 
@@ -151,7 +149,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jul-to-slf4j</artifactId>
-      <version>1.7.25</version>
+      <version>${version.slf4j}</version>
       <scope>test</scope>
     </dependency>
 
@@ -202,6 +200,11 @@
         <groupId>org.jboss.as.plugins</groupId>
         <artifactId>jboss-as-maven-plugin</artifactId>
         <version>7.9.Final</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${version.maven-surefire-plugin}</version>
       </plugin>
     </plugins>
   </build>
