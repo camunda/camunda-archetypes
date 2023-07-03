@@ -19,6 +19,7 @@
     and EE repository below
     -->
     <springBoot.version>${spring-boot-version}</springBoot.version>
+    <jaxb-api.version>2.3.1</jaxb-api.version>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -134,7 +135,14 @@
     <dependency>
       <groupId>javax.xml.bind</groupId>
       <artifactId>jaxb-api</artifactId>
+      <version>${jaxb-api.version}</version>
       <scope>runtime</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>
