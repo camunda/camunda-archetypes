@@ -23,7 +23,7 @@ mvn clean test
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Deployment to an Application Server
 You can also build and deploy the process application to an application server.
-For an easy start you can download JBoss Wildfly with a pre-installed Camunda
+For an easy start you can download WildFly with a pre-installed Camunda
 from our [Download Page](https://downloads.camunda.cloud/release/camunda-bpm/wildfly/).
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Manually
@@ -36,19 +36,13 @@ mvn clean package
 of your application server e.g. `wildfly/standalone/deployments`.
 For a faster 1-click (re-)deployment see the alternatives below.
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Wildfly (using Wildfly Maven Plugin)
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} WildFly (using WildFly Maven Plugin)
 1. Build and deploy the process application using:
 
 ```bash
 mvn clean wildfly:deploy
 ```
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} JBoss AS7 (using JBoss AS Maven Plugin)
-1. Build and deploy the process application using:
-
-```bash
-mvn clean jboss-as:deploy
-```
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Run and Inspect with Tasklist and Cockpit
 Once you deployed the application you can run it using
@@ -57,7 +51,7 @@ and inspect it using
 [Camunda Cockpit](http://docs.camunda.org/latest/guides/user-guide/#cockpit).
 
 ${symbol_pound}${symbol_pound} Environment Restrictions
-Built and tested against Camunda Platform version ${camunda-version}.
+Built and tested against Camunda Platform version ${camunda-version} on WildFly 27+ Application Server.
 
 ${symbol_pound}${symbol_pound} Known Limitations
 
