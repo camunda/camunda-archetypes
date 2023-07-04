@@ -20,10 +20,11 @@
     -->
     <springBoot.version>${spring-boot-version}</springBoot.version>
     <cxf.version>3.4.4</cxf.version>
+    <jaxb-api.version>2.3.1</jaxb-api.version>
+    <jaxws-api.version>2.3.1</jaxws-api.version>
 
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <version.java>1.8</version.java>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -191,6 +192,7 @@
     <dependency>
       <groupId>javax.xml.bind</groupId>
       <artifactId>jaxb-api</artifactId>
+      <version>${jaxb-api.version}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jaxb</groupId>
@@ -206,11 +208,18 @@
     <dependency>
     	<groupId>javax.xml.ws</groupId>
     	<artifactId>jaxws-api</artifactId>
+      <version>${jaxws-api.version}</version>
     </dependency>
     <dependency>
       <groupId>javax.jws</groupId>
       <artifactId>jsr181-api</artifactId>
       <version>1.0-MR1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
 

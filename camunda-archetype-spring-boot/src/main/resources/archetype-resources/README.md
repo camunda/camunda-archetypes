@@ -56,6 +56,7 @@ and inspect it using
 
 ${symbol_pound}${symbol_pound} Environment Restrictions
 Built and tested against Camunda Platform version ${camunda-version}.
+Requires JDK 17.
 
 ${symbol_pound}${symbol_pound} Known Limitations
 
