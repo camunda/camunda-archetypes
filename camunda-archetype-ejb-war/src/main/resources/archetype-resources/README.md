@@ -51,7 +51,7 @@ and inspect it using
 [Camunda Cockpit](http://docs.camunda.org/latest/guides/user-guide/#cockpit).
 
 ${symbol_pound}${symbol_pound} Environment Restrictions
-Built and tested against Camunda Platform version ${camunda-version} on WildFly 27 Application Server.
+Built and tested against Camunda Platform version ${camunda-version} on WildFly 27+ Application Server.
 
 ${symbol_pound}${symbol_pound} Known Limitations
 
