@@ -134,10 +134,6 @@
       <groupId>org.camunda.template-engines</groupId>
       <artifactId>camunda-template-engines-freemarker</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.camunda.template-engines</groupId>
-      <artifactId>camunda-template-engines-velocity</artifactId>
-    </dependency>
 
     <!-- Used to generate test coverage reports, see https://github.com/camunda-community-hub/camunda-process-test-coverage -->
     <dependency>
