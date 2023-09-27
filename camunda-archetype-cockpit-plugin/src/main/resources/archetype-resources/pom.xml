@@ -14,12 +14,12 @@
   <url></url>
 
   <properties>
-    <camunda.version>${camunda-version}</camunda.version>
     <!--
     Adjust if you want to use Camunda Enterprise Edition (EE):
     <camunda.version>${camunda-version}-ee</camunda.version>
     Make sure you also switch to EE repository below
     -->
+    <camunda.version>${camunda-version}</camunda.version>
 
     <!-- This property must be present for the pom.xml to be recognized as a plugin -->
     <camunda.plugin.category>${camunda-plugin-category}</camunda.plugin.category>
@@ -30,8 +30,7 @@
     <!-- <camunda.plugin.exampleProcessApplicationUrl></camunda.plugin.exampleProcessApplicationUrl> -->
     <camunda.plugin.language>${camunda-plugin-language}</camunda.plugin.language>
 
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -92,6 +91,15 @@
 
   <build>
     <finalName>\${project.artifactId}</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${version.maven-compiler-plugin}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 
 </project>

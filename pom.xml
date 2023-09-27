@@ -27,16 +27,17 @@
   </modules>
 
   <properties>
-    <version.assertj-core>3.22.0</version.assertj-core>
-    <version.camunda>7.20.0-SNAPSHOT</version.camunda>
+    <version.assertj-core>3.24.2</version.assertj-core>
+    <version.camunda>7.20.0-alpha6</version.camunda>
     <version.camunda-bpm-assert-scenario>1.1.1</version.camunda-bpm-assert-scenario>
-    <version.camunda-test-coverage>2.0.0</version.camunda-test-coverage>
+    <version.camunda-test-coverage>2.1.0</version.camunda-test-coverage>
     <version.h2>2.1.214</version.h2>
     <version.logback>1.2.12</version.logback>
     <version.maven-war-plugin>3.3.2</version.maven-war-plugin>
-    <version.maven-surefire-plugin>3.0.0-M9</version.maven-surefire-plugin>
+    <version.maven-surefire-plugin>3.1.2</version.maven-surefire-plugin>
+    <version.maven-compiler-plugin>3.11.0</version.maven-compiler-plugin>
     <version.slf4j>1.7.36</version.slf4j>
-    <version.springBoot>3.1.1</version.springBoot>
+    <version.springBoot>3.1.4</version.springBoot>
   </properties>
 
   <licenses>
