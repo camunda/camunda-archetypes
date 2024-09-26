@@ -28,7 +28,7 @@
 
   <properties>
     <version.assertj-core>3.24.2</version.assertj-core>
-    <version.camunda>7.21.0</version.camunda>
+    <version.camunda>7.22.0</version.camunda>
     <version.camunda-bpm-assert-scenario>1.1.1</version.camunda-bpm-assert-scenario>
     <version.camunda-test-coverage>2.1.0</version.camunda-test-coverage>
     <version.h2>2.1.214</version.h2>
