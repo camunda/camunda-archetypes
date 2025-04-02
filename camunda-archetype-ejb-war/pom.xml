@@ -17,7 +17,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>Camunda Platform Archetype: Process Application (EJB, WAR)</name>
-  <description>Process application that uses a shared Camunda Platform engine in a Java EE Container, e.g. JBoss Wildfly.
+  <description>Process application that uses a shared Camunda Platform engine in a Jakarta EE Container, e.g. JBoss Wildfly.
           Contains: Camunda EJB Client, Camunda CDI Integration, BPMN Process, Java Delegate as CDI bean, HTML5-based start and task forms,
           configuration for JPA (Hibernate), JUnit Test with in-memory engine and visual process test coverage, Maven Plugins</description>
 
