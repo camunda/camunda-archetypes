@@ -1,7 +1,7 @@
 package ${package}.resources;
 
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 
 import org.camunda.bpm.cockpit.plugin.resource.AbstractCockpitPluginRootResource;
 

@@ -20,7 +20,7 @@
     -->
     <camunda.version>${camunda-version}</camunda.version>
 
-    <maven.compiler.release>11</maven.compiler.release>
+    <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
@@ -45,7 +45,7 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <!-- client for Java EE application server integration, included in WAR as an alternative to write your own ProcessApplication class -->
+      <!-- client for Jakarta EE application server integration, included in WAR as an alternative to write your own ProcessApplication class -->
       <groupId>org.camunda.bpm.javaee</groupId>
       <artifactId>camunda-ejb-client-jakarta</artifactId>
     </dependency>
@@ -88,11 +88,11 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- Java EE 6 APIs -->
+    <!-- Jakarta EE APIs -->
     <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>6.0</version>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>10.0.0</version>
       <scope>provided</scope>
     </dependency>
 
