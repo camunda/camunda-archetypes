@@ -146,7 +146,7 @@
     <repository>
       <id>camunda-bpm-nexus</id>
       <name>Camunda Maven Repository</name>
-      <url>https://artifacts.camunda.com/artifactory/public/</url>
+      <url>https://artifacts.camunda.com/artifactory/private/</url>
     </repository>
     <!-- enable this for EE dependencies (requires credentials in ~/.m2/settings.xml)
     <repository>
